@@ -1,0 +1,7 @@
+'IndicatorConfiguration.indicatorType' : ['DMI','TFT','EDS','None']
+'IndicatorConfiguration.displaySize' : ['4.3','7','10','12','15']
+'IndicatorConfiguration.displayColor' : ['AMBER','BLUE','GREEN','RED','WHITE']
+'IndicatorConfiguration.coverSize' : ['W189/W191','W239/W241','W289/W291','W339/W341']
+'IndicatorConfiguration.displayLayout' : ['Layout 1','Layout 2','Layout 3','Layout 4','Layout 5','Layout 6']
+'IndicatorConfiguration.glassCoverColor' : ['BLACK','WHITE']
+'IndicatorConfiguration.mountingType' : ['Surface','Flush']
