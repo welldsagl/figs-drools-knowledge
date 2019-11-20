@@ -1,0 +1,41 @@
+include:
+- 'http://gitlab.welld.io/welld/gitlabci/raw/master/generic/stages.yml'
+- 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/.variables_template.yml'
+- 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/before_script.yml'
+- 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/cache.yml'
+- 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/.install_template.yml'
+- 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/.build_template.yml'
+- 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/.publish_template.yml'
+
+variables:
+  extends: .mvn_variables
+
+# --------------- INSTALL --------------- #
+install:
+  extends: .install
+
+# --------------- TEST --------------- #
+# TODO: implement
+
+# --------------- QUALITY --------------- #
+# TODO: implement
+
+# --------------- BUILD --------------- #
+mvn_build:preview:
+  extends: .mvn_build:preview
+
+mvn_build:prerelease:
+  extends: .mvn_build:prerelease
+
+mvn_build:release:
+  extends: .mvn_build:release
+
+# --------------- PUBLISH --------------- #
+publish:preview:
+  extends: .publish:preview
+
+publish:prerelease:
+  extends: .publish:prerelease
+
+publish:release:
+  extends: .publish:release
