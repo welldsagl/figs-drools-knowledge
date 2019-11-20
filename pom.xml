@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.myspace</groupId>
-  <artifactId>Fixture</artifactId>
+  <groupId>ch.welld.schindler.figs</groupId>
+  <artifactId>drools-knowledge</artifactId>
   <version>1.0.5-SNAPSHOT</version>
   <packaging>kjar</packaging>
-  <name>Fixture</name>
+  <name>Drools Knowledge</name>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <description></description>
+  
+  <distributionManagement>
+    <snapshotRepository>
+        <id>welld-nexus-snapshot</id>
+        <url>https://nexus.welld.io/repository/maven-snapshots/</url>
+    </snapshotRepository>
+
+    <repository>
+        <id>welld-nexus</id>
+        <url>https://nexus.welld.io/repository/maven-releases/</url>
+    </repository>
+  </distributionManagement>
+  
   <dependencies>
     <dependency>
       <groupId>com.thoughtworks.xstream</groupId>
@@ -88,6 +106,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
   <build>
     <plugins>
       <plugin>
@@ -98,4 +117,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>

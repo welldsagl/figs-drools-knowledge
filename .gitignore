@@ -1,11 +1,4 @@
-.gradle
-/build/
-!gradle/wrapper/gradle-wrapper.jar
-.gradletasknamecache
-
-/bin/
-/log/
-
+target/
 ### STS ###
 .apt_generated
 .classpath
@@ -22,18 +15,8 @@
 *.ipr
 /out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
 ### macOS ###
 .DS_Store
-
-### Visual Studio Code ###
-/.vscode/
 
 ##@ Excel temp files
 ~$*
