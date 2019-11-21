@@ -1,0 +1,7 @@
+package com.myspace.buzzers;
+
+rule "DT Buzzers"
+    when
+        BuzzerConfiguration()
+    then
+end

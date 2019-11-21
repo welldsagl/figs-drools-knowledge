@@ -1,0 +1,7 @@
+package com.myspace.controldevices;
+
+rule "Control Devices"
+    when
+        ControlDeviceConfiguration()
+    then
+end
