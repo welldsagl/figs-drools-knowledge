@@ -1,0 +1,7 @@
+package com.myspace.lamps;
+
+rule "DT Lamps"
+    when
+        LampConfiguration()
+    then
+end
