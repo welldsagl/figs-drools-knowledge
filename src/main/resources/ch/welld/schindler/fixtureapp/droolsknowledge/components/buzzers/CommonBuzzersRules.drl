@@ -1,0 +1,7 @@
+package ch.welld.schindler.fixtureapp.droolsknowledge.components.buzzers;
+
+rule "DT Buzzers"
+    when
+        BuzzerConfiguration()
+    then
+end

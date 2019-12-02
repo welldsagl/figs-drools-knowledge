@@ -1,0 +1,37 @@
+package ch.welld.schindler.fixtureapp.droolsknowledge.components.fixtures;
+
+rule "DT2 Buttons"
+    when
+        FixtureConfiguration( fixtureFamily == "DT2" )
+    then
+end
+
+rule "DT4 Buttons"
+    when
+        FixtureConfiguration( fixtureFamily == "DT4" )
+    then
+end
+
+rule "DT8 Buttons"
+    when
+        FixtureConfiguration( fixtureFamily == "DT8" )
+    then
+end
+
+rule "DT4 Push Buttons"
+    when
+        FixtureConfiguration( fixtureFamily == "DT4", fixtureType in ( "PUSH_DOOR", "PUSH_FLOOR" ) )
+    then
+end
+
+rule "DT4 Push Main Floor Buttons"
+    when
+        FixtureConfiguration( fixtureFamily == "DT4", fixtureType == "PUSH_MAIN" )
+    then
+end
+
+rule "DT4 Alarm Buttons"
+    when
+        FixtureConfiguration( fixtureFamily == "DT4", fixtureType == "ALARM" )
+    then
+end

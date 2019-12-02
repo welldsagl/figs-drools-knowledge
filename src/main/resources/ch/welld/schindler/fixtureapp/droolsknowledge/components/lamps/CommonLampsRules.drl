@@ -1,0 +1,7 @@
+package ch.welld.schindler.fixtureapp.droolsknowledge.components.lamps;
+
+rule "DT Lamps"
+    when
+        LampConfiguration()
+    then
+end
