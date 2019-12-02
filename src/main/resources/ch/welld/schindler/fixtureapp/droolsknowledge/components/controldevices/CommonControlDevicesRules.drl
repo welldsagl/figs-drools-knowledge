@@ -1,7 +1,0 @@
-package ch.welld.schindler.fixtureapp.droolsknowledge.components.controldevices;
-
-rule "Control Devices"
-    when
-        ControlDeviceConfiguration()
-    then
-end

@@ -1,7 +1,0 @@
-package ch.welld.schindler.fixtureapp.droolsknowledge.components.keyswitches;
-
-rule "DT KeySwitch"
-    when
-        KeySwitchConfiguration()
-    then
-end

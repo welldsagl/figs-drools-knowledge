@@ -3,8 +3,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   
   <modelVersion>4.0.0</modelVersion>
-  <groupId>ch.welld.schindler.fixtureapp</groupId>
-  <artifactId>droolsknowledge</artifactId>
+  <groupId>ch.welld.schindler.figs</groupId>
+  <artifactId>drools-knowledge</artifactId>
   <version>1.0.5-SNAPSHOT</version>
   <packaging>kjar</packaging>
   <name>Drools Knowledge</name>
