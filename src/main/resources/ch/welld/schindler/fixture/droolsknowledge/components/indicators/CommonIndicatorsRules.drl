@@ -1,0 +1,25 @@
+package ch.welld.schindler.fixture.droolsknowledge.components.indicators;
+
+rule "DT TFT Indicators"
+    when
+        IndicatorConfiguration( indicatorType == "TFT" )
+    then
+end
+
+rule "DT EDS Indicators"
+    when
+        IndicatorConfiguration( indicatorType == "EDS" )
+    then
+end
+
+rule "DT DMI Indicators"
+    when
+        IndicatorConfiguration( indicatorType == "DMI" )
+    then
+end
+
+rule "DT None Indicators"
+    when
+        IndicatorConfiguration( indicatorType == "None" )
+    then
+end

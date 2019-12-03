@@ -1,7 +1,0 @@
-package com.myspace.keyswitches;
-
-rule "DT KeySwitch"
-    when
-        KeySwitchConfiguration()
-    then
-end

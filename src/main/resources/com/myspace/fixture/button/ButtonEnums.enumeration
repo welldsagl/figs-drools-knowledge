@@ -1,3 +1,0 @@
-'ButtonConfiguration.buttonColor' : ['AMBER','BLUE','GREEN','RED','WHITE']
-'ButtonConfiguration.fixtureFamily' : ['DT2','DT4','DT8']
-'ButtonConfiguration.fixtureType' : ['ALARM','PUSH_FLOOR','PUSH_DOOR','PUSH_MAIN']
