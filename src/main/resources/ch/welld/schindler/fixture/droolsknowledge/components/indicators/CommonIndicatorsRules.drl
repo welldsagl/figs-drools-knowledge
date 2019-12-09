@@ -1,5 +1,8 @@
 package ch.welld.schindler.fixture.droolsknowledge.components.indicators;
 
+import java.util.Map;
+import java.util.HashMap;
+
 rule "DT TFT Indicators"
     when
         IndicatorConfiguration( indicatorType == "TFT" )
@@ -23,3 +26,10 @@ rule "DT None Indicators"
         IndicatorConfiguration( indicatorType == "None" )
     then
 end
+
+function Map<String, Object> createIndicatorsMetadata(IndicatorConfiguration config) {
+    Map<String, Object> m = new HashMap<String, Object>();
+    m.put("language", config.getLanguage());
+    m.put("displayLayout", config.getDisplayLayout());
+    return m;
+}

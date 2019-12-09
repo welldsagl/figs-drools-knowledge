@@ -13,6 +13,9 @@ public class Material implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("familyCode")
 	private java.lang.String familyCode;
 
+	@org.kie.api.definition.type.Label(value = "metadata")
+	private java.util.Map<java.lang.String, java.lang.Object> metadata;
+
 	public Material() {
 	}
 
@@ -32,9 +35,19 @@ public class Material implements java.io.Serializable {
 		this.familyCode = familyCode;
 	}
 
-	public Material(java.lang.String materialCode, java.lang.String familyCode) {
+	public java.util.Map<java.lang.String, java.lang.Object> getMetadata() {
+		return this.metadata;
+	}
+
+	public void setMetadata(java.util.Map<java.lang.String, java.lang.Object> metadata) {
+		this.metadata = metadata;
+	}
+
+	public Material(java.lang.String materialCode, java.lang.String familyCode,
+			java.util.Map<java.lang.String, java.lang.Object> metadata) {
 		this.materialCode = materialCode;
 		this.familyCode = familyCode;
+		this.metadata = metadata;
 	}
 
 }

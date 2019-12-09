@@ -1,7 +1,16 @@
 package ch.welld.schindler.fixture.droolsknowledge.components.keyswitches;
 
+import java.util.Map;
+import java.util.HashMap;
+
 rule "DT KeySwitch"
     when
         KeySwitchConfiguration()
     then
 end
+
+function Map<String, Object> createEngravingMetadata(KeySwitchConfiguration config) {
+    Map<String, Object> m = new HashMap<String, Object>();
+    m.put("engraving", config.getEngraving());
+    return m;
+}

@@ -32,39 +32,6 @@
           <operator>==</operator>
           <parameters/>
         </condition-column52>
-        <condition-column52>
-          <typedDefaultValue>
-            <valueString></valueString>
-            <dataType>STRING</dataType>
-            <isOtherwise>false</isOtherwise>
-          </typedDefaultValue>
-          <hideColumn>false</hideColumn>
-          <width>100</width>
-          <header>EN81-72</header>
-          <constraintValueType>3</constraintValueType>
-          <factField>en8120</factField>
-          <fieldType>Boolean</fieldType>
-          <operator>==</operator>
-          <valueList>true,false</valueList>
-          <parameters/>
-        </condition-column52>
-        <condition-column52>
-          <typedDefaultValue>
-            <valueString></valueString>
-            <dataType>STRING</dataType>
-            <isOtherwise>false</isOtherwise>
-          </typedDefaultValue>
-          <hideColumn>false</hideColumn>
-          <width>100</width>
-          <header>na</header>
-          <constraintValueType>3</constraintValueType>
-          <factField>na</factField>
-          <fieldType>Boolean</fieldType>
-          <operator>==</operator>
-          <valueList>true,false</valueList>
-          <parameters/>
-          <binding></binding>
-        </condition-column52>
       </conditions>
       <window>
         <parameters/>
@@ -160,16 +127,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>54412867</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -194,16 +151,6 @@
       </value>
       <value>
         <valueString>LARC-COMMUNICATION</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -236,16 +183,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>54412867</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -274,16 +211,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>54412867</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -307,17 +234,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>LL-X</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>true</valueString>
+        <valueString>LL-X-NA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -350,16 +267,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>54412867</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -383,17 +290,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>LBFC</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>true</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
+        <valueString>LBFC-FIRE</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -426,16 +323,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>54412867</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -460,16 +347,6 @@
       </value>
       <value>
         <valueString>LBFC-FULL</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -502,16 +379,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>54412867</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -536,16 +403,6 @@
       </value>
       <value>
         <valueString>LREC</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -578,16 +435,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>54412867</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -611,17 +458,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>LEB</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>true</valueString>
+        <valueString>LEB-NA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -654,16 +491,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>54412867</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -688,16 +515,6 @@
       </value>
       <value>
         <valueString>LNO</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -730,16 +547,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>54412867</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -768,16 +575,6 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>54412867</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -802,16 +599,6 @@
       </value>
       <value>
         <valueString>LAB</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>

@@ -1,5 +1,6 @@
 <decision-table52>
   <tableName>DTKeySwitchesAdditional</tableName>
+  <parentName>DT KeySwitch</parentName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
     <width>50</width>
@@ -98,6 +99,22 @@
       <type>String</type>
       <isInsertLogical>false</isInsertLogical>
     </insert-fact-column52>
+    <insert-fact-column52>
+      <typedDefaultValue>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </typedDefaultValue>
+      <hideColumn>false</hideColumn>
+      <width>100</width>
+      <header>metadata</header>
+      <factType>Material</factType>
+      <boundName>f2</boundName>
+      <factField>metadata</factField>
+      <type>java.util.Map</type>
+      <valueList>createEngravingMetadata(f1)</valueList>
+      <isInsertLogical>false</isInsertLogical>
+    </insert-fact-column52>
   </actionCols>
   <auditLog>
     <filter class="org.drools.guvnor.client.modeldriven.dt52.auditlog.DecisionTableAuditLogFilter">
@@ -174,6 +191,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -205,6 +227,11 @@
       </value>
       <value>
         <valueString>54413163</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -242,6 +269,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -273,6 +305,11 @@
       </value>
       <value>
         <valueString>54413165</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -310,6 +347,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -344,6 +386,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -371,6 +418,11 @@
       </value>
       <value>
         <valueString>54413181</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -404,6 +456,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -431,6 +488,11 @@
       </value>
       <value>
         <valueString>54413183</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -464,6 +526,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -491,6 +558,11 @@
       </value>
       <value>
         <valueString>54413185</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -532,6 +604,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -559,6 +636,11 @@
       </value>
       <value>
         <valueString>54413194</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -592,6 +674,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -622,6 +709,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -649,6 +741,11 @@
       </value>
       <value>
         <valueString>54413209</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -690,6 +787,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -724,7 +826,12 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>4414056</valueString>
+        <valueString>54414056</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -766,6 +873,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -801,6 +913,11 @@
       </value>
       <value>
         <valueString>54414058</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -842,6 +959,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -877,6 +999,11 @@
       </value>
       <value>
         <valueString>54414061</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -918,6 +1045,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -953,6 +1085,11 @@
       </value>
       <value>
         <valueString>54414063</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -994,6 +1131,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -1029,6 +1171,11 @@
       </value>
       <value>
         <valueString>54414065</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -1070,6 +1217,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -1105,6 +1257,11 @@
       </value>
       <value>
         <valueString>54414067</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -1146,6 +1303,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -1181,6 +1343,11 @@
       </value>
       <value>
         <valueString>54414069</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -1222,6 +1389,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -1257,6 +1429,11 @@
       </value>
       <value>
         <valueString>54414071</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -1298,6 +1475,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -1333,6 +1515,11 @@
       </value>
       <value>
         <valueString>54414134</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>createEngravingMetadata(f1)</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
