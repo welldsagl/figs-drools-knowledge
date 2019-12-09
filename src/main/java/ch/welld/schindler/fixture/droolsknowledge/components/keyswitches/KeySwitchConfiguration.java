@@ -12,6 +12,8 @@ public class KeySwitchConfiguration implements java.io.Serializable {
 	private java.lang.String keySwitch;
 	private java.lang.String keyFunction;
 
+	private java.lang.String engraving;
+
 	public KeySwitchConfiguration() {
 	}
 
@@ -39,11 +41,21 @@ public class KeySwitchConfiguration implements java.io.Serializable {
 		this.keyFunction = keyFunction;
 	}
 
+	public java.lang.String getEngraving() {
+		return this.engraving;
+	}
+
+	public void setEngraving(java.lang.String engraving) {
+		this.engraving = engraving;
+	}
+
 	public KeySwitchConfiguration(java.lang.String keyType,
-			java.lang.String keySwitch, java.lang.String keyFunction) {
+								  java.lang.String keySwitch, java.lang.String keyFunction,
+								  java.lang.String engraving) {
 		this.keyType = keyType;
 		this.keySwitch = keySwitch;
 		this.keyFunction = keyFunction;
+		this.engraving = engraving;
 	}
 
 }

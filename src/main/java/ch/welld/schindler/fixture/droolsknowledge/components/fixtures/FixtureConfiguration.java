@@ -37,6 +37,9 @@ public class FixtureConfiguration implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("fiveDot")
 	private Boolean fiveDot;
 
+	@org.kie.api.definition.type.Label(value = "label")
+	private java.lang.String label;
+
 	public FixtureConfiguration() {
 	}
 
@@ -120,12 +123,20 @@ public class FixtureConfiguration implements java.io.Serializable {
 		this.fiveDot = fiveDot;
 	}
 
+	public java.lang.String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(java.lang.String label) {
+		this.label = label;
+	}
+
 	public FixtureConfiguration(java.lang.Boolean backlight,
-                                java.lang.String buttonColor, java.lang.String fixtureFamily,
-                                java.lang.String fixtureType, java.lang.Boolean hairlineInsert,
-                                java.lang.Boolean letterRaised, java.lang.Boolean braille,
-                                java.lang.Boolean illumination, java.lang.Boolean buzzer,
-                                java.lang.Boolean fiveDot) {
+			java.lang.String buttonColor, java.lang.String fixtureFamily,
+			java.lang.String fixtureType, java.lang.Boolean hairlineInsert,
+			java.lang.Boolean letterRaised, java.lang.Boolean braille,
+			java.lang.Boolean illumination, java.lang.Boolean buzzer,
+			java.lang.Boolean fiveDot, java.lang.String label) {
 		this.backlight = backlight;
 		this.buttonColor = buttonColor;
 		this.fixtureFamily = fixtureFamily;
@@ -136,6 +147,7 @@ public class FixtureConfiguration implements java.io.Serializable {
 		this.illumination = illumination;
 		this.buzzer = buzzer;
 		this.fiveDot = fiveDot;
+		this.label = label;
 	}
 
 }
