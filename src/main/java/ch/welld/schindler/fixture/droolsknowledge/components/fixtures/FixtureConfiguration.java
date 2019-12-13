@@ -40,6 +40,9 @@ public class FixtureConfiguration implements java.io.Serializable {
 	@org.kie.api.definition.type.Label(value = "label")
 	private java.lang.String label;
 
+	@org.kie.api.definition.type.Label(value = "doorButtonType")
+	private java.lang.String doorButtonType;
+
 	public FixtureConfiguration() {
 	}
 
@@ -131,12 +134,21 @@ public class FixtureConfiguration implements java.io.Serializable {
 		this.label = label;
 	}
 
+	public java.lang.String getDoorButtonType() {
+		return this.doorButtonType;
+	}
+
+	public void setDoorButtonType(java.lang.String doorButtonType) {
+		this.doorButtonType = doorButtonType;
+	}
+
 	public FixtureConfiguration(java.lang.Boolean backlight,
 			java.lang.String buttonColor, java.lang.String fixtureFamily,
 			java.lang.String fixtureType, java.lang.Boolean hairlineInsert,
 			java.lang.Boolean letterRaised, java.lang.Boolean braille,
 			java.lang.Boolean illumination, java.lang.Boolean buzzer,
-			java.lang.Boolean fiveDot, java.lang.String label) {
+			java.lang.Boolean fiveDot, java.lang.String label,
+			java.lang.String doorButtonType) {
 		this.backlight = backlight;
 		this.buttonColor = buttonColor;
 		this.fixtureFamily = fixtureFamily;
@@ -148,6 +160,7 @@ public class FixtureConfiguration implements java.io.Serializable {
 		this.buzzer = buzzer;
 		this.fiveDot = fiveDot;
 		this.label = label;
+		this.doorButtonType = doorButtonType;
 	}
 
 }
