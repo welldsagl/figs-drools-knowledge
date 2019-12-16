@@ -3,39 +3,69 @@ package ch.welld.schindler.fixture.droolsknowledge.components.fixtures;
 import java.util.Map;
 import java.util.HashMap;
 
-rule "DT2 Buttons"
+rule "DT Buttons"
     when
-        FixtureConfiguration( fixtureFamily == "DT2" )
+        FixtureConfiguration( fixtureFamily == "DT" )
     then
 end
 
-rule "DT4 Buttons"
+rule "DT2 Buttons" extends "DT Buttons"
     when
-        FixtureConfiguration( fixtureFamily == "DT4" )
+        FixtureConfiguration( fixtureSubfamily == "DT2" )
     then
 end
 
-rule "DT8 Buttons"
+rule "DT4 Buttons" extends "DT Buttons"
     when
-        FixtureConfiguration( fixtureFamily == "DT8" )
+        FixtureConfiguration( fixtureSubfamily == "DT4" )
     then
 end
 
-rule "DT4 Push Buttons"
+rule "DT8 Buttons" extends "DT Buttons"
     when
-        FixtureConfiguration( fixtureFamily == "DT4", fixtureType in ( "PUSH_DOOR", "PUSH_FLOOR" ) )
+        FixtureConfiguration( fixtureSubfamily == "DT8" )
     then
 end
 
-rule "DT4 Push Main Floor Buttons"
+rule "DT4 Push Buttons" extends "DT4 Buttons"
     when
-        FixtureConfiguration( fixtureFamily == "DT4", fixtureType == "PUSH_MAIN" )
+        FixtureConfiguration( fixtureType in ( "PUSH_DOOR", "PUSH_FLOOR" ) )
     then
 end
 
-rule "DT4 Alarm Buttons"
+rule "DT4 Push Main Floor Buttons" extends "DT4 Buttons"
     when
-        FixtureConfiguration( fixtureFamily == "DT4", fixtureType == "ALARM" )
+        FixtureConfiguration( fixtureType == "PUSH_MAIN" )
+    then
+end
+
+rule "DT4 Alarm Buttons" extends "DT4 Buttons"
+    when
+        FixtureConfiguration( fixtureType == "ALARM" )
+    then
+end
+
+rule "AT Buttons"
+    when
+        FixtureConfiguration( fixtureFamily == "AT" )
+    then
+end
+
+rule "AT Push Floor Door Buttons" extends "AT Buttons"
+    when
+        FixtureConfiguration( fixtureType in ( "PUSH_DOOR", "PUSH_MAIN" ) )
+    then
+end
+
+rule "AT Push Floor Buttons" extends "AT Buttons"
+    when
+        FixtureConfiguration( fixtureType == "PUSH_FLOOR" )
+    then
+end
+
+rule "AT Alarm Buttons" extends "AT Buttons"
+    when
+        FixtureConfiguration( fixtureType == "ALARM" )
     then
 end
 

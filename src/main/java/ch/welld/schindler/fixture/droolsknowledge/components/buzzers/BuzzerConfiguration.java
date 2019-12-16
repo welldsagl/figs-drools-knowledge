@@ -10,6 +10,8 @@ public class BuzzerConfiguration implements java.io.Serializable {
 
 	private java.lang.String buzzerType;
 
+	private java.lang.String fixtureFamily;
+
 	public BuzzerConfiguration() {
 	}
 
@@ -21,8 +23,17 @@ public class BuzzerConfiguration implements java.io.Serializable {
 		this.buzzerType = buzzerType;
 	}
 
-	public BuzzerConfiguration(java.lang.String buzzerType) {
+	public java.lang.String getFixtureFamily() {
+		return this.fixtureFamily;
+	}
+
+	public void setFixtureFamily(java.lang.String fixtureFamily) {
+		this.fixtureFamily = fixtureFamily;
+	}
+
+	public BuzzerConfiguration(java.lang.String buzzerType, java.lang.String fixtureFamily) {
 		this.buzzerType = buzzerType;
+		this.fixtureFamily = fixtureFamily;
 	}
 
 }

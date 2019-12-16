@@ -12,6 +12,8 @@ public class LampConfiguration implements java.io.Serializable {
 
 	private java.lang.String lamp;
 
+	private java.lang.String fixtureFamily;
+
 	public LampConfiguration() {
 	}
 
@@ -31,9 +33,19 @@ public class LampConfiguration implements java.io.Serializable {
 		this.lamp = lamp;
 	}
 
-	public LampConfiguration(java.lang.Boolean en8120, java.lang.String lamp) {
+	public java.lang.String getFixtureFamily() {
+		return this.fixtureFamily;
+	}
+
+	public void setFixtureFamily(java.lang.String fixtureFamily) {
+		this.fixtureFamily = fixtureFamily;
+	}
+
+	public LampConfiguration(java.lang.Boolean en8120, java.lang.String lamp,
+							 java.lang.String fixtureFamily) {
 		this.en8120 = en8120;
 		this.lamp = lamp;
+		this.fixtureFamily = fixtureFamily;
 	}
 
 }

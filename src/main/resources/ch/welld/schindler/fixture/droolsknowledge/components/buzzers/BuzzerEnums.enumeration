@@ -1,1 +1,2 @@
 'BuzzerConfiguration.buzzerType' : ['HAIRLINE','MIRROR']
+'BuzzerConfiguration.fixtureFamily' : ['DT','AT']

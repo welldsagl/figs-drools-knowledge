@@ -8,39 +8,30 @@ public class FixtureConfiguration implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label("backlight")
 	private java.lang.Boolean backlight;
-	@org.kie.api.definition.type.Label("buttonColor")
+
 	private java.lang.String buttonColor;
 
-	@org.kie.api.definition.type.Label("fixtureFamily")
 	private java.lang.String fixtureFamily;
 
-	@org.kie.api.definition.type.Label("fixtureType")
+	private java.lang.String fixtureSubfamily;
+
 	private java.lang.String fixtureType;
 
-	@org.kie.api.definition.type.Label("hairlineInsert")
 	private java.lang.Boolean hairlineInsert;
 
-	@org.kie.api.definition.type.Label("letterRaised")
 	private java.lang.Boolean letterRaised;
 
-	@org.kie.api.definition.type.Label("braille")
 	private java.lang.Boolean braille;
 
-	@org.kie.api.definition.type.Label("illumination")
 	private java.lang.Boolean illumination;
 
-	@org.kie.api.definition.type.Label("buzzer")
 	private java.lang.Boolean buzzer;
 
-	@org.kie.api.definition.type.Label("fiveDot")
 	private Boolean fiveDot;
 
-	@org.kie.api.definition.type.Label(value = "label")
 	private java.lang.String label;
 
-	@org.kie.api.definition.type.Label(value = "doorButtonType")
 	private java.lang.String doorButtonType;
 
 	public FixtureConfiguration() {
@@ -68,6 +59,14 @@ public class FixtureConfiguration implements java.io.Serializable {
 
 	public void setFixtureFamily(java.lang.String fixtureFamily) {
 		this.fixtureFamily = fixtureFamily;
+	}
+
+	public java.lang.String getFixtureSubfamily() {
+		return this.fixtureSubfamily;
+	}
+
+	public void setFixtureSubfamily(java.lang.String fixtureSubfamily) {
+		this.fixtureSubfamily = fixtureSubfamily;
 	}
 
 	public java.lang.String getFixtureType() {
@@ -144,6 +143,7 @@ public class FixtureConfiguration implements java.io.Serializable {
 
 	public FixtureConfiguration(java.lang.Boolean backlight,
 			java.lang.String buttonColor, java.lang.String fixtureFamily,
+			java.lang.String fixtureSubfamily,
 			java.lang.String fixtureType, java.lang.Boolean hairlineInsert,
 			java.lang.Boolean letterRaised, java.lang.Boolean braille,
 			java.lang.Boolean illumination, java.lang.Boolean buzzer,
@@ -152,6 +152,7 @@ public class FixtureConfiguration implements java.io.Serializable {
 		this.backlight = backlight;
 		this.buttonColor = buttonColor;
 		this.fixtureFamily = fixtureFamily;
+		this.fixtureSubfamily = fixtureSubfamily;
 		this.fixtureType = fixtureType;
 		this.hairlineInsert = hairlineInsert;
 		this.letterRaised = letterRaised;
