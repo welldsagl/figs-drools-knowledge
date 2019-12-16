@@ -1,6 +1,6 @@
 <decision-table52>
   <tableName>DTFixturesBasic</tableName>
-  <parentName></parentName>
+  <parentName>DT Buttons</parentName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
     <width>50</width>
@@ -25,9 +25,9 @@
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
           <width>123</width>
-          <header>fixture family</header>
+          <header>fixture subfamily</header>
           <constraintValueType>1</constraintValueType>
-          <factField>fixtureFamily</factField>
+          <factField>fixtureSubfamily</factField>
           <fieldType>String</fieldType>
           <operator>==</operator>
           <parameters/>

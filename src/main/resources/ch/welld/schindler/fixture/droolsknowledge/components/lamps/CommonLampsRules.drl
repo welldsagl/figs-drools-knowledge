@@ -2,6 +2,12 @@ package ch.welld.schindler.fixture.droolsknowledge.components.lamps;
 
 rule "DT Lamps"
     when
-        LampConfiguration()
+        LampConfiguration( fixtureFamily == "DT" )
+    then
+end
+
+rule "AT Lamps"
+    when
+        LampConfiguration( fixtureFamily == "AT" )
     then
 end

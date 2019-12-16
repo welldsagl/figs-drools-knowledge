@@ -2,6 +2,12 @@ package ch.welld.schindler.fixture.droolsknowledge.components.buzzers;
 
 rule "DT Buzzers"
     when
-        BuzzerConfiguration()
+        BuzzerConfiguration( fixtureFamily == "DT" )
+    then
+end
+
+rule "AT Buzzers"
+    when
+        BuzzerConfiguration( fixtureFamily == "AT" )
     then
 end
