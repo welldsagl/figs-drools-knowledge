@@ -27,9 +27,15 @@ rule "DT8 Buttons" extends "DT Buttons"
     then
 end
 
-rule "DT4 Push Buttons" extends "DT4 Buttons"
+rule "DT4 Push Floor Buttons" extends "DT4 Buttons"
     when
-        FixtureConfiguration( fixtureType in ( "PUSH_DOOR", "PUSH_FLOOR" ) )
+        FixtureConfiguration( fixtureType == "PUSH_FLOOR" )
+    then
+end
+
+rule "DT4 Push Door Buttons" extends "DT4 Buttons"
+    when
+        FixtureConfiguration( fixtureType == "PUSH_DOOR" )
     then
 end
 
