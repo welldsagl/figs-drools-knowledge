@@ -17,3 +17,9 @@ rule "MT Buzzers"
         BuzzerConfiguration( fixtureFamily == "MT" )
     then
 end
+
+rule "GST Buzzers"
+    when
+        BuzzerConfiguration( fixtureFamily == "GST" )
+    then
+end

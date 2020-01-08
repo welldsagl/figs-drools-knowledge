@@ -1,5 +1,5 @@
 'FixtureConfiguration.buttonColor' : ['AMBER','BLUE','GREEN','RED','WHITE']
-'FixtureConfiguration.fixtureFamily' : ['AT','DT']
+'FixtureConfiguration.fixtureFamily' : ['AT','DT','MT','GST']
 'FixtureConfiguration.fixtureSubfamily' : ['DT2','DT4','DT8']
 'FixtureConfiguration.fixtureType' : ['ALARM','MAIN','FLOOR','DOOR']
 'FixtureConfiguration.pushType' : ['PUSH','TOUCH']
