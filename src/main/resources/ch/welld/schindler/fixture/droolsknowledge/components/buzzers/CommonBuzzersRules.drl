@@ -11,3 +11,9 @@ rule "AT Buzzers"
         BuzzerConfiguration( fixtureFamily == "AT" )
     then
 end
+
+rule "MT Buzzers"
+    when
+        BuzzerConfiguration( fixtureFamily == "MT" )
+    then
+end

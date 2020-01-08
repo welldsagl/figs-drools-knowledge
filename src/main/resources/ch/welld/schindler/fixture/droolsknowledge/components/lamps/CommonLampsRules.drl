@@ -11,3 +11,9 @@ rule "AT Lamps"
         LampConfiguration( fixtureFamily == "AT" )
     then
 end
+
+rule "MT Lamps"
+    when
+        LampConfiguration( fixtureFamily == "MT" )
+    then
+end

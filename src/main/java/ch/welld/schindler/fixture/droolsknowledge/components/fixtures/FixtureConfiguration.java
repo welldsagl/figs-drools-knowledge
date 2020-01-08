@@ -34,6 +34,8 @@ public class FixtureConfiguration implements java.io.Serializable {
 
 	private java.lang.String doorButtonType;
 
+	private java.lang.String pushType;
+
 	public FixtureConfiguration() {
 	}
 
@@ -141,14 +143,22 @@ public class FixtureConfiguration implements java.io.Serializable {
 		this.doorButtonType = doorButtonType;
 	}
 
+	public java.lang.String getPushType() {
+		return this.pushType;
+	}
+
+	public void setPushType(java.lang.String pushType) {
+		this.pushType = pushType;
+	}
+
 	public FixtureConfiguration(java.lang.Boolean backlight,
-			java.lang.String buttonColor, java.lang.String fixtureFamily,
-			java.lang.String fixtureSubfamily,
-			java.lang.String fixtureType, java.lang.Boolean hairlineInsert,
-			java.lang.Boolean letterRaised, java.lang.Boolean braille,
-			java.lang.Boolean illumination, java.lang.Boolean buzzer,
-			java.lang.Boolean fiveDot, java.lang.String label,
-			java.lang.String doorButtonType) {
+								java.lang.String buttonColor, java.lang.String fixtureFamily,
+								java.lang.String fixtureSubfamily, java.lang.String fixtureType,
+								java.lang.Boolean hairlineInsert, java.lang.Boolean letterRaised,
+								java.lang.Boolean braille, java.lang.Boolean illumination,
+								java.lang.Boolean buzzer, java.lang.Boolean fiveDot,
+								java.lang.String label, java.lang.String doorButtonType,
+								java.lang.String pushType) {
 		this.backlight = backlight;
 		this.buttonColor = buttonColor;
 		this.fixtureFamily = fixtureFamily;
@@ -162,6 +172,7 @@ public class FixtureConfiguration implements java.io.Serializable {
 		this.fiveDot = fiveDot;
 		this.label = label;
 		this.doorButtonType = doorButtonType;
+		this.pushType = pushType;
 	}
 
 }

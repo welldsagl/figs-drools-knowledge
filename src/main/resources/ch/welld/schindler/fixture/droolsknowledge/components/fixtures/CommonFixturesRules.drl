@@ -29,19 +29,19 @@ end
 
 rule "DT4 Push Floor Buttons" extends "DT4 Buttons"
     when
-        FixtureConfiguration( fixtureType == "PUSH_FLOOR" )
+        FixtureConfiguration( fixtureType == "FLOOR" )
     then
 end
 
 rule "DT4 Push Door Buttons" extends "DT4 Buttons"
     when
-        FixtureConfiguration( fixtureType == "PUSH_DOOR" )
+        FixtureConfiguration( fixtureType == "DOOR" )
     then
 end
 
 rule "DT4 Push Main Floor Buttons" extends "DT4 Buttons"
     when
-        FixtureConfiguration( fixtureType == "PUSH_MAIN" )
+        FixtureConfiguration( fixtureType == "MAIN" )
     then
 end
 
@@ -57,15 +57,15 @@ rule "AT Buttons"
     then
 end
 
-rule "AT Push Floor Door Buttons" extends "AT Buttons"
+rule "AT Push Door Main Buttons" extends "AT Buttons"
     when
-        FixtureConfiguration( fixtureType in ( "PUSH_DOOR", "PUSH_MAIN" ) )
+        FixtureConfiguration( fixtureType in ( "DOOR", "MAIN" ) )
     then
 end
 
 rule "AT Push Floor Buttons" extends "AT Buttons"
     when
-        FixtureConfiguration( fixtureType == "PUSH_FLOOR" )
+        FixtureConfiguration( fixtureType == "FLOOR" )
     then
 end
 
@@ -75,13 +75,61 @@ rule "AT Alarm Buttons" extends "AT Buttons"
     then
 end
 
+rule "MT Buttons"
+    when
+        FixtureConfiguration( fixtureFamily == "MT" )
+    then
+end
+
+rule "MT Alarm Buttons" extends "MT Buttons"
+    when
+        FixtureConfiguration( fixtureType == "ALARM" )
+    then
+end
+
+rule "MT Push Buttons"
+    when
+        FixtureConfiguration( pushType == "PUSH" )
+    then
+end
+
+rule "MT Touch Buttons"
+    when
+        FixtureConfiguration( pushType == "TOUCH" )
+    then
+end
+
+rule "MT Push Floor Buttons" extends "MT Push Buttons"
+    when
+        FixtureConfiguration( fixtureType == "FLOOR" )
+    then
+end
+
+rule "MT Push Door Main Buttons" extends "MT Push Buttons"
+    when
+        FixtureConfiguration( fixtureType in ( "DOOR", "MAIN" ) )
+    then
+end
+
+rule "MT Touch Floor Buttons" extends "MT Touch Buttons"
+    when
+        FixtureConfiguration( fixtureType == "FLOOR" )
+    then
+end
+
+rule "MT Touch Door Main Buttons" extends "MT Touch Buttons"
+    when
+        FixtureConfiguration( fixtureType in ( "DOOR", "MAIN" ) )
+    then
+end
+
 function Map<String, Object> createLabelMetadata(FixtureConfiguration config) {
     Map<String, Object> m = new HashMap<String, Object>();
     switch (config.getFixtureType()) {
         case "ALARM":
             m.put("label", "🔔");
             break;
-        case "PUSH_DOOR":
+        case "DOOR":
             m.put("label", config.getDoorButtonType().equals("OPEN") ? "◀|▶" : "▶|◀");
             break;
         default:
