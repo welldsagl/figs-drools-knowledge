@@ -17,3 +17,9 @@ rule "MT Lamps"
         LampConfiguration( fixtureFamily == "MT" )
     then
 end
+
+rule "GST Lamps"
+    when
+        LampConfiguration( fixtureFamily == "GST" )
+    then
+end

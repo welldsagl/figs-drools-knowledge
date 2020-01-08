@@ -87,13 +87,13 @@ rule "MT Alarm Buttons" extends "MT Buttons"
     then
 end
 
-rule "MT Push Buttons"
+rule "MT Push Buttons" extends "MT Buttons"
     when
         FixtureConfiguration( pushType == "PUSH" )
     then
 end
 
-rule "MT Touch Buttons"
+rule "MT Touch Buttons" extends "MT Buttons"
     when
         FixtureConfiguration( pushType == "TOUCH" )
     then
@@ -120,6 +120,36 @@ end
 rule "MT Touch Door Main Buttons" extends "MT Touch Buttons"
     when
         FixtureConfiguration( fixtureType in ( "DOOR", "MAIN" ) )
+    then
+end
+
+rule "GST Buttons"
+    when
+        FixtureConfiguration( fixtureFamily == "GST" )
+    then
+end
+
+rule "GST Floor Buttons" extends "GST Buttons"
+    when
+        FixtureConfiguration( fixtureType == "FLOOR" )
+    then
+end
+
+rule "GST Door Buttons" extends "GST Buttons"
+    when
+        FixtureConfiguration( fixtureType == "DOOR" )
+    then
+end
+
+rule "GST Main Buttons" extends "GST Buttons"
+    when
+        FixtureConfiguration( fixtureType == "MAIN" )
+    then
+end
+
+rule "GST Alarm Buttons" extends "GST Buttons"
+    when
+        FixtureConfiguration( fixtureType == "ALARM" )
     then
 end
 
