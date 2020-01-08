@@ -1,6 +1,6 @@
 <decision-table52>
-  <tableName>ATFixturesPushAdditional2</tableName>
-  <parentName>AT Push Door Main Buttons</parentName>
+  <tableName>MTFixturesBasic</tableName>
+  <parentName>MT Buttons</parentName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
     <width>50</width>
@@ -25,45 +25,28 @@
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
           <width>100</width>
-          <header>buzzer</header>
+          <header>push type</header>
           <constraintValueType>1</constraintValueType>
-          <factField>buzzer</factField>
-          <fieldType>Boolean</fieldType>
-          <operator>==</operator>
-          <valueList>true,false</valueList>
-          <parameters/>
-        </condition-column52>
-        <condition-column52>
-          <typedDefaultValue>
-            <valueString></valueString>
-            <dataType>STRING</dataType>
-            <isOtherwise>false</isOtherwise>
-          </typedDefaultValue>
-          <hideColumn>false</hideColumn>
-          <width>100</width>
-          <header>backlight</header>
-          <constraintValueType>1</constraintValueType>
-          <factField>backlight</factField>
-          <fieldType>Boolean</fieldType>
-          <operator>==</operator>
-          <valueList>true,false</valueList>
-          <parameters/>
-        </condition-column52>
-        <condition-column52>
-          <typedDefaultValue>
-            <valueString></valueString>
-            <dataType>STRING</dataType>
-            <isOtherwise>false</isOtherwise>
-          </typedDefaultValue>
-          <hideColumn>false</hideColumn>
-          <width>100</width>
-          <header>color</header>
-          <constraintValueType>1</constraintValueType>
-          <factField>buttonColor</factField>
+          <factField>pushType</factField>
           <fieldType>String</fieldType>
           <operator>==</operator>
           <parameters/>
           <binding></binding>
+        </condition-column52>
+        <condition-column52>
+          <typedDefaultValue>
+            <valueString></valueString>
+            <dataType>STRING</dataType>
+            <isOtherwise>false</isOtherwise>
+          </typedDefaultValue>
+          <hideColumn>false</hideColumn>
+          <width>340</width>
+          <header>fixture type</header>
+          <constraintValueType>1</constraintValueType>
+          <factField>fixtureType</factField>
+          <fieldType>String</fieldType>
+          <operator>in</operator>
+          <parameters/>
         </condition-column52>
       </conditions>
       <window>
@@ -95,28 +78,12 @@
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
-      <width>100</width>
+      <width>119</width>
       <header>material code</header>
       <factType>Material</factType>
       <boundName>f2</boundName>
       <factField>materialCode</factField>
       <type>String</type>
-      <isInsertLogical>false</isInsertLogical>
-    </insert-fact-column52>
-    <insert-fact-column52>
-      <typedDefaultValue>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </typedDefaultValue>
-      <hideColumn>false</hideColumn>
-      <width>208</width>
-      <header>metadata</header>
-      <factType>Material</factType>
-      <boundName>f2</boundName>
-      <factField>metadata</factField>
-      <type>java.util.Map</type>
-      <valueList>createLabelMetadata(f1)</valueList>
       <isInsertLogical>false</isInsertLogical>
     </insert-fact-column52>
   </actionCols>
@@ -171,32 +138,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString>ALARM</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>AMBER</valueString>
+        <valueString>54413010</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54413323</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412970</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -213,29 +170,23 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
       <value>
-        <valueString>true</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>BLUE</valueString>
+        <valueString>ALARM</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
+        <valueString>54413010</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413324</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412971</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -253,28 +204,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value reference="../../list/value[4]"/>
-      <value>
-        <valueString>GREEN</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
+        <valueString>ALARM</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413325</valueString>
+        <valueString>54413010</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412972</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -292,32 +237,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString>ALARM</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>RED</valueString>
+        <valueString>54413010</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54413326</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412973</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -335,32 +270,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>ALARM</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>AMBER</valueString>
+        <valueString>54413010</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54413318</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412624</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -378,32 +303,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString>PUSH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>BLUE</valueString>
+        <valueString>54412957</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54413319</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412970</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -421,32 +336,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString>PUSH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>GREEN</valueString>
+        <valueString>54412957</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54413320</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412971</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -464,32 +369,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString>PUSH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>RED</valueString>
+        <valueString>54412957</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54413321</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412972</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -507,32 +402,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString>PUSH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>WHITE</valueString>
+        <valueString>54412957</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54413322</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412973</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -550,32 +435,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>PUSH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>AMBER</valueString>
+        <valueString>54412957</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412621</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412624</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -593,32 +468,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>TOUCH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>BLUE</valueString>
+        <valueString>54413020</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412622</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412970</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -636,32 +501,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>TOUCH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>GREEN</valueString>
+        <valueString>54413020</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412623</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54413029</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -679,32 +534,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>TOUCH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>RED</valueString>
+        <valueString>54413020</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54413317</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412971</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -722,32 +567,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>TOUCH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>AMBER</valueString>
+        <valueString>54413020</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412665</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412973</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -765,32 +600,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>TOUCH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>BLUE</valueString>
+        <valueString>54413020</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412667</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54413030</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -808,118 +633,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>TOUCH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>false</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>GREEN</valueString>
+        <valueString>54413020</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412668</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-    </list>
-    <list>
-      <value>
-        <valueNumeric class="int">17</valueNumeric>
-        <valueString></valueString>
-        <dataType>NUMERIC_INTEGER</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>RED</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412618</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-    </list>
-    <list>
-      <value>
-        <valueNumeric class="int">18</valueNumeric>
-        <valueString></valueString>
-        <dataType>NUMERIC_INTEGER</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>WHITE</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412589</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412619</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>createLabelMetadata(f1)</valueString>
+        <valueString>54412624</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>

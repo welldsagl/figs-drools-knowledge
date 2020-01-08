@@ -361,7 +361,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -409,7 +409,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -457,7 +457,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -505,7 +505,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -553,7 +553,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -601,7 +601,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -649,7 +649,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -697,7 +697,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -745,7 +745,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -793,7 +793,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -841,7 +841,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -889,7 +889,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -937,7 +937,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -985,7 +985,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -1033,7 +1033,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -1081,7 +1081,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_FLOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>

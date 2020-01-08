@@ -169,7 +169,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_FLOOR</valueString>
+        <valueString>FLOOR</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -213,7 +213,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_FLOOR</valueString>
+        <valueString>FLOOR</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -257,7 +257,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_FLOOR</valueString>
+        <valueString>FLOOR</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -301,7 +301,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_FLOOR</valueString>
+        <valueString>FLOOR</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -345,7 +345,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_FLOOR</valueString>
+        <valueString>FLOOR</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -389,7 +389,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_FLOOR</valueString>
+        <valueString>FLOOR</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -432,7 +432,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[6]/value[3]"/>
+      <value>
+        <valueString>FLOOR</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
       <value>
         <valueString>BLUE</valueString>
         <dataType>STRING</dataType>
@@ -472,7 +476,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[6]/value[3]"/>
+      <value>
+        <valueString>FLOOR</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
       <value>
         <valueString>GREEN</valueString>
         <dataType>STRING</dataType>
@@ -512,7 +520,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[6]/value[3]"/>
+      <value>
+        <valueString>FLOOR</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
       <value>
         <valueString>RED</valueString>
         <dataType>STRING</dataType>
@@ -553,7 +565,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -597,7 +609,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -641,7 +653,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -685,7 +697,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -729,7 +741,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -773,7 +785,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -817,7 +829,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -861,7 +873,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -905,7 +917,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH_DOOR,PUSH_MAIN</valueString>
+        <valueString>DOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
