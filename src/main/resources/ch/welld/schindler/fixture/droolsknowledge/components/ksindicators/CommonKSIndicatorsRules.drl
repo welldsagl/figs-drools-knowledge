@@ -1,0 +1,8 @@
+package ch.welld.schindler.fixture.droolsknowledge.components.ksindicators;
+
+rule "KS Indicators"
+    when
+        KSIndicatorConfiguration()
+    then
+end
+
