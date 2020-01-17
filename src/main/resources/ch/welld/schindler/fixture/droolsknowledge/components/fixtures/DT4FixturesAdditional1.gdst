@@ -24,7 +24,7 @@
             <isOtherwise>false</isOtherwise>
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
-          <width>188</width>
+          <width>100</width>
           <header>fixture type</header>
           <constraintValueType>1</constraintValueType>
           <factField>fixtureType</factField>
@@ -36,18 +36,18 @@
         <condition-column52>
           <typedDefaultValue>
             <valueString></valueString>
-            <dataType>BOOLEAN</dataType>
+            <dataType>STRING</dataType>
             <isOtherwise>false</isOtherwise>
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
           <width>100</width>
-          <header>hairline insert</header>
+          <header>hariline insert</header>
           <constraintValueType>1</constraintValueType>
           <factField>hairlineInsert</factField>
           <fieldType>Boolean</fieldType>
           <operator>==</operator>
+          <valueList>true,false</valueList>
           <parameters/>
-          <binding></binding>
         </condition-column52>
         <condition-column52>
           <typedDefaultValue>
@@ -58,12 +58,12 @@
           <hideColumn>false</hideColumn>
           <width>100</width>
           <header>letter raised</header>
-          <constraintValueType>3</constraintValueType>
+          <constraintValueType>1</constraintValueType>
           <factField>letterRaised</factField>
           <fieldType>Boolean</fieldType>
           <operator>==</operator>
+          <valueList>true,false</valueList>
           <parameters/>
-          <binding></binding>
         </condition-column52>
         <condition-column52>
           <typedDefaultValue>
@@ -74,12 +74,12 @@
           <hideColumn>false</hideColumn>
           <width>100</width>
           <header>braille</header>
-          <constraintValueType>3</constraintValueType>
+          <constraintValueType>1</constraintValueType>
           <factField>braille</factField>
           <fieldType>Boolean</fieldType>
           <operator>==</operator>
+          <valueList>true,false</valueList>
           <parameters/>
-          <binding></binding>
         </condition-column52>
         <condition-column52>
           <typedDefaultValue>
@@ -90,28 +90,28 @@
           <hideColumn>false</hideColumn>
           <width>100</width>
           <header>illumination</header>
-          <constraintValueType>3</constraintValueType>
+          <constraintValueType>1</constraintValueType>
           <factField>illumination</factField>
           <fieldType>Boolean</fieldType>
           <operator>==</operator>
+          <valueList>true,false</valueList>
           <parameters/>
-          <binding></binding>
         </condition-column52>
         <condition-column52>
           <typedDefaultValue>
             <valueString></valueString>
-            <dataType>BOOLEAN</dataType>
+            <dataType>STRING</dataType>
             <isOtherwise>false</isOtherwise>
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
           <width>100</width>
           <header>5 dot</header>
-          <constraintValueType>3</constraintValueType>
+          <constraintValueType>1</constraintValueType>
           <factField>fiveDot</factField>
           <fieldType>Boolean</fieldType>
           <operator>==</operator>
+          <valueList>true,false</valueList>
           <parameters/>
-          <binding></binding>
         </condition-column52>
       </conditions>
       <window>
@@ -208,9 +208,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>true</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -261,12 +260,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>false</valueString>
         <dataType>STRING</dataType>
@@ -315,12 +309,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>false</valueString>
         <dataType>STRING</dataType>
@@ -369,12 +358,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>false</valueString>
         <dataType>STRING</dataType>
@@ -423,12 +407,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>false</valueString>
         <dataType>STRING</dataType>
@@ -446,7 +425,7 @@
       </value>
       <value>
         <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -477,12 +456,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>false</valueString>
         <dataType>STRING</dataType>
@@ -494,13 +468,13 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>true</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
         <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -531,32 +505,23 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../list/value[4]"/>
       <value>
-        <valueBoolean>true</valueBoolean>
         <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>true</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>false</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
         <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list[5]/value[8]"/>
       <value>
         <valueString>54412841</valueString>
         <dataType>STRING</dataType>
@@ -585,32 +550,15 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list/value[4]"/>
+      <value reference="../../list[7]/value[5]"/>
+      <value reference="../../list[7]/value[6]"/>
       <value>
         <valueString>true</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>true</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[6]/value[8]"/>
       <value>
         <valueString>54412841</valueString>
         <dataType>STRING</dataType>
@@ -639,12 +587,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>true</valueString>
         <dataType>STRING</dataType>
@@ -660,11 +603,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[5]/value[8]"/>
       <value>
         <valueString>54412841</valueString>
         <dataType>STRING</dataType>
@@ -693,32 +632,15 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>true</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString>true</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>true</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[9]/value[6]"/>
+      <value reference="../../list[6]/value[7]"/>
+      <value reference="../../list[6]/value[8]"/>
       <value>
         <valueString>54412841</valueString>
         <dataType>STRING</dataType>
@@ -748,9 +670,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>false</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -802,9 +723,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>false</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -856,9 +776,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>false</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -910,9 +829,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>false</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -964,9 +882,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>false</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -984,11 +901,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[5]/value[8]"/>
       <value>
         <valueString>54412841</valueString>
         <dataType>STRING</dataType>
@@ -1018,9 +931,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>false</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -1038,11 +950,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[6]/value[8]"/>
       <value>
         <valueString>54412841</valueString>
         <dataType>STRING</dataType>
@@ -1072,9 +980,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>false</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -1092,11 +999,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[5]/value[8]"/>
       <value>
         <valueString>54412841</valueString>
         <dataType>STRING</dataType>
@@ -1126,9 +1029,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>false</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -1146,11 +1048,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[6]/value[8]"/>
       <value>
         <valueString>54412841</valueString>
         <dataType>STRING</dataType>
@@ -1179,12 +1077,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[18]/value[4]"/>
       <value>
         <valueString>true</valueString>
         <dataType>STRING</dataType>
@@ -1200,11 +1093,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[5]/value[8]"/>
       <value>
         <valueString>54412841</valueString>
         <dataType>STRING</dataType>
@@ -1233,12 +1122,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[18]/value[4]"/>
       <value>
         <valueString>true</valueString>
         <dataType>STRING</dataType>
@@ -1254,11 +1138,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[6]/value[8]"/>
       <value>
         <valueString>54412841</valueString>
         <dataType>STRING</dataType>
@@ -1288,31 +1168,18 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>true</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[7]/value[5]"/>
+      <value reference="../../list[7]/value[6]"/>
       <value>
         <valueString>false</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[5]/value[8]"/>
       <value>
         <valueString>54413385</valueString>
         <dataType>STRING</dataType>
@@ -1342,31 +1209,14 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>true</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[7]/value[5]"/>
+      <value reference="../../list[7]/value[6]"/>
+      <value reference="../../list[6]/value[7]"/>
+      <value reference="../../list[6]/value[8]"/>
       <value>
         <valueString>54413385</valueString>
         <dataType>STRING</dataType>
@@ -1395,32 +1245,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>false</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[18]/value[4]"/>
+      <value reference="../../list[7]/value[5]"/>
+      <value reference="../../list[7]/value[6]"/>
+      <value reference="../../list[7]/value[7]"/>
+      <value reference="../../list[5]/value[8]"/>
       <value>
         <valueString>54413385</valueString>
         <dataType>STRING</dataType>
@@ -1449,32 +1278,15 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[18]/value[4]"/>
+      <value reference="../../list[7]/value[5]"/>
+      <value reference="../../list[7]/value[6]"/>
       <value>
         <valueString>true</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[6]/value[8]"/>
       <value>
         <valueString>54413385</valueString>
         <dataType>STRING</dataType>
@@ -1504,14 +1316,13 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <valueString>true</valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
         <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -1519,16 +1330,8 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[6]/value[7]"/>
+      <value reference="../../list[5]/value[8]"/>
       <value>
         <valueString>54412854</valueString>
         <dataType>STRING</dataType>
@@ -1558,31 +1361,14 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueBoolean>true</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
         <valueString>true</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[25]/value[5]"/>
+      <value reference="../../list[9]/value[6]"/>
+      <value reference="../../list[6]/value[7]"/>
+      <value reference="../../list[6]/value[8]"/>
       <value>
         <valueString>54412854</valueString>
         <dataType>STRING</dataType>
@@ -1611,32 +1397,15 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[18]/value[4]"/>
+      <value reference="../../list[25]/value[5]"/>
       <value>
         <valueString>false</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[7]/value[7]"/>
+      <value reference="../../list[5]/value[8]"/>
       <value>
         <valueString>54412854</valueString>
         <dataType>STRING</dataType>
@@ -1665,32 +1434,11 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueBoolean>false</valueBoolean>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>true</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>BOOLEAN</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[18]/value[4]"/>
+      <value reference="../../list[25]/value[5]"/>
+      <value reference="../../list[9]/value[6]"/>
+      <value reference="../../list[7]/value[7]"/>
+      <value reference="../../list[6]/value[8]"/>
       <value>
         <valueString>54412854</valueString>
         <dataType>STRING</dataType>
