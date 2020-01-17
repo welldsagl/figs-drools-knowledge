@@ -80,7 +80,11 @@ public class FixtureConfigurationBuilder extends AbstractConfigurationBuilder {
         configuration.setIllumination((Boolean) config.get("illumination"));
         configuration.setBuzzer((Boolean) config.get("buzzer"));
         configuration.setFiveDot((Boolean) config.get("fiveDot"));
-        configuration.setPushType(((String) config.getOrDefault("pushType", "PUSH")).toUpperCase());
+        if (type == FixtureType.ALARM) {
+            configuration.setPushType("PUSH");
+        } else {
+            configuration.setPushType(((String) config.getOrDefault("pushType", "PUSH")).toUpperCase());
+        }
         configuration.setFixtureType(mapFixtureTypeToDroolsFixtureType(type));
         configuration.setLabel(mapFixtureTypeToLabel(config, type));
         if (type == FixtureType.OPEN || type == FixtureType.CLOSE) {
