@@ -3,7 +3,7 @@ package ch.welld.schindler.fixture.droolsknowledge.builders;
 import ch.welld.schindler.fixture.droolsknowledge.components.buzzers.BuzzerConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -23,10 +23,10 @@ public class BuzzerConfigurationBuilder extends AbstractConfigurationBuilder {
                 .map(text -> ((String) text).toUpperCase())
                 .orElse(null));
         bc.setFixtureFamily((String) config.get("fixtureFamily"));
-        return Arrays.asList(
+        return Collections.singletonList(
                 new ComponentConfiguration(
-                        bc,
-                        1
+                    bc,
+                    1
                 )
         );
     }

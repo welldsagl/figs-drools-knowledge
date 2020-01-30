@@ -3,3 +3,5 @@
 'FixtureConfiguration.fixtureSubfamily' : ['DT2','DT4','DT8']
 'FixtureConfiguration.fixtureType' : ['ALARM','MAIN','FLOOR','DOOR']
 'FixtureConfiguration.pushType' : ['PUSH','TOUCH']
+'FixtureConfiguration.cableType' : ['PVC/CCC','UL','HLF']
+

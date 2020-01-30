@@ -1,5 +1,6 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders;
 
+import ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean;
 import ch.welld.schindler.fixture.droolsknowledge.components.fixtures.FixtureConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -80,6 +81,7 @@ public class FixtureConfigurationBuilder extends AbstractConfigurationBuilder {
         configuration.setIllumination((Boolean) config.get("illumination"));
         configuration.setBuzzer((Boolean) config.get("buzzer"));
         configuration.setFiveDot((Boolean) config.get("fiveDot"));
+        configuration.setLdtO(NullableBoolean.from((String) config.getOrDefault("ldtO", "no")));
         if (type == FixtureType.ALARM) {
             configuration.setPushType("PUSH");
         } else {
