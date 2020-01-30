@@ -1,5 +1,7 @@
 package ch.welld.schindler.fixture.droolsknowledge.components.lamps;
 
+import ch.welld.schindler.fixture.droolsknowledge.materials.CableRequest;
+
 rule "DT Lamps"
     when
         LampConfiguration( fixtureFamily == "DT" )
@@ -21,5 +23,17 @@ end
 rule "GST Lamps"
     when
         LampConfiguration( fixtureFamily == "GST" )
+    then
+end
+
+rule "LARC LAGC Lamp Cables"
+    when
+        LampConfiguration( lamp in ( "LARC", "LAGC" ) ) or CableRequest()
+    then
+end
+
+rule "Other Lamps Cables"
+    when
+        LampConfiguration( lamp not in ( "LARC", "LAGC" ) ) or CableRequest()
     then
 end

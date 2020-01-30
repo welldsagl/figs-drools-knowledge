@@ -1,2 +1,3 @@
 'BuzzerConfiguration.buzzerType' : ['HAIRLINE','MIRROR']
 'BuzzerConfiguration.fixtureFamily' : ['DT','AT','MT','GST']
+'BuzzerConfiguration.cableType' : ['PVC/CCC','UL','HLF']

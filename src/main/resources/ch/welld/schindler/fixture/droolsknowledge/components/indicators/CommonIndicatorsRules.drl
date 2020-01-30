@@ -1,5 +1,6 @@
 package ch.welld.schindler.fixture.droolsknowledge.components.indicators;
 
+import ch.welld.schindler.fixture.droolsknowledge.materials.CableRequest;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -21,15 +22,27 @@ rule "DT DMI Indicators"
     then
 end
 
-rule "DT None Indicators"
-    when
-        IndicatorConfiguration( indicatorType == "None" )
-    then
-end
-
 function Map<String, Object> createIndicatorsMetadata(IndicatorConfiguration config) {
     Map<String, Object> m = new HashMap<String, Object>();
     m.put("language", config.getLanguage());
     m.put("displayLayout", config.getDisplayLayout());
     return m;
 }
+
+rule "TFT DMI Indicator Cables"
+    when
+        IndicatorConfiguration( indicatorType in ( "DMI", "TFT" ) ) or CableRequest()
+    then
+end
+
+rule "EDS Large Indicator Cables"
+    when
+        CableRequest() or IndicatorConfiguration( indicatorType == "EDS" && displaySize in ( "12", "15" ))
+    then
+end
+
+rule "EDS Small Indicator Cables"
+    when
+        CableRequest() or IndicatorConfiguration( indicatorType == "EDS" && displaySize in ( "4.3", "7", "10" ))
+    then
+end

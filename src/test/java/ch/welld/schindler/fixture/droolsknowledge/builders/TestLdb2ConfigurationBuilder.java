@@ -1,5 +1,6 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders;
 
+import ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean;
 import ch.welld.schindler.fixture.droolsknowledge.components.ldb2.Ldb2Configuration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -56,7 +57,7 @@ public class TestLdb2ConfigurationBuilder {
         assertEquals(1, configurations.get(0).getCount());
         assertTrue(configurations.get(0).getConfiguration() instanceof Ldb2Configuration);
         Ldb2Configuration ldb2Configuration = (Ldb2Configuration) configurations.get(0).getConfiguration();
-        assertEquals(false, ldb2Configuration.getHiddenBox());
+        assertEquals(NullableBoolean.NO, ldb2Configuration.getHiddenBox());
     }
 
     @Test

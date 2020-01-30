@@ -1,5 +1,6 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders;
 
+import ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean;
 import ch.welld.schindler.fixture.droolsknowledge.components.fixtures.FixtureConfiguration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -55,6 +56,7 @@ public class TestFixtureConfigurationBuilder {
                 .put("fiveDot", true)
                 .put("mainFloor", "G")
                 .put("floorDesignation", "-1,0,G,2")
+                .put("ldtO", "true")
                 .build();
     }
 
@@ -78,6 +80,7 @@ public class TestFixtureConfigurationBuilder {
         assertTrue(c.getIllumination());
         assertTrue(c.getBuzzer());
         assertTrue(c.getFiveDot());
+        assertEquals(NullableBoolean.YES, c.getLdtO());
         assertEquals("AMBER", c.getButtonColor());
         assertEquals("DT", c.getFixtureFamily());
         assertEquals("DT4", c.getFixtureSubfamily());

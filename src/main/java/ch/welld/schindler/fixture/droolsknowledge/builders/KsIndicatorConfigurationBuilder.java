@@ -3,7 +3,7 @@ package ch.welld.schindler.fixture.droolsknowledge.builders;
 import ch.welld.schindler.fixture.droolsknowledge.components.ksindicators.KSIndicatorConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -23,7 +23,7 @@ public class KsIndicatorConfigurationBuilder extends AbstractConfigurationBuilde
                 .ofNullable(config.get("color"))
                 .map(text -> ((String) text).toUpperCase())
                 .orElse(null));
-        return Arrays.asList(
+        return Collections.singletonList(
                 new ComponentConfiguration(
                         ksc,
                         1
