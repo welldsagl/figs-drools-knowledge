@@ -81,7 +81,7 @@ public class FixtureConfigurationBuilder extends AbstractConfigurationBuilder {
         configuration.setIllumination((Boolean) config.get("illumination"));
         configuration.setBuzzer((Boolean) config.get("buzzer"));
         configuration.setFiveDot((Boolean) config.get("fiveDot"));
-        configuration.setLdtO(NullableBoolean.from((String) config.getOrDefault("ldtO", "no")));
+        configuration.setLdtO(NullableBoolean.from((Boolean) config.getOrDefault("ldtO", false)));
         if (type == FixtureType.ALARM) {
             configuration.setPushType("PUSH");
         } else {

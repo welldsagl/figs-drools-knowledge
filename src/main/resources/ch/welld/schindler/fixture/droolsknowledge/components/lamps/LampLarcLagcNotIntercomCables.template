@@ -1,6 +1,6 @@
 <rule>
-  <name>LampLarcLagcCables</name>
-  <parentName>LARC LAGC Lamp Cables</parentName>
+  <name>LampLarcLagcNotIntercomCables</name>
+  <parentName>LARC LAGC Not Intercom Lamp Cables</parentName>
   <modelVersion>1.0</modelVersion>
   <attributes/>
   <metadataList/>
@@ -23,19 +23,6 @@
                 <factType>LampConfiguration</factType>
                 <fieldName>cableType</fieldName>
                 <fieldType>String</fieldType>
-              </fieldConstraint>
-              <fieldConstraint>
-                <value>$copIntercomStation</value>
-                <operator>==</operator>
-                <constraintValueType>7</constraintValueType>
-                <expression>
-                  <parts/>
-                  <index>2147483647</index>
-                </expression>
-                <parameters/>
-                <factType>LampConfiguration</factType>
-                <fieldName>copIntercomStation</fieldName>
-                <fieldType>Comparable</fieldType>
               </fieldConstraint>
               <fieldConstraint>
                 <value>$doppelDeckerCar</value>
@@ -78,19 +65,6 @@
                 <compositeJunctionType>||</compositeJunctionType>
                 <constraints>
                   <fieldConstraint>
-                    <value>$cableStandardCode</value>
-                    <operator>==</operator>
-                    <constraintValueType>7</constraintValueType>
-                    <expression>
-                      <parts/>
-                      <index>2147483647</index>
-                    </expression>
-                    <parameters/>
-                    <factType>CableRequest</factType>
-                    <fieldName>materialCode</fieldName>
-                    <fieldType>String</fieldType>
-                  </fieldConstraint>
-                  <fieldConstraint>
                     <value>$cableOnCommissionCode</value>
                     <operator>==</operator>
                     <constraintValueType>7</constraintValueType>
@@ -119,7 +93,7 @@
   <rhs>
     <freeForm>
       <text>Tuple tuple = drools.getTuple();
-insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{$cableStandardCode}&quot;, @{$cableStandardLength}, &quot;@{$cableOnCommissionCode}&quot;));</text>
+insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  null, null, &quot;@{$cableOnCommissionCode}&quot;));</text>
     </freeForm>
   </rhs>
   <imports>
@@ -131,11 +105,11 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <type>ch.welld.schindler.fixture.droolsknowledge.materials.CableHelper</type>
       </org.kie.soup.project.datamodel.imports.Import>
       <org.kie.soup.project.datamodel.imports.Import>
-          <type>ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean</type>
-        </org.kie.soup.project.datamodel.imports.Import>
-        <org.kie.soup.project.datamodel.imports.Import>
-          <type>org.drools.core.spi.Tuple</type>
-        </org.kie.soup.project.datamodel.imports.Import>
+        <type>ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean</type>
+      </org.kie.soup.project.datamodel.imports.Import>
+      <org.kie.soup.project.datamodel.imports.Import>
+        <type>org.drools.core.spi.Tuple</type>
+      </org.kie.soup.project.datamodel.imports.Import>
     </imports>
   </imports>
   <packageName>ch.welld.schindler.fixture.droolsknowledge.components.lamps</packageName>
@@ -144,12 +118,6 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
     <entry>
       <string>$cableType</string>
       <list>
-        <string>PVC/CCC</string>
-        <string>PVC/CCC</string>
-        <string>UL</string>
-        <string>UL</string>
-        <string>HLF</string>
-        <string>HLF</string>
         <string>PVC/CCC</string>
         <string>HLF</string>
         <string>HLF</string>
@@ -161,12 +129,6 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
     <entry>
       <string>$doppelDeckerCar</string>
       <list>
-        <string></string>
-        <string></string>
-        <string></string>
-        <string></string>
-        <string></string>
-        <string></string>
         <string>NullableBoolean.NO</string>
         <string>NullableBoolean.NO</string>
         <string>NullableBoolean.NO</string>
@@ -178,12 +140,6 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
     <entry>
       <string>__ID_KOL_NAME__</string>
       <list>
-        <string>4</string>
-        <string>8</string>
-        <string>5</string>
-        <string>9</string>
-        <string>6</string>
-        <string>10</string>
         <string>12</string>
         <string>13</string>
         <string>14</string>
@@ -193,54 +149,14 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
       </list>
     </entry>
     <entry>
-      <string>$copIntercomStation</string>
-      <list>
-        <string>NullableBoolean.YES</string>
-        <string>NullableBoolean.YES</string>
-        <string>NullableBoolean.YES</string>
-        <string>NullableBoolean.YES</string>
-        <string>NullableBoolean.YES</string>
-        <string>NullableBoolean.YES</string>
-        <string>NullableBoolean.NO</string>
-        <string>NullableBoolean.NO</string>
-        <string>NullableBoolean.NO</string>
-        <string>NullableBoolean.NO</string>
-        <string>NullableBoolean.NO</string>
-        <string>NullableBoolean.NO</string>
-      </list>
-    </entry>
-    <entry>
       <string>$cableOnCommissionCode</string>
       <list>
-        <string>57634552</string>
-        <string>57634558</string>
-        <string>57634553</string>
-        <string>57634559</string>
-        <string>57634554</string>
-        <string>57634560</string>
         <string>57643745</string>
         <string>57643746</string>
         <string>57643747</string>
         <string>57643748</string>
         <string>57643749</string>
         <string>57643750</string>
-      </list>
-    </entry>
-    <entry>
-      <string>$cableStandardCode</string>
-      <list>
-        <string>57634549</string>
-        <string>57634555</string>
-        <string>57634550</string>
-        <string>57634556</string>
-        <string>57634551</string>
-        <string>57634557</string>
-        <string></string>
-        <string></string>
-        <string></string>
-        <string></string>
-        <string></string>
-        <string></string>
       </list>
     </entry>
     <entry>
@@ -252,32 +168,9 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <string>57634502</string>
         <string>57634502</string>
         <string>57634502</string>
-        <string>57634502</string>
-        <string>57634502</string>
-        <string>57634502</string>
-        <string>57634502</string>
-        <string>57634502</string>
-        <string>57634502</string>
-      </list>
-    </entry>
-    <entry>
-      <string>$cableStandardLength</string>
-      <list>
-        <string>700</string>
-        <string>700</string>
-        <string>700</string>
-        <string>700</string>
-        <string>700</string>
-        <string>700</string>
-        <string></string>
-        <string></string>
-        <string></string>
-        <string></string>
-        <string></string>
-        <string></string>
       </list>
     </entry>
   </table>
   <idCol>17</idCol>
-  <rowsCount>12</rowsCount>
+  <rowsCount>6</rowsCount>
 </rule>

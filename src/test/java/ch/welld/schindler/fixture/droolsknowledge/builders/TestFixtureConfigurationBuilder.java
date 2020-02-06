@@ -56,7 +56,7 @@ public class TestFixtureConfigurationBuilder {
                 .put("fiveDot", true)
                 .put("mainFloor", "G")
                 .put("floorDesignation", "-1,0,G,2")
-                .put("ldtO", "true")
+                .put("ldtO", true)
                 .build();
     }
 
