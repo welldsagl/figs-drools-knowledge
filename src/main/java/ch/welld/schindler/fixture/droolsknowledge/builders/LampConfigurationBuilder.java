@@ -1,5 +1,6 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders;
 
+import ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean;
 import ch.welld.schindler.fixture.droolsknowledge.components.lamps.LampConfiguration;
 import com.google.common.collect.Lists;
 
@@ -45,6 +46,14 @@ public class LampConfigurationBuilder extends AbstractConfigurationBuilder {
         lp.setEn8120((Boolean)config.get("EN 81-20"));
         lp.setLamp(lamp.toUpperCase());
         lp.setFixtureFamily((String) config.get("fixtureFamily"));
+        Boolean copIntercomStation = (Boolean) config.get("copIntercomStation");
+        Boolean doppelDeckerCar = (Boolean) config.get("doppelDeckerCar");
+        if(copIntercomStation != null) {
+            lp.setCopIntercomStation(NullableBoolean.from(copIntercomStation));
+        }
+        if(doppelDeckerCar != null) {
+            lp.setDoppelDeckerCar(NullableBoolean.from(doppelDeckerCar));
+        }
         return new ComponentConfiguration(lp, 1);
     }
 

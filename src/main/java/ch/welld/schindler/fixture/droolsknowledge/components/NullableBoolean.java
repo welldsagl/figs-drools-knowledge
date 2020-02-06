@@ -22,7 +22,7 @@ public enum NullableBoolean {
         return null;
     }
 
-    public static NullableBoolean from(boolean from) {
+    public static NullableBoolean from(Boolean from) {
         return from ? YES : NO;
     }
 }
