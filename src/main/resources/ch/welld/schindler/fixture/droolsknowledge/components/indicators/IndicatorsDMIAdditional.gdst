@@ -1,6 +1,6 @@
 <decision-table52>
-  <tableName>DTIndicatorsDMIAdditional</tableName>
-  <parentName>DT DMI Indicators</parentName>
+  <tableName>IndicatorsDMIAdditional</tableName>
+  <parentName>DMI Indicators</parentName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
     <width>50</width>

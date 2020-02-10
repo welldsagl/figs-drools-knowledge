@@ -1,6 +1,6 @@
 <decision-table52>
-  <tableName>MTLampsBasic</tableName>
-  <parentName>MT Lamps</parentName>
+  <tableName>IndicatorsTFTAdditional</tableName>
+  <parentName>TFT Indicators</parentName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
     <width>50</width>
@@ -11,7 +11,33 @@
   </descriptionCol>
   <metadataCols/>
   <attributeCols/>
-  <conditionPatterns/>
+  <conditionPatterns>
+    <Pattern52>
+      <factType>IndicatorConfiguration</factType>
+      <boundName>f1</boundName>
+      <isNegated>false</isNegated>
+      <conditions>
+        <condition-column52>
+          <typedDefaultValue>
+            <valueString></valueString>
+            <dataType>STRING</dataType>
+            <isOtherwise>false</isOtherwise>
+          </typedDefaultValue>
+          <hideColumn>false</hideColumn>
+          <width>100</width>
+          <header>display color</header>
+          <constraintValueType>1</constraintValueType>
+          <factField>displayColor</factField>
+          <fieldType>String</fieldType>
+          <operator>==</operator>
+          <parameters/>
+        </condition-column52>
+      </conditions>
+      <window>
+        <parameters/>
+      </window>
+    </Pattern52>
+  </conditionPatterns>
   <actionCols>
     <insert-fact-column52>
       <typedDefaultValue>
@@ -78,7 +104,7 @@
       </org.kie.soup.project.datamodel.imports.Import>
     </imports>
   </imports>
-  <packageName>ch.welld.schindler.fixture.droolsknowledge.components.lamps</packageName>
+  <packageName>ch.welld.schindler.fixture.droolsknowledge.components.indicators</packageName>
   <tableFormat>EXTENDED_ENTRY</tableFormat>
   <hitPolicy>RULE_ORDER</hitPolicy>
   <data>
@@ -95,12 +121,17 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413048</valueString>
+        <valueString>AMBER</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413140</valueString>
+        <valueString>57634381</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411608</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -118,12 +149,17 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413048</valueString>
+        <valueString>BLUE</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412971</valueString>
+        <valueString>57634381</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411609</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -141,12 +177,73 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413048</valueString>
+        <valueString>GREEN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412973</valueString>
+        <valueString>57634381</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411610</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+    </list>
+    <list>
+      <value>
+        <valueNumeric class="int">4</valueNumeric>
+        <valueString></valueString>
+        <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>RED</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>57634381</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411611</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+    </list>
+    <list>
+      <value>
+        <valueNumeric class="int">5</valueNumeric>
+        <valueString></valueString>
+        <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>WHITE</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>57634381</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411612</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>

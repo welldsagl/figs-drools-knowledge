@@ -1,6 +1,5 @@
 <decision-table52>
-  <tableName>MTFixturesBasic</tableName>
-  <parentName>MT Buttons</parentName>
+  <tableName>FixturesBasic</tableName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
     <width>50</width>
@@ -25,13 +24,12 @@
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
           <width>100</width>
-          <header>push type</header>
+          <header>fixture family</header>
           <constraintValueType>1</constraintValueType>
-          <factField>pushType</factField>
+          <factField>fixtureFamily</factField>
           <fieldType>String</fieldType>
           <operator>==</operator>
           <parameters/>
-          <binding></binding>
         </condition-column52>
         <condition-column52>
           <typedDefaultValue>
@@ -40,7 +38,22 @@
             <isOtherwise>false</isOtherwise>
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
-          <width>340</width>
+          <width>100</width>
+          <header>fixture subfamily</header>
+          <constraintValueType>1</constraintValueType>
+          <factField>fixtureSubfamily</factField>
+          <fieldType>String</fieldType>
+          <operator>==</operator>
+          <parameters/>
+        </condition-column52>
+        <condition-column52>
+          <typedDefaultValue>
+            <valueString></valueString>
+            <dataType>STRING</dataType>
+            <isOtherwise>false</isOtherwise>
+          </typedDefaultValue>
+          <hideColumn>false</hideColumn>
+          <width>175</width>
           <header>fixture type</header>
           <constraintValueType>1</constraintValueType>
           <factField>fixtureType</factField>
@@ -48,11 +61,25 @@
           <operator>in</operator>
           <parameters/>
         </condition-column52>
+        <condition-column52>
+          <typedDefaultValue>
+            <valueString></valueString>
+            <dataType>STRING</dataType>
+            <isOtherwise>false</isOtherwise>
+          </typedDefaultValue>
+          <hideColumn>false</hideColumn>
+          <width>100</width>
+          <header>push type</header>
+          <constraintValueType>1</constraintValueType>
+          <factField>pushType</factField>
+          <fieldType>String</fieldType>
+          <operator>==</operator>
+          <parameters/>
+        </condition-column52>
       </conditions>
       <window>
         <parameters/>
       </window>
-      <entryPointName></entryPointName>
     </Pattern52>
   </conditionPatterns>
   <actionCols>
@@ -65,7 +92,7 @@
       <hideColumn>false</hideColumn>
       <width>100</width>
       <header>family code</header>
-      <factType>Material</factType>
+      <factType>Family</factType>
       <boundName>f2</boundName>
       <factField>familyCode</factField>
       <type>String</type>
@@ -73,16 +100,16 @@
     </insert-fact-column52>
     <insert-fact-column52>
       <typedDefaultValue>
-        <valueString></valueString>
+        <valueString>basic</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
-      <width>119</width>
-      <header>material code</header>
-      <factType>Material</factType>
+      <width>100</width>
+      <header>price position</header>
+      <factType>Family</factType>
       <boundName>f2</boundName>
-      <factField>materialCode</factField>
+      <factField>pricePosition</factField>
       <type>String</type>
       <isInsertLogical>false</isInsertLogical>
     </insert-fact-column52>
@@ -117,7 +144,7 @@
   <imports>
     <imports>
       <org.kie.soup.project.datamodel.imports.Import>
-        <type>ch.welld.schindler.fixture.droolsknowledge.materials.Material</type>
+        <type>ch.welld.schindler.fixture.droolsknowledge.materials.Family</type>
       </org.kie.soup.project.datamodel.imports.Import>
     </imports>
   </imports>
@@ -138,6 +165,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString>AT</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -148,15 +180,16 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413010</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412970</valueString>
+        <valueString>54412625</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -170,26 +203,24 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../list/value[3]"/>
+      <value reference="../../list/value[4]"/>
+      <value>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
       <value>
         <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>ALARM</valueString>
+        <valueString>54412589</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString>54413010</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412971</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -204,7 +235,12 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
+        <valueString>DT</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>DT2</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -214,15 +250,16 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413010</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412972</valueString>
+        <valueString>54412830</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -236,26 +273,24 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../list[3]/value[3]"/>
+      <value reference="../../list[3]/value[4]"/>
+      <value>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
       <value>
         <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>ALARM</valueString>
+        <valueString>54412673</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString>54413010</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412973</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -269,8 +304,9 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../list[3]/value[3]"/>
       <value>
-        <valueString></valueString>
+        <valueString>DT4</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -280,15 +316,16 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413010</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412624</valueString>
+        <valueString>54412854</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -302,26 +339,28 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../list[3]/value[3]"/>
       <value>
-        <valueString>PUSH</valueString>
+        <valueString>DT4</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>DOOR,FLOOR,MAIN</valueString>
+        <valueString>MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412957</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412970</valueString>
+        <valueString>54413385</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -335,26 +374,28 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../list[3]/value[3]"/>
       <value>
-        <valueString>PUSH</valueString>
+        <valueString>DT4</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>DOOR,FLOOR,MAIN</valueString>
+        <valueString>DOOR,FLOOR</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412957</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412971</valueString>
+        <valueString>54412841</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -368,26 +409,28 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../list[3]/value[3]"/>
       <value>
-        <valueString>PUSH</valueString>
+        <valueString>DT8</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>DOOR,FLOOR,MAIN</valueString>
+        <valueString>ALARM</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412957</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412972</valueString>
+        <valueString>54412865</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -401,8 +444,9 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../list[3]/value[3]"/>
       <value>
-        <valueString>PUSH</valueString>
+        <valueString>DT8</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -412,15 +456,16 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412957</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412973</valueString>
+        <valueString>54412863</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -435,25 +480,31 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>PUSH</valueString>
+        <valueString>MT</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>DOOR,FLOOR,MAIN</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412957</valueString>
+        <valueString>ALARM</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412624</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>54413010</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -467,26 +518,24 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString>TOUCH</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../list[10]/value[3]"/>
+      <value reference="../../list[10]/value[4]"/>
       <value>
         <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413020</valueString>
+        <valueString>PUSH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412970</valueString>
+        <valueString>54412957</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -500,13 +549,15 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../list[10]/value[3]"/>
+      <value reference="../../list[10]/value[4]"/>
       <value>
-        <valueString>TOUCH</valueString>
+        <valueString>DOOR,FLOOR,MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>DOOR,FLOOR,MAIN</valueString>
+        <valueString>TOUCH</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -515,11 +566,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString>54413029</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -534,25 +581,31 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>TOUCH</valueString>
+        <valueString>GST</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>DOOR,FLOOR,MAIN</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413020</valueString>
+        <valueString>ALARM</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412971</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value>
+        <valueString>54412927</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -566,26 +619,24 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
+      <value reference="../../list[13]/value[3]"/>
+      <value reference="../../list[13]/value[4]"/>
       <value>
-        <valueString>TOUCH</valueString>
+        <valueString>MAIN</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>DOOR,FLOOR,MAIN</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413020</valueString>
+        <valueString>54413118</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value>
-        <valueString>54412973</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
+      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -600,31 +651,8 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>TOUCH</valueString>
+        <valueString>GST</valueString>
         <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>DOOR,FLOOR,MAIN</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54413020</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54413030</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-    </list>
-    <list>
-      <value>
-        <valueNumeric class="int">16</valueNumeric>
-        <valueString></valueString>
-        <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -633,22 +661,22 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>TOUCH</valueString>
+        <valueString>DOOR,FLOOR</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>DOOR,FLOOR,MAIN</valueString>
+        <valueString></valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413020</valueString>
+        <valueString>54412886</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412624</valueString>
+        <valueString>basic</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>

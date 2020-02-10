@@ -1,5 +1,5 @@
 <decision-table52>
-  <tableName>KSIndicators</tableName>
+  <tableName>KSIndicatorsAdditional</tableName>
   <parentName>KS Indicators</parentName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
@@ -126,106 +126,6 @@
     <list>
       <value>
         <valueNumeric class="int">1</valueNumeric>
-        <valueString></valueString>
-        <dataType>NUMERIC_INTEGER</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>basic</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>57634464</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>412220</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-    </list>
-    <list>
-      <value>
-        <valueNumeric class="int">2</valueNumeric>
-        <valueString></valueString>
-        <dataType>NUMERIC_INTEGER</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>basic</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>57634464</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>57634366</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-    </list>
-    <list>
-      <value>
-        <valueNumeric class="int">3</valueNumeric>
-        <valueString></valueString>
-        <dataType>NUMERIC_INTEGER</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>basic</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>57634464</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>57638037</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-    </list>
-    <list>
-      <value>
-        <valueNumeric class="int">4</valueNumeric>
-        <valueString></valueString>
         <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -257,8 +157,7 @@
     </list>
     <list>
       <value>
-        <valueNumeric class="int">5</valueNumeric>
-        <valueString></valueString>
+        <valueNumeric class="int">2</valueNumeric>
         <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -290,8 +189,7 @@
     </list>
     <list>
       <value>
-        <valueNumeric class="int">6</valueNumeric>
-        <valueString></valueString>
+        <valueNumeric class="int">3</valueNumeric>
         <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -323,8 +221,7 @@
     </list>
     <list>
       <value>
-        <valueNumeric class="int">7</valueNumeric>
-        <valueString></valueString>
+        <valueNumeric class="int">4</valueNumeric>
         <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -333,7 +230,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[6]/value[3]"/>
+      <value reference="../../list[3]/value[3]"/>
       <value>
         <valueString>AMBER</valueString>
         <dataType>STRING</dataType>
@@ -352,8 +249,7 @@
     </list>
     <list>
       <value>
-        <valueNumeric class="int">8</valueNumeric>
-        <valueString></valueString>
+        <valueNumeric class="int">5</valueNumeric>
         <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -362,7 +258,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[6]/value[3]"/>
+      <value reference="../../list[3]/value[3]"/>
       <value>
         <valueString>GREEN</valueString>
         <dataType>STRING</dataType>
@@ -381,8 +277,7 @@
     </list>
     <list>
       <value>
-        <valueNumeric class="int">9</valueNumeric>
-        <valueString></valueString>
+        <valueNumeric class="int">6</valueNumeric>
         <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -391,7 +286,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[6]/value[3]"/>
+      <value reference="../../list[3]/value[3]"/>
       <value>
         <valueString>WHITE</valueString>
         <dataType>STRING</dataType>
@@ -410,8 +305,7 @@
     </list>
     <list>
       <value>
-        <valueNumeric class="int">10</valueNumeric>
-        <valueString></valueString>
+        <valueNumeric class="int">7</valueNumeric>
         <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -420,7 +314,7 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[6]/value[3]"/>
+      <value reference="../../list[3]/value[3]"/>
       <value>
         <valueString>BLUE</valueString>
         <dataType>STRING</dataType>
@@ -439,8 +333,7 @@
     </list>
     <list>
       <value>
-        <valueNumeric class="int">11</valueNumeric>
-        <valueString></valueString>
+        <valueNumeric class="int">8</valueNumeric>
         <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
