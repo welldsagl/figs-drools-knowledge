@@ -1,6 +1,5 @@
 <decision-table52>
-  <tableName>ATLampsBasic</tableName>
-  <parentName>AT Lamps</parentName>
+  <tableName>BuzzersBasic</tableName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
     <width>50</width>
@@ -11,7 +10,33 @@
   </descriptionCol>
   <metadataCols/>
   <attributeCols/>
-  <conditionPatterns/>
+  <conditionPatterns>
+    <Pattern52>
+      <factType>BuzzerConfiguration</factType>
+      <boundName>f1</boundName>
+      <isNegated>false</isNegated>
+      <conditions>
+        <condition-column52>
+          <typedDefaultValue>
+            <valueString></valueString>
+            <dataType>STRING</dataType>
+            <isOtherwise>false</isOtherwise>
+          </typedDefaultValue>
+          <hideColumn>false</hideColumn>
+          <width>193</width>
+          <header>fixture family</header>
+          <constraintValueType>1</constraintValueType>
+          <factField>fixtureFamily</factField>
+          <fieldType>String</fieldType>
+          <operator>==</operator>
+          <parameters/>
+        </condition-column52>
+      </conditions>
+      <window>
+        <parameters/>
+      </window>
+    </Pattern52>
+  </conditionPatterns>
   <actionCols>
     <insert-fact-column52>
       <typedDefaultValue>
@@ -22,7 +47,7 @@
       <hideColumn>false</hideColumn>
       <width>100</width>
       <header>family code</header>
-      <factType>Material</factType>
+      <factType>Family</factType>
       <boundName>f2</boundName>
       <factField>familyCode</factField>
       <type>String</type>
@@ -36,10 +61,10 @@
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
       <width>100</width>
-      <header>material code</header>
-      <factType>Material</factType>
+      <header>price position</header>
+      <factType>Family</factType>
       <boundName>f2</boundName>
-      <factField>materialCode</factField>
+      <factField>pricePosition</factField>
       <type>String</type>
       <isInsertLogical>false</isInsertLogical>
     </insert-fact-column52>
@@ -74,11 +99,11 @@
   <imports>
     <imports>
       <org.kie.soup.project.datamodel.imports.Import>
-        <type>ch.welld.schindler.fixture.droolsknowledge.materials.Material</type>
+        <type>ch.welld.schindler.fixture.droolsknowledge.materials.Family</type>
       </org.kie.soup.project.datamodel.imports.Import>
     </imports>
   </imports>
-  <packageName>ch.welld.schindler.fixture.droolsknowledge.components.lamps</packageName>
+  <packageName>ch.welld.schindler.fixture.droolsknowledge.components.buzzers</packageName>
   <tableFormat>EXTENDED_ENTRY</tableFormat>
   <hitPolicy>RULE_ORDER</hitPolicy>
   <data>
@@ -95,12 +120,17 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412633</valueString>
+        <valueString>DT</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413119</valueString>
+        <valueString>54412882</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>basic</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -118,12 +148,17 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412633</valueString>
+        <valueString>AT</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412604</valueString>
+        <valueString>54412648</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>basic</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -141,12 +176,17 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412633</valueString>
+        <valueString>MT</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54413120</valueString>
+        <valueString>54413063</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>basic</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -164,35 +204,17 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412633</valueString>
+        <valueString>GST</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412606</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-    </list>
-    <list>
-      <value>
-        <valueNumeric class="int">5</valueNumeric>
-        <valueString></valueString>
-        <dataType>NUMERIC_INTEGER</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString></valueString>
+        <valueString>54412953</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412633</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </value>
-      <value>
-        <valueString>54412624</valueString>
+        <valueString>basic</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>

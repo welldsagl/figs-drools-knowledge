@@ -1,6 +1,6 @@
 <decision-table52>
-  <tableName>GSTLampsBasic</tableName>
-  <parentName>GST Lamps</parentName>
+  <tableName>KSIndicatorsBasic</tableName>
+  <parentName>KS Indicators</parentName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
     <width>50</width>
@@ -11,7 +11,17 @@
   </descriptionCol>
   <metadataCols/>
   <attributeCols/>
-  <conditionPatterns/>
+  <conditionPatterns>
+    <Pattern52>
+      <factType>KSIndicatorConfiguration</factType>
+      <boundName>f1</boundName>
+      <isNegated>false</isNegated>
+      <conditions/>
+      <window>
+        <parameters/>
+      </window>
+    </Pattern52>
+  </conditionPatterns>
   <actionCols>
     <insert-fact-column52>
       <typedDefaultValue>
@@ -22,7 +32,7 @@
       <hideColumn>false</hideColumn>
       <width>100</width>
       <header>family code</header>
-      <factType>Material</factType>
+      <factType>Family</factType>
       <boundName>f2</boundName>
       <factField>familyCode</factField>
       <type>String</type>
@@ -30,16 +40,16 @@
     </insert-fact-column52>
     <insert-fact-column52>
       <typedDefaultValue>
-        <valueString></valueString>
+        <valueString>basic</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
       <width>100</width>
-      <header>material code</header>
-      <factType>Material</factType>
+      <header>price position</header>
+      <factType>Family</factType>
       <boundName>f2</boundName>
-      <factField>materialCode</factField>
+      <factField>pricePosition</factField>
       <type>String</type>
       <isInsertLogical>false</isInsertLogical>
     </insert-fact-column52>
@@ -74,11 +84,11 @@
   <imports>
     <imports>
       <org.kie.soup.project.datamodel.imports.Import>
-        <type>ch.welld.schindler.fixture.droolsknowledge.materials.Material</type>
+        <type>ch.welld.schindler.fixture.droolsknowledge.materials.Family</type>
       </org.kie.soup.project.datamodel.imports.Import>
     </imports>
   </imports>
-  <packageName>ch.welld.schindler.fixture.droolsknowledge.components.lamps</packageName>
+  <packageName>ch.welld.schindler.fixture.droolsknowledge.components.ksindicators</packageName>
   <tableFormat>EXTENDED_ENTRY</tableFormat>
   <hitPolicy>RULE_ORDER</hitPolicy>
   <data>
@@ -95,12 +105,12 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>54412938</valueString>
+        <valueString>57634464</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>59329470</valueString>
+        <valueString>basic</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>

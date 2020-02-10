@@ -1,1 +1,2 @@
 'LampConfiguration.cableType' : ['PVC/CCC','UL','HLF']
+'LampConfiguration.fixtureFamily' : ['DT','AT','MT','GST']
