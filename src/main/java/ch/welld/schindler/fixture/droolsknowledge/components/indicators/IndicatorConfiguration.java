@@ -28,6 +28,8 @@ public class IndicatorConfiguration extends BaseConfiguration {
 
 	private java.lang.String displaySize;
 
+	private java.lang.String edsType;
+
 	public IndicatorConfiguration() {
 	}
 
@@ -103,11 +105,20 @@ public class IndicatorConfiguration extends BaseConfiguration {
 		this.displaySize = displaySize;
 	}
 
+	public java.lang.String getEdsType() {
+		return this.edsType;
+	}
+
+	public void setEdsType(java.lang.String edsType) {
+		this.edsType = edsType;
+	}
+
 	public IndicatorConfiguration(java.lang.String indicatorType,
-			java.lang.String mountingType, java.lang.String glassCoverColor,
-			java.lang.String coverSize, java.lang.String displayColor,
-			java.lang.String language, java.lang.String displayLayout,
-			java.lang.Boolean temperatureSensor, java.lang.String displaySize) {
+								  java.lang.String mountingType, java.lang.String glassCoverColor,
+								  java.lang.String coverSize, java.lang.String displayColor,
+								  java.lang.String language, java.lang.String displayLayout,
+								  java.lang.Boolean temperatureSensor, java.lang.String displaySize,
+								  java.lang.String edsType) {
 		this.indicatorType = indicatorType;
 		this.mountingType = mountingType;
 		this.glassCoverColor = glassCoverColor;
@@ -117,6 +128,7 @@ public class IndicatorConfiguration extends BaseConfiguration {
 		this.displayLayout = displayLayout;
 		this.temperatureSensor = temperatureSensor;
 		this.displaySize = displaySize;
+		this.edsType = edsType;
 	}
 
 }

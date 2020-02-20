@@ -36,6 +36,10 @@ public class IndicatorConfigurationBuilder extends AbstractConfigurationBuilder 
         ic.setMountingType((String) config.get("mountingType"));
         ic.setTemperatureSensor((Boolean)config.get("temperatureSensor"));
         ic.setLanguage((String) config.get("language"));
+        ic.setEdsType(Optional
+                .ofNullable(config.get("edsType"))
+                .map(text -> ((String) text).toUpperCase())
+                .orElse(null));
 
         return Collections.singletonList(new ComponentConfiguration(ic,1));
     }

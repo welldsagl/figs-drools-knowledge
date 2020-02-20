@@ -1,6 +1,6 @@
 <rule>
-  <name>EdsLargeIndicatorCables</name>
-  <parentName>EDS Large Indicator Cables</parentName>
+  <name>EdsIndicatorCables</name>
+  <parentName>EDS Indicator Cables</parentName>
   <modelVersion>1.0</modelVersion>
   <attributes/>
   <metadataList/>
@@ -22,6 +22,19 @@
                 <parameters/>
                 <factType>IndicatorConfiguration</factType>
                 <fieldName>cableType</fieldName>
+                <fieldType>String</fieldType>
+              </fieldConstraint>
+              <fieldConstraint>
+                <value>$edsType</value>
+                <operator>==</operator>
+                <constraintValueType>7</constraintValueType>
+                <expression>
+                  <parts/>
+                  <index>2147483647</index>
+                </expression>
+                <parameters/>
+                <factType>IndicatorConfiguration</factType>
+                <fieldName>edsType</fieldName>
                 <fieldType>String</fieldType>
               </fieldConstraint>
             </constraints>
@@ -150,7 +163,18 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <string>57634309</string>
         <string>57647931</string>
         <string>57634308</string>
-        <string>57647931</string>
+        <string>57647932</string>
+      </list>
+    </entry>
+    <entry>
+      <string>$edsType</string>
+      <list>
+        <string>MASTER</string>
+        <string>SLAVE</string>
+        <string>MASTER</string>
+        <string>SLAVE</string>
+        <string>MASTER</string>
+        <string>SLAVE</string>
       </list>
     </entry>
     <entry>

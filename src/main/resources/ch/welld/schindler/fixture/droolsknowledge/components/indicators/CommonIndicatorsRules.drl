@@ -26,6 +26,7 @@ function Map<String, Object> createIndicatorsMetadata(IndicatorConfiguration con
     Map<String, Object> m = new HashMap<String, Object>();
     m.put("language", config.getLanguage());
     m.put("displayLayout", config.getDisplayLayout());
+    m.put("position", config.getEdsType());
     return m;
 }
 
@@ -35,14 +36,14 @@ rule "TFT DMI Indicator Cables"
     then
 end
 
-rule "EDS Large Indicator Cables"
+rule "EDS Indicator Cables"
     when
-        CableRequest() or IndicatorConfiguration( indicatorType == "EDS" && displaySize in ( "12", "15" ))
+        CableRequest() or IndicatorConfiguration( indicatorType == "EDS" )
     then
 end
 
-rule "EDS Small Indicator Cables"
+rule "EDS Large Indicator Cables"
     when
-        CableRequest() or IndicatorConfiguration( indicatorType == "EDS" && displaySize in ( "4.3", "7", "10" ))
+        CableRequest() or IndicatorConfiguration( indicatorType == "EDS" && displaySize in ( "12", "15" ))
     then
 end
