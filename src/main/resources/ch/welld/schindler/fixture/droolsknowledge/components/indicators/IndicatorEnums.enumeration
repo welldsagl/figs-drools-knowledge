@@ -6,3 +6,4 @@
 'IndicatorConfiguration.glassCoverColor' : ['BLACK','WHITE']
 'IndicatorConfiguration.mountingType' : ['Surface','Flush']
 'IndicatorConfiguration.cableType' : ['PVC/CCC','UL','HLF']
+'IndicatorConfiguration.edsType' : ['MASTER','SLAVE']

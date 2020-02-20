@@ -29,7 +29,7 @@ end
 
 rule "LARC LAGC Lamp Cables"
     when
-        LampConfiguration( lamp in ( "LARC", "LAGC" ) ) or CableRequest()
+        LampConfiguration( lamp in ( "LARC-Communication", "LARC-Phone", "LAGC" ) ) or CableRequest()
     then
 end
 
@@ -47,6 +47,6 @@ end
 
 rule "Other Lamps Cables"
     when
-        LampConfiguration( lamp not in ( "LARC", "LAGC" ) ) or CableRequest()
+        LampConfiguration( lamp not in ( "LARC-Communication", "LARC-Phone", "LAGC" ) ) or CableRequest()
     then
 end
