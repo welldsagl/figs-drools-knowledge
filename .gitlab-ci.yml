@@ -14,12 +14,6 @@ variables:
 install:
   extends: .install
 
-# --------------- TEST --------------- #
-# TODO: implement
-
-# --------------- QUALITY --------------- #
-# TODO: implement
-
 # --------------- BUILD --------------- #
 mvn_build:preview:
   extends: .mvn_build:preview
