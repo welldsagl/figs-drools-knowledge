@@ -1,11 +1,14 @@
 include:
 - 'http://gitlab.welld.io/welld/gitlabci/raw/master/generic/stages.yml'
+- 'https://gitlab.welld.io/welld/gitlabci/raw/master/generic/check_semver.yml'
 - 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/.variables_template.yml'
 - 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/before_script.yml'
 - 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/cache.yml'
 - 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/.install_template.yml'
 - 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/.build_template.yml'
 - 'http://gitlab.welld.io/welld/gitlabci/raw/master/maven/.publish_template.yml'
+
+image: maven:3-jdk-11
 
 variables:
   extends: .mvn_variables
