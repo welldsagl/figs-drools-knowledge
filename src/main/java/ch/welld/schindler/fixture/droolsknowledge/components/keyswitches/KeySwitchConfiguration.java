@@ -13,8 +13,8 @@ public class KeySwitchConfiguration extends BaseConfiguration {
 	private java.lang.String keyType;
 	private java.lang.String keySwitch;
 	private java.lang.String keyFunction;
-
 	private java.lang.String engraving;
+	private java.lang.String fixtureFamily;
 
 	public KeySwitchConfiguration() {
 	}
@@ -51,13 +51,22 @@ public class KeySwitchConfiguration extends BaseConfiguration {
 		this.engraving = engraving;
 	}
 
+	public java.lang.String getFixtureFamily() {
+		return this.fixtureFamily;
+	}
+
+	public void setFixtureFamily(java.lang.String fixtureFamily) {
+		this.fixtureFamily = fixtureFamily;
+	}
+
 	public KeySwitchConfiguration(java.lang.String keyType,
 								  java.lang.String keySwitch, java.lang.String keyFunction,
-								  java.lang.String engraving) {
+								  java.lang.String engraving, java.lang.String fixtureFamily) {
 		this.keyType = keyType;
 		this.keySwitch = keySwitch;
 		this.keyFunction = keyFunction;
 		this.engraving = engraving;
+		this.fixtureFamily = fixtureFamily;
 	}
 
 }

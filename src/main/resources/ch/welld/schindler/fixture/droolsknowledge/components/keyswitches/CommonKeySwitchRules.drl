@@ -2,15 +2,35 @@ package ch.welld.schindler.fixture.droolsknowledge.components.keyswitches;
 
 import java.util.Map;
 import java.util.HashMap;
+import ch.welld.schindler.fixture.droolsknowledge.materials.CableRequest;
 
-rule "DT KeySwitch"
+rule "KeySwitch Cables"
     when
-        KeySwitchConfiguration()
+        KeySwitchConfiguration() or CableRequest()
     then
 end
 
-function Map<String, Object> createEngravingMetadata(KeySwitchConfiguration config) {
+rule "DT AT KeySwitch"
+    when
+        KeySwitchConfiguration( fixtureFamily in ( "DT", "AT" ) )
+    then
+end
+
+rule "MT KeySwitch"
+    when
+        KeySwitchConfiguration( fixtureFamily == "MT" )
+    then
+end
+
+rule "GST KeySwitch"
+    when
+        KeySwitchConfiguration( fixtureFamily == "GST" )
+    then
+end
+
+function Map<String, Object> createKeySwitchMetadata(KeySwitchConfiguration config) {
     Map<String, Object> m = new HashMap<String, Object>();
     m.put("engraving", config.getEngraving());
+    m.put("function", config.getKeyFunction());
     return m;
 }

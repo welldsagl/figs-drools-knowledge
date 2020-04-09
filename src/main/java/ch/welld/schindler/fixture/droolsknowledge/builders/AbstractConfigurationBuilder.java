@@ -5,6 +5,7 @@ import ch.welld.schindler.fixture.droolsknowledge.materials.CableLengthType;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Abstract implementation of the component configuration builder interface.
@@ -12,6 +13,13 @@ import java.util.Map;
  * exception caught and wrapped into an application-well-known InvalidConfigurationFormatException
  */
 public abstract class AbstractConfigurationBuilder implements ComponentConfigurationBuilder {
+
+    protected String getUpperCaseString(Map<String, Object> config, String key) {
+        return Optional
+            .ofNullable(config.get(key))
+            .map(text -> ((String) text).toUpperCase())
+            .orElse(null);
+    }
 
     /**
      * As 'getConfigurations' this should convert a generic key-value map into a list of

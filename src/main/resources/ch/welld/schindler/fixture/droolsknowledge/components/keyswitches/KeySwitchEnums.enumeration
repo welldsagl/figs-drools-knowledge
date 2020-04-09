@@ -1,3 +1,4 @@
 'KeySwitchConfiguration.keyType' : ['KCA31','KABA']
 'KeySwitchConfiguration.keySwitch' : ['2 POSITION','3 POSITION','KEY CONTACT']
 'KeySwitchConfiguration.keyFunction' : ['JAB','JBF','JBF-A','JBF-H1','JBF-H2','JDC','JDCW','JDEV','JDNF','JDNFG','JKLBL','JLC','JLI','JNFF','JNFFP','JNO','JPF','JRVC','JRVPC','JSPE','JVEC']
+'KeySwitchConfiguration.cableType' : ['PVC/CCC','UL','HLF']
