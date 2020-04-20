@@ -43,7 +43,7 @@ public class LampConfigurationBuilder extends AbstractConfigurationBuilder {
 
     private ComponentConfiguration createBaseConfiguration(Map<String, Object> config, String lamp) {
         LampConfiguration lp = new LampConfiguration();
-        lp.setEn8120((Boolean)config.get("EN 81-20"));
+        lp.setEn8120(((List<String>) config.get("regulations")).contains("EN 81-20"));
         lp.setLamp(lamp.toUpperCase());
         lp.setFixtureFamily((String) config.get("fixtureFamily"));
         Boolean copIntercomStation = (Boolean) config.get("copIntercomStation");

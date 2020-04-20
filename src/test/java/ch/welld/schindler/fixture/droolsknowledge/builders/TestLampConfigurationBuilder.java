@@ -1,6 +1,7 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders;
 
 import ch.welld.schindler.fixture.droolsknowledge.components.lamps.LampConfiguration;
+import com.google.common.collect.Lists;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.kie.soup.commons.util.Maps;
@@ -46,7 +47,7 @@ public class TestLampConfigurationBuilder {
         List<ComponentConfiguration> configuration = builder.getConfigurations(
                 new Maps.Builder<String,Object>()
                     .put("fixtureFamily", "DT")
-                    .put("EN 81-20", true)
+                    .put("regulations", Lists.newArrayList("EN 81-20"))
                     .put("LEB", BigDecimal.ONE)
                     .put("LNO", BigDecimal.ONE)
                     .put("LBF", BigDecimal.ZERO)
