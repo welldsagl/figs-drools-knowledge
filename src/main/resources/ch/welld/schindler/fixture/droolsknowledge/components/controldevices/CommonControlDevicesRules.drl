@@ -1,7 +1,18 @@
 package ch.welld.schindler.fixture.droolsknowledge.components.controldevices;
 
+import ch.welld.schindler.fixture.droolsknowledge.materials.Material;
+import java.util.HashMap;
+import java.util.Map;
+
 rule "Control Devices"
     when
         ControlDeviceConfiguration()
     then
 end
+
+function Map<String, Object> createPositionMetadata(PositionSetup positionSetup) {
+    Map<String, Object> m = new HashMap<String, Object>();
+    m.put("engraving", positionSetup.getEngraving());
+    m.put("position", positionSetup.getPosition());
+    return m;
+}

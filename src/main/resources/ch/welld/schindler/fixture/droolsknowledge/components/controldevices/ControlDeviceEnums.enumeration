@@ -1,0 +1,3 @@
+'ControlDeviceConfiguration.cableType' : ['PVC/CCC','UL','HLF']
+'ControlDeviceConfiguration.type' : ['ON COMMISSION','ATTENDANT CONTROL','WITHOUT ATTENDANT']
+'PositionSetup.type' : ['CPB', 'KEY', 'IB']
