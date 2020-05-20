@@ -147,6 +147,28 @@ public class TestFixtureConfigurationBuilder {
         commonCheck(configurations, "MAIN", null, "G", "PUSH");
     }
 
+    @Test
+    @DisplayName("convert a hidden button configuration")
+    public void testParseHiddenConfiguration() {
+        Map<String, Object> configurationRequest = new Maps.Builder<String,Object>()
+            .put("fixtureFamily", "hidden button")
+            .put("designation", "-1,0,G,2")
+            .put("quantity", new BigDecimal(4))
+            .build();
+
+        List<ComponentConfiguration> configurations = builder.getConfigurations(configurationRequest);
+        assertNotNull(configurations);
+        assertEquals(1, configurations.size());
+
+        ComponentConfiguration config = configurations.get(0);
+        assertEquals(4, config.getCount());
+        assertTrue(config.getConfiguration() instanceof FixtureConfiguration);
+        FixtureConfiguration c = (FixtureConfiguration) config.getConfiguration();
+        assertEquals("HIDDEN", c.getFixtureFamily());
+        assertEquals("HIDDEN", c.getFixtureType());
+        assertEquals("-1,0,G,2", c.getLabel());
+    }
+
     private ComponentConfiguration findConfigurationOfType(List<ComponentConfiguration> configurations, String type) {
         return configurations.stream().filter(c ->
                 ((FixtureConfiguration) c.getConfiguration()).getFixtureType().equals(type)
