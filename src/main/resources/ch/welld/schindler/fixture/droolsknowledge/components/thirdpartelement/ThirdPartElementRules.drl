@@ -1,0 +1,11 @@
+package ch.welld.schindler.fixture.droolsknowledge.components.thirdpartelement;
+
+rule "Third Part Element"
+    when
+        ThirdPartElementConfiguration()
+    then
+end
+
+
+
+

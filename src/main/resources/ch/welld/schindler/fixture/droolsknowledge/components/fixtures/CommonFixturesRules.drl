@@ -153,6 +153,12 @@ rule "GST Alarm Buttons" extends "GST Buttons"
     then
 end
 
+rule "Hidden Buttons"
+    when
+        FixtureConfiguration( fixtureFamily == "HIDDEN" )
+    then
+end
+
 function Map<String, Object> createLabelMetadata(FixtureConfiguration config) {
     Map<String, Object> m = new HashMap<String, Object>();
     switch (config.getFixtureType()) {

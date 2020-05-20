@@ -96,8 +96,25 @@ public class FixtureConfigurationBuilder extends AbstractConfigurationBuilder {
         return new ComponentConfiguration(configuration, count);
     }
 
+    private boolean isHiddenButtonConfiguration(Map<String, Object> config) {
+        return "hidden button".equalsIgnoreCase((String) config.get("fixtureFamily"));
+    }
+
+    private List<ComponentConfiguration> getHiddenButtonConfiguration(Map<String, Object> config) {
+        FixtureConfiguration fc = new FixtureConfiguration();
+        fc.setLabel(((String) config.get("designation")));
+        fc.setFixtureFamily("HIDDEN");
+        fc.setFixtureType("HIDDEN");
+        int quantity = ((BigDecimal) config.getOrDefault("quantity", BigDecimal.ONE)).intValue();
+        return Collections.singletonList(new ComponentConfiguration(fc, quantity));
+    }
+
     @Override
     public List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
+        if (isHiddenButtonConfiguration(config)) {
+            return getHiddenButtonConfiguration(config);
+        }
+
         List<ComponentConfiguration> configList = new ArrayList<>();
         int alarmButtons = ((BigDecimal) config.getOrDefault("alarmButtons", BigDecimal.ZERO)).intValue();
         int openButtons = ((BigDecimal) config.getOrDefault("openButtons", BigDecimal.ZERO)).intValue();
