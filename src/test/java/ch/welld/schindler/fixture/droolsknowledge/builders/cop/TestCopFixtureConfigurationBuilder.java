@@ -1,46 +1,22 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders;
+package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
-import ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean;
+import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.builders.InvalidConfigurationFormatException;
 import ch.welld.schindler.fixture.droolsknowledge.components.fixtures.FixtureConfiguration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.kie.soup.commons.util.Maps;
 
 import java.math.BigDecimal;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("test fixture configuration builder")
-public class TestFixtureConfigurationBuilder {
+@DisplayName("test cop fixture configuration builder")
+public class TestCopFixtureConfigurationBuilder {
 
-    private FixtureConfigurationBuilder builder = new FixtureConfigurationBuilder();
-
-    @Test
-    @DisplayName("can convert a fixture configuration")
-    public void testCanParseFixtureConfiguration() {
-        assertTrue(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Fixtures"))
-        );
-    }
-
-    @Test
-    @DisplayName("cannot convert a not fixture configuration")
-    public void testCannotParseNonFixtureConfiguration() {
-        assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Lamps"))
-        );
-    }
-
-    @Test
-    @DisplayName("cannot convert a configuration with no 'elevator' field")
-    public void testCannotParseConfigurationWithNoElevatorKey() {
-        assertFalse(
-            builder.canParseConfiguration(Collections.emptyMap())
-        );
-    }
+    private CopFixtureConfigurationBuilder builder = new CopFixtureConfigurationBuilder();
 
     private Map<String, Object> createConfigurationRequest() {
         return new Maps.Builder<String,Object>()
@@ -60,43 +36,6 @@ public class TestFixtureConfigurationBuilder {
                 .build();
     }
 
-    private void commonCheck(
-            List<ComponentConfiguration> configurations,
-            String fixtureType,
-            String doorButtonType,
-            String label,
-            String pushType) {
-        assertNotNull(configurations);
-        assertEquals(1, configurations.size());
-
-        ComponentConfiguration config = configurations.get(0);
-        assertEquals(1, config.getCount());
-        assertTrue(config.getConfiguration() instanceof FixtureConfiguration);
-        FixtureConfiguration c = (FixtureConfiguration) config.getConfiguration();
-        assertTrue(c.getBacklight());
-        assertTrue(c.getHairlineInsert());
-        assertTrue(c.getLetterRaised());
-        assertTrue(c.getBacklight());
-        assertTrue(c.getIllumination());
-        assertTrue(c.getBuzzer());
-        assertTrue(c.getFiveDot());
-        assertEquals(NullableBoolean.YES, c.getLdtO());
-        assertEquals("AMBER", c.getButtonColor());
-        assertEquals("DT", c.getFixtureFamily());
-        assertEquals("DT4", c.getFixtureSubfamily());
-
-        if (fixtureType != null) {
-            assertEquals(fixtureType, c.getFixtureType());
-        }
-        if (doorButtonType != null) {
-            assertEquals(doorButtonType, c.getDoorButtonType());
-        }
-        if (pushType != null) {
-            assertEquals(pushType, c.getPushType());
-        }
-        assertEquals(label, c.getLabel());
-    }
-
     @Test
     @DisplayName("convert an alarm configuration")
     public void testParseAlarmConfiguration() {
@@ -104,7 +43,15 @@ public class TestFixtureConfigurationBuilder {
         configurationRequest.put("alarmButtons", BigDecimal.ONE);
 
         List<ComponentConfiguration> configurations = builder.getConfigurations(configurationRequest);
-        commonCheck(configurations, "ALARM", null, null, "PUSH");
+        assertNotNull(configurations);
+        assertEquals(1, configurations.size());
+        ComponentConfiguration config = configurations.get(0);
+        assertEquals(1, config.getCount());
+        assertTrue(config.getConfiguration() instanceof FixtureConfiguration);
+        FixtureConfiguration c = (FixtureConfiguration) config.getConfiguration();
+        assertEquals("ALARM", c.getFixtureType());
+        assertEquals("PUSH", c.getPushType());
+        assertEquals("🔔", c.getLabel());
     }
 
     @Test
@@ -114,7 +61,15 @@ public class TestFixtureConfigurationBuilder {
         configurationRequest.put("openButtons", BigDecimal.ONE);
 
         List<ComponentConfiguration> configurations = builder.getConfigurations(configurationRequest);
-        commonCheck(configurations, "DOOR", "OPEN", null, "PUSH");
+        assertNotNull(configurations);
+        assertEquals(1, configurations.size());
+        ComponentConfiguration config = configurations.get(0);
+        assertEquals(1, config.getCount());
+        assertTrue(config.getConfiguration() instanceof FixtureConfiguration);
+        FixtureConfiguration c = (FixtureConfiguration) config.getConfiguration();
+        assertEquals("DOOR", c.getFixtureType());
+        assertEquals("PUSH", c.getPushType());
+        assertEquals("◀|▶", c.getLabel());
     }
 
     @Test
@@ -124,7 +79,15 @@ public class TestFixtureConfigurationBuilder {
         configurationRequest.put("closeButtons", BigDecimal.ONE);
 
         List<ComponentConfiguration> configurations = builder.getConfigurations(configurationRequest);
-        commonCheck(configurations, "DOOR", "CLOSE", null, "PUSH");
+        assertNotNull(configurations);
+        assertEquals(1, configurations.size());
+        ComponentConfiguration config = configurations.get(0);
+        assertEquals(1, config.getCount());
+        assertTrue(config.getConfiguration() instanceof FixtureConfiguration);
+        FixtureConfiguration c = (FixtureConfiguration) config.getConfiguration();
+        assertEquals("DOOR", c.getFixtureType());
+        assertEquals("PUSH", c.getPushType());
+        assertEquals("▶|◀", c.getLabel());
     }
 
     @Test
@@ -134,7 +97,15 @@ public class TestFixtureConfigurationBuilder {
         configurationRequest.put("floorButtons", BigDecimal.ONE);
 
         List<ComponentConfiguration> configurations = builder.getConfigurations(configurationRequest);
-        commonCheck(configurations, "FLOOR", null, "-1,0,G,2", "PUSH");
+        assertNotNull(configurations);
+        assertEquals(1, configurations.size());
+        ComponentConfiguration config = configurations.get(0);
+        assertEquals(1, config.getCount());
+        assertTrue(config.getConfiguration() instanceof FixtureConfiguration);
+        FixtureConfiguration c = (FixtureConfiguration) config.getConfiguration();
+        assertEquals("FLOOR", c.getFixtureType());
+        assertEquals("PUSH", c.getPushType());
+        assertEquals("-1,0,G,2", c.getLabel());
     }
 
     @Test
@@ -144,7 +115,15 @@ public class TestFixtureConfigurationBuilder {
         configurationRequest.put("mainFloorButton", true);
 
         List<ComponentConfiguration> configurations = builder.getConfigurations(configurationRequest);
-        commonCheck(configurations, "MAIN", null, "G", "PUSH");
+        assertNotNull(configurations);
+        assertEquals(1, configurations.size());
+        ComponentConfiguration config = configurations.get(0);
+        assertEquals(1, config.getCount());
+        assertTrue(config.getConfiguration() instanceof FixtureConfiguration);
+        FixtureConfiguration c = (FixtureConfiguration) config.getConfiguration();
+        assertEquals("MAIN", c.getFixtureType());
+        assertEquals("PUSH", c.getPushType());
+        assertEquals("G", c.getLabel());
     }
 
     @Test
@@ -203,7 +182,7 @@ public class TestFixtureConfigurationBuilder {
         configurationRequest.put("pushType", "TOUCH");
 
         List<ComponentConfiguration> configurations = builder.getConfigurations(configurationRequest);
-        commonCheck(configurations, "DOOR", "CLOSE", null, "TOUCH");
+        assertEquals("TOUCH", ((FixtureConfiguration)configurations.get(0).getConfiguration()).getPushType());
     }
 
     @Test

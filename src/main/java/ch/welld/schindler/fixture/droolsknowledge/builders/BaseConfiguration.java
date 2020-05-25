@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * Abstract superclass of all drools-known configuration classes. This handles all common attributes,
- * such as cable-related ones.
+ * such as cable-related ones and component type.
  */
 public abstract class BaseConfiguration implements Serializable {
 
@@ -17,6 +17,8 @@ public abstract class BaseConfiguration implements Serializable {
     protected Integer cableLength;
 
     protected java.lang.String cableType;
+
+    protected String componentType;
 
     protected BaseConfiguration() {
 
@@ -45,5 +47,13 @@ public abstract class BaseConfiguration implements Serializable {
 
     public void setCableType(String cableType) {
         this.cableType = cableType;
+    }
+
+    public String getComponentType() {
+        return componentType;
+    }
+
+    public void setComponentType(String componentType) {
+        this.componentType = componentType;
     }
 }

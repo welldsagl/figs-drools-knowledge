@@ -49,6 +49,19 @@
                 <fieldName>ldtO</fieldName>
                 <fieldType>Comparable</fieldType>
               </fieldConstraint>
+              <fieldConstraint>
+                <value>COP</value>
+                <operator>==</operator>
+                <constraintValueType>1</constraintValueType>
+                <expression>
+                  <parts/>
+                  <index>2147483647</index>
+                </expression>
+                <parameters/>
+                <factType>FixtureConfiguration</factType>
+                <fieldName>componentType</fieldName>
+                <fieldType>String</fieldType>
+              </fieldConstraint>
             </constraints>
           </constraintList>
           <factType>FixtureConfiguration</factType>
@@ -155,6 +168,9 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <string>DOOR</string>
         <string>DOOR</string>
         <string>DOOR</string>
+        <string>DOOR</string>
+        <string>DOOR</string>
+        <string>DOOR</string>
         <string>HIDDEN</string>
         <string>HIDDEN</string>
         <string>HIDDEN</string>
@@ -163,6 +179,9 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
     <entry>
       <string>$cableType</string>
       <list>
+        <string>PVC/CCC</string>
+        <string>UL</string>
+        <string>HLF</string>
         <string>PVC/CCC</string>
         <string>UL</string>
         <string>HLF</string>
@@ -195,6 +214,9 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <string>7</string>
         <string>8</string>
         <string>9</string>
+        <string>22</string>
+        <string>21</string>
+        <string>20</string>
         <string>16</string>
         <string>17</string>
         <string>18</string>
@@ -215,6 +237,9 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <string>57630785</string>
         <string>57630786</string>
         <string>57630787</string>
+        <string></string>
+        <string></string>
+        <string></string>
         <string>57640168</string>
         <string>57640170</string>
         <string>57640169</string>
@@ -235,6 +260,9 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <string>57630757</string>
         <string>57630758</string>
         <string>57630759</string>
+        <string>57641701</string>
+        <string>57641703</string>
+        <string>57641702</string>
         <string>57640165</string>
         <string>57640167</string>
         <string>57640166</string>
@@ -255,6 +283,9 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <string>NullableBoolean.NO</string>
         <string>NullableBoolean.NO</string>
         <string>NullableBoolean.NO</string>
+        <string>NullableBoolean.YES</string>
+        <string>NullableBoolean.YES</string>
+        <string>NullableBoolean.YES</string>
         <string></string>
         <string></string>
         <string></string>
@@ -263,6 +294,9 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
     <entry>
       <string>$cableFamilyCode</string>
       <list>
+        <string>57634502</string>
+        <string>57634502</string>
+        <string>57634502</string>
         <string>57634502</string>
         <string>57634502</string>
         <string>57634502</string>
@@ -298,9 +332,12 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <string>900</string>
         <string>900</string>
         <string>900</string>
+        <string>900</string>
+        <string>900</string>
+        <string>900</string>
       </list>
     </entry>
   </table>
-  <idCol>18</idCol>
-  <rowsCount>15</rowsCount>
+  <idCol>22</idCol>
+  <rowsCount>18</rowsCount>
 </rule>

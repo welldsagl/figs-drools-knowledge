@@ -1,15 +1,15 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders;
+package ch.welld.schindler.fixture.droolsknowledge.builders.common;
 
+import ch.welld.schindler.fixture.droolsknowledge.builders.AbstractConfigurationBuilder;
+import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.components.indicators.IndicatorConfiguration;
 
-import javax.enterprise.context.ApplicationScoped;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@ApplicationScoped
-public class IndicatorConfigurationBuilder extends AbstractConfigurationBuilder {
+public abstract class IndicatorConfigurationBuilder extends AbstractConfigurationBuilder {
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
         return "Indicator".equalsIgnoreCase((String) config.get("elevator"));

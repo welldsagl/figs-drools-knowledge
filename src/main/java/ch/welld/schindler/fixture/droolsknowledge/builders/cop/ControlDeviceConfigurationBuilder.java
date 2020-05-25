@@ -1,7 +1,10 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders;
+package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
+import ch.welld.schindler.fixture.droolsknowledge.builders.AbstractConfigurationBuilder;
+import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.components.controldevices.ControlDeviceConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.components.controldevices.PositionSetup;
+import ch.welld.schindler.fixture.droolsknowledge.types.CopConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
@@ -12,7 +15,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @ApplicationScoped
-public class ControlDeviceConfigurationBuilder extends AbstractConfigurationBuilder {
+public class ControlDeviceConfigurationBuilder extends AbstractConfigurationBuilder implements CopConfiguration {
 
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {

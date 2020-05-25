@@ -1,7 +1,10 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders;
+package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.builders.InvalidConfigurationFormatException;
+import ch.welld.schindler.fixture.droolsknowledge.builders.cop.KsIndicatorConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.components.ksindicators.KSIndicatorConfiguration;
 
 import org.junit.jupiter.api.DisplayName;
