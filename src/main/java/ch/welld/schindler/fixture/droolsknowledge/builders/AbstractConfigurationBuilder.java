@@ -9,7 +9,7 @@ import java.util.Optional;
 
 /**
  * Abstract implementation of the component configuration builder interface.
- * Every candicate builder should extends this class in order to make every conversion
+ * Every candidate builder should extend this class in order to make every conversion
  * exception caught and wrapped into an application-well-known InvalidConfigurationFormatException
  */
 public abstract class AbstractConfigurationBuilder implements ComponentConfigurationBuilder {
@@ -35,10 +35,10 @@ public abstract class AbstractConfigurationBuilder implements ComponentConfigura
      * Utility method that fill all cable-related attributes of the created `BaseConfiguration`.
      * @param config The key-value map that must be converted
      * @param outputConfig The drools-known configuration that can retrieve both materials and cables
-     * @param cableLengthKey The key of the key-value map where the required cable length is saved
      */
-    protected void setCableAttributes(Map<String, Object> config, BaseConfiguration outputConfig, String cableLengthKey) {
+    protected void setCableAttributes(Map<String, Object> config, BaseConfiguration outputConfig) {
         outputConfig.setCableType((String) config.get("cableType"));
+        String cableLengthKey = getCableLengthKey();
         outputConfig.setCableLength(((BigDecimal) config.getOrDefault(cableLengthKey, BigDecimal.ZERO)).intValue());
         outputConfig.setCableLengthType(CableLengthType.valueOf((String) config.getOrDefault("cableLengthType", "STANDARD")));
     }
@@ -48,9 +48,10 @@ public abstract class AbstractConfigurationBuilder implements ComponentConfigura
         try {
             List<ComponentConfiguration> configurationsImpl = getConfigurationsImpl(config);
             configurationsImpl.forEach(
-                // TODO for now the cable length key is hardcoded,
-                //  we should make it dynamic for new component types (LOP)
-                c -> setCableAttributes(config, c.getConfiguration(), "internalCopCableLength")
+                c -> {
+                    c.getConfiguration().setComponentType(getComponentType());
+                    setCableAttributes(config, c.getConfiguration());
+                }
             );
             return configurationsImpl;
         } catch (RuntimeException e) {

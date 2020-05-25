@@ -1,5 +1,7 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders;
+package ch.welld.schindler.fixture.droolsknowledge.builders.common;
 
+import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.builders.InvalidConfigurationFormatException;
 import ch.welld.schindler.fixture.droolsknowledge.components.indicators.IndicatorConfiguration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,7 +15,17 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("test indicator configuration builder")
 public class TestIndicatorConfigurationBuilder {
 
-    private IndicatorConfigurationBuilder builder = new IndicatorConfigurationBuilder();
+    private IndicatorConfigurationBuilder builder = new IndicatorConfigurationBuilder() {
+        @Override
+        public String getCableLengthKey() {
+            return null;
+        }
+
+        @Override
+        public String getComponentType() {
+            return null;
+        }
+    };
 
     @Test
     @DisplayName("can convert an indicator configuration")

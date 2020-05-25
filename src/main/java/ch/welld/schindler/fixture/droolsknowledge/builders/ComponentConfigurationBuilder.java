@@ -1,5 +1,7 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders;
 
+import ch.welld.schindler.fixture.droolsknowledge.types.ComponentType;
+
 import java.util.List;
 import java.util.Map;
 
@@ -7,7 +9,7 @@ import java.util.Map;
  * A component configuration builder is a class that can convert
  * a generic key-value map into a list of drools-known configurations.
  */
-public interface ComponentConfigurationBuilder {
+public interface ComponentConfigurationBuilder extends ComponentType {
 
     /**
      * Check if this builder can convert the given configuration.

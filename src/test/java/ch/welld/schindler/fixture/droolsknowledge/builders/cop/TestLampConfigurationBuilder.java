@@ -1,5 +1,8 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders;
+package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
+import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.builders.InvalidConfigurationFormatException;
+import ch.welld.schindler.fixture.droolsknowledge.builders.cop.LampConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.components.lamps.LampConfiguration;
 import com.google.common.collect.Lists;
 import org.junit.jupiter.api.DisplayName;

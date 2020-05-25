@@ -1,7 +1,10 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders;
+package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
+import ch.welld.schindler.fixture.droolsknowledge.builders.AbstractConfigurationBuilder;
+import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean;
 import ch.welld.schindler.fixture.droolsknowledge.components.lamps.LampConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.types.CopConfiguration;
 import com.google.common.collect.Lists;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -11,7 +14,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
-public class LampConfigurationBuilder extends AbstractConfigurationBuilder {
+public class LampConfigurationBuilder extends AbstractConfigurationBuilder implements CopConfiguration {
 
     // FIXME: these should not be hardcoded (see https://gitlab.welld.io/schindler/figs/catalog/issues/13)
     private static List<String> LAMPS = Lists.newArrayList(

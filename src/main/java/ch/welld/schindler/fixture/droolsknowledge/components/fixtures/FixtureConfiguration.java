@@ -34,8 +34,6 @@ public class FixtureConfiguration extends BaseConfiguration {
 
 	private java.lang.String label;
 
-	private java.lang.String doorButtonType;
-
 	private java.lang.String pushType;
 
 	private ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean ldtO;
@@ -139,14 +137,6 @@ public class FixtureConfiguration extends BaseConfiguration {
 		this.label = label;
 	}
 
-	public java.lang.String getDoorButtonType() {
-		return this.doorButtonType;
-	}
-
-	public void setDoorButtonType(java.lang.String doorButtonType) {
-		this.doorButtonType = doorButtonType;
-	}
-
 	public java.lang.String getPushType() {
 		return this.pushType;
 	}
@@ -177,7 +167,6 @@ public class FixtureConfiguration extends BaseConfiguration {
 			java.lang.Boolean buzzer,
 			java.lang.Boolean fiveDot,
 			java.lang.String label,
-			java.lang.String doorButtonType,
 			java.lang.String pushType,
 			java.lang.String cableType,
 			ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean ldtO) {
@@ -193,7 +182,6 @@ public class FixtureConfiguration extends BaseConfiguration {
 		this.buzzer = buzzer;
 		this.fiveDot = fiveDot;
 		this.label = label;
-		this.doorButtonType = doorButtonType;
 		this.pushType = pushType;
 		this.cableType = cableType;
 		this.ldtO = ldtO;

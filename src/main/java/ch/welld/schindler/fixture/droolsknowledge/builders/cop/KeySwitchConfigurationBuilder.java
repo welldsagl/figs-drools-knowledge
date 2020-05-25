@@ -1,6 +1,9 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders;
+package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
+import ch.welld.schindler.fixture.droolsknowledge.builders.AbstractConfigurationBuilder;
+import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.components.keyswitches.KeySwitchConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.types.CopConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.Collections;
@@ -8,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @ApplicationScoped
-public class KeySwitchConfigurationBuilder extends AbstractConfigurationBuilder {
+public class KeySwitchConfigurationBuilder extends AbstractConfigurationBuilder implements CopConfiguration {
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
         return "key switches".equalsIgnoreCase((String) config.get("elevator"));

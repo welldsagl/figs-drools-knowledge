@@ -1,7 +1,9 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders;
+package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
-import ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean;
+import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.builders.common.FixtureConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.components.fixtures.FixtureConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.types.CopConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.math.BigDecimal;
@@ -9,7 +11,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
-public class FixtureConfigurationBuilder extends AbstractConfigurationBuilder {
+public class CopFixtureConfigurationBuilder extends FixtureConfigurationBuilder implements CopConfiguration {
 
     enum FixtureType {
         ALARM,
@@ -19,8 +21,18 @@ public class FixtureConfigurationBuilder extends AbstractConfigurationBuilder {
         MAIN
     }
 
-    private String mapFixtureTypeToDroolsFixtureType(FixtureType type) {
-        switch (type) {
+    private boolean hasMainFloor(Map<String, Object> config) {
+        return (Boolean) config.getOrDefault("mainFloorButton", false);
+    }
+
+    @Override
+    public boolean canParseConfiguration(Map<String, Object> config) {
+        return super.canParseConfiguration(config) && config.containsKey("copType");
+    }
+
+    @Override
+    protected String getFixtureType(Map<String, Object> config, String type) {
+        switch (FixtureType.valueOf(type)) {
             case ALARM:
                 return "ALARM";
             case CLOSE:
@@ -34,10 +46,24 @@ public class FixtureConfigurationBuilder extends AbstractConfigurationBuilder {
         }
     }
 
-    private String mapFixtureTypeToLabel(Map<String, Object> config, FixtureType type) {
-        switch (type) {
+    @Override
+    protected String getPushType(Map<String, Object> config, String type) {
+        return type.equals(FixtureType.ALARM.toString())
+            ? "PUSH"
+            : ((String) config.getOrDefault("pushType", "PUSH")).toUpperCase();
+    }
+
+    @Override
+    protected String getLabel(Map<String, Object> config, String type) {
+        switch (FixtureType.valueOf(type)) {
             case MAIN:
                 return (String) config.get("mainFloor");
+            case OPEN:
+                return "◀|▶";
+            case CLOSE:
+                return "▶|◀";
+            case ALARM:
+                return "🔔";
             case FLOOR: {
                 String floors = (String) config.get("floorDesignation");
                 boolean hasMainFloor = hasMainFloor(config);
@@ -53,47 +79,6 @@ public class FixtureConfigurationBuilder extends AbstractConfigurationBuilder {
             default:
                 return null;
         }
-    }
-
-    private boolean hasMainFloor(Map<String, Object> config) {
-        return (Boolean) config.getOrDefault("mainFloorButton", false);
-    }
-
-    @Override
-    public boolean canParseConfiguration(Map<String, Object> config) {
-        return "Fixtures".equalsIgnoreCase((String) config.get("elevator"));
-    }
-
-    private ComponentConfiguration createBaseConfiguration(Map<String, Object> config, FixtureType type, int count) {
-        FixtureConfiguration configuration = new FixtureConfiguration();
-        configuration.setBacklight((Boolean) config.get("backlight"));
-
-        configuration.setButtonColor(Optional
-                .ofNullable(config.get("color"))
-                .map(text -> ((String) text).toUpperCase())
-                .orElse(null));
-
-        configuration.setFixtureFamily((String) config.get("fixtureFamily"));
-        configuration.setFixtureSubfamily((String) config.get("buttons"));
-        configuration.setHairlineInsert((Boolean) config.get("hairlineInsert"));
-        configuration.setLetterRaised((Boolean) config.get("letterRaised"));
-        configuration.setBraille((Boolean) config.get("braille"));
-        configuration.setIllumination((Boolean) config.get("illumination"));
-        configuration.setBuzzer((Boolean) config.get("buzzer"));
-        configuration.setFiveDot((Boolean) config.get("fiveDot"));
-        configuration.setLdtO(NullableBoolean.from((Boolean) config.getOrDefault("ldtO", false)));
-        if (type == FixtureType.ALARM) {
-            configuration.setPushType("PUSH");
-        } else {
-            configuration.setPushType(((String) config.getOrDefault("pushType", "PUSH")).toUpperCase());
-        }
-        configuration.setFixtureType(mapFixtureTypeToDroolsFixtureType(type));
-        configuration.setLabel(mapFixtureTypeToLabel(config, type));
-        if (type == FixtureType.OPEN || type == FixtureType.CLOSE) {
-            configuration.setDoorButtonType(type.toString());
-        }
-
-        return new ComponentConfiguration(configuration, count);
     }
 
     private boolean isHiddenButtonConfiguration(Map<String, Object> config) {
@@ -122,19 +107,19 @@ public class FixtureConfigurationBuilder extends AbstractConfigurationBuilder {
         int floorButtons = ((BigDecimal) config.getOrDefault("floorButtons", BigDecimal.ZERO)).intValue();
 
         if (hasMainFloor(config)) {
-            configList.add(createBaseConfiguration(config, FixtureType.MAIN, 1));
+            configList.add(new ComponentConfiguration(createBaseConfiguration(config, FixtureType.MAIN.toString()),1));
         }
         if (alarmButtons > 0) {
-            configList.add(createBaseConfiguration(config, FixtureType.ALARM, alarmButtons));
+            configList.add(new ComponentConfiguration(createBaseConfiguration(config, FixtureType.ALARM.toString()), alarmButtons));
         }
         if (openButtons > 0) {
-            configList.add(createBaseConfiguration(config, FixtureType.OPEN, openButtons));
+            configList.add(new ComponentConfiguration(createBaseConfiguration(config, FixtureType.OPEN.toString()), openButtons));
         }
         if (closeButtons > 0) {
-            configList.add(createBaseConfiguration(config, FixtureType.CLOSE, closeButtons));
+            configList.add(new ComponentConfiguration(createBaseConfiguration(config, FixtureType.CLOSE.toString()), closeButtons));
         }
         if (floorButtons > 0) {
-            configList.add(createBaseConfiguration(config, FixtureType.FLOOR, floorButtons));
+            configList.add(new ComponentConfiguration(createBaseConfiguration(config, FixtureType.FLOOR.toString()), floorButtons));
         }
         return configList;
     }
