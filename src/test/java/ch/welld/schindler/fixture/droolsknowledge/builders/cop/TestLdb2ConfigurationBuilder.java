@@ -27,7 +27,7 @@ public class TestLdb2ConfigurationBuilder {
     @DisplayName("can convert a LDB2 configuration")
     public void testCanParseLampConfiguration() {
         assertTrue(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "LDB2"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "LDB2"))
         );
     }
 
@@ -35,13 +35,13 @@ public class TestLdb2ConfigurationBuilder {
     @DisplayName("cannot convert a not LDB2 configuration")
     public void testCannotParseNonLampConfiguration() {
         assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Fixtures"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Fixtures"))
         );
     }
 
     @Test
-    @DisplayName("cannot convert a configuration with no 'elevator' field")
-    public void testCannotParseConfigurationWithNoElevatorKey() {
+    @DisplayName("cannot convert a configuration with no 'sections' field")
+    public void testCannotParseConfigurationWithNoSectionsKey() {
         assertFalse(
             builder.canParseConfiguration(Collections.emptyMap())
         );

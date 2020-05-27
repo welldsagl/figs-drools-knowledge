@@ -10,115 +10,132 @@ public class IndicatorConfiguration extends BaseConfiguration {
 
 	static final long serialVersionUID = 1L;
 
-	private java.lang.String indicatorType;
+	private String indicatorType;
 
-	private java.lang.String mountingType;
+	private String mountingType;
 
-	private java.lang.String glassCoverColor;
+	private String glassCoverColor;
 
-	private java.lang.String coverSize;
+	private String coverSize;
 
-	private java.lang.String displayColor;
+	private String displayColor;
 
-	private java.lang.String language;
+	private String language;
 
-	private java.lang.String displayLayout;
+	private String displayLayout;
 
-	private java.lang.Boolean temperatureSensor;
+	private Boolean temperatureSensor;
 
-	private java.lang.String displaySize;
+	private String displaySize;
 
-	private java.lang.String edsType;
+	private String edsType;
+
+	private String lopType;
 
 	public IndicatorConfiguration() {
 	}
 
-	public java.lang.String getIndicatorType() {
+	public String getIndicatorType() {
 		return this.indicatorType;
 	}
 
-	public void setIndicatorType(java.lang.String indicatorType) {
+	public void setIndicatorType(String indicatorType) {
 		this.indicatorType = indicatorType;
 	}
 
-	public java.lang.String getMountingType() {
+	public String getMountingType() {
 		return this.mountingType;
 	}
 
-	public void setMountingType(java.lang.String mountingType) {
+	public void setMountingType(String mountingType) {
 		this.mountingType = mountingType;
 	}
 
-	public java.lang.String getGlassCoverColor() {
+	public String getGlassCoverColor() {
 		return this.glassCoverColor;
 	}
 
-	public void setGlassCoverColor(java.lang.String glassCoverColor) {
+	public void setGlassCoverColor(String glassCoverColor) {
 		this.glassCoverColor = glassCoverColor;
 	}
 
-	public java.lang.String getCoverSize() {
+	public String getCoverSize() {
 		return this.coverSize;
 	}
 
-	public void setCoverSize(java.lang.String coverSize) {
+	public void setCoverSize(String coverSize) {
 		this.coverSize = coverSize;
 	}
 
-	public java.lang.String getDisplayColor() {
+	public String getDisplayColor() {
 		return this.displayColor;
 	}
 
-	public void setDisplayColor(java.lang.String displayColor) {
+	public void setDisplayColor(String displayColor) {
 		this.displayColor = displayColor;
 	}
 
-	public java.lang.String getLanguage() {
+	public String getLanguage() {
 		return this.language;
 	}
 
-	public void setLanguage(java.lang.String language) {
+	public void setLanguage(String language) {
 		this.language = language;
 	}
 
-	public java.lang.String getDisplayLayout() {
+	public String getDisplayLayout() {
 		return this.displayLayout;
 	}
 
-	public void setDisplayLayout(java.lang.String displayLayout) {
+	public void setDisplayLayout(String displayLayout) {
 		this.displayLayout = displayLayout;
 	}
 
-	public java.lang.Boolean getTemperatureSensor() {
+	public Boolean getTemperatureSensor() {
 		return this.temperatureSensor;
 	}
 
-	public void setTemperatureSensor(java.lang.Boolean temperatureSensor) {
+	public void setTemperatureSensor(Boolean temperatureSensor) {
 		this.temperatureSensor = temperatureSensor;
 	}
 
-	public java.lang.String getDisplaySize() {
+	public String getDisplaySize() {
 		return this.displaySize;
 	}
 
-	public void setDisplaySize(java.lang.String displaySize) {
+	public void setDisplaySize(String displaySize) {
 		this.displaySize = displaySize;
 	}
 
-	public java.lang.String getEdsType() {
+	public String getEdsType() {
 		return this.edsType;
 	}
 
-	public void setEdsType(java.lang.String edsType) {
+	public void setEdsType(String edsType) {
 		this.edsType = edsType;
 	}
 
-	public IndicatorConfiguration(java.lang.String indicatorType,
-								  java.lang.String mountingType, java.lang.String glassCoverColor,
-								  java.lang.String coverSize, java.lang.String displayColor,
-								  java.lang.String language, java.lang.String displayLayout,
-								  java.lang.Boolean temperatureSensor, java.lang.String displaySize,
-								  java.lang.String edsType) {
+	public String getLopType() {
+		return this.lopType;
+	}
+
+	public void setLopType(String lopType) {
+		this.lopType = lopType;
+	}
+
+	public IndicatorConfiguration(
+		String indicatorType,
+		String mountingType,
+		String glassCoverColor,
+		String coverSize,
+		String displayColor,
+		String language,
+		String displayLayout,
+		Boolean temperatureSensor,
+		String displaySize,
+		String edsType,
+		String lopType
+	) {
 		this.indicatorType = indicatorType;
 		this.mountingType = mountingType;
 		this.glassCoverColor = glassCoverColor;
@@ -129,6 +146,7 @@ public class IndicatorConfiguration extends BaseConfiguration {
 		this.temperatureSensor = temperatureSensor;
 		this.displaySize = displaySize;
 		this.edsType = edsType;
+		this.lopType = lopType;
 	}
 
 }

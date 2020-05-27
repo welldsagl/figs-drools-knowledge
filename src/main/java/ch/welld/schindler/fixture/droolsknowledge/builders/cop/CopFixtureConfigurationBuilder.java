@@ -26,11 +26,6 @@ public class CopFixtureConfigurationBuilder extends FixtureConfigurationBuilder 
     }
 
     @Override
-    public boolean canParseConfiguration(Map<String, Object> config) {
-        return super.canParseConfiguration(config) && config.containsKey("copType");
-    }
-
-    @Override
     protected String getFixtureType(Map<String, Object> config, String type) {
         switch (FixtureType.valueOf(type)) {
             case ALARM:

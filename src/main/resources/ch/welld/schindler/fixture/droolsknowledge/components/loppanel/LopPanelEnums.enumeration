@@ -1,0 +1,5 @@
+'LopPanelConfiguration.lopType' : ['SINGLE','DOUBLE','WITHOUT']
+'LopPanelConfiguration.decoPanel' : ['BLACK','SLR']
+'LopPanelConfiguration.buttonPanel' : ['HAIRLINE','MIRROR','SPECIAL']
+'LopPanelConfiguration.indicatorFamily' : ['TFT','DMI']
+'LopPanelConfiguration.cableType' : ['PVC/CCC','UL','HLF']

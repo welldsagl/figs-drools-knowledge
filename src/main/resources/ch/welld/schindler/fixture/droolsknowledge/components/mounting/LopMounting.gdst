@@ -1,5 +1,6 @@
 <decision-table52>
-  <tableName>IndicatorsBasic</tableName>
+  <tableName>LopMounting</tableName>
+  <parentName>LOP Mounting</parentName>
   <rowNumberCol>
     <hideColumn>false</hideColumn>
     <width>50</width>
@@ -12,7 +13,7 @@
   <attributeCols/>
   <conditionPatterns>
     <Pattern52>
-      <factType>IndicatorConfiguration</factType>
+      <factType>MountingConfiguration</factType>
       <boundName>f1</boundName>
       <isNegated>false</isNegated>
       <conditions>
@@ -24,27 +25,13 @@
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
           <width>100</width>
-          <header>indicator type</header>
+          <header>lop type</header>
           <constraintValueType>1</constraintValueType>
-          <factField>indicatorType</factField>
+          <factField>lopType</factField>
           <fieldType>String</fieldType>
           <operator>==</operator>
           <parameters/>
-        </condition-column52>
-        <condition-column52>
-          <typedDefaultValue>
-            <valueString></valueString>
-            <dataType>STRING</dataType>
-            <isOtherwise>false</isOtherwise>
-          </typedDefaultValue>
-          <hideColumn>false</hideColumn>
-          <width>100</width>
-          <header>display size</header>
-          <constraintValueType>1</constraintValueType>
-          <factField>displaySize</factField>
-          <fieldType>String</fieldType>
-          <operator>==</operator>
-          <parameters/>
+          <binding></binding>
         </condition-column52>
         <condition-column52>
           <typedDefaultValue>
@@ -61,10 +48,27 @@
           <operator>==</operator>
           <parameters/>
         </condition-column52>
+        <condition-column52>
+          <typedDefaultValue>
+            <valueString></valueString>
+            <dataType>STRING</dataType>
+            <isOtherwise>false</isOtherwise>
+          </typedDefaultValue>
+          <hideColumn>false</hideColumn>
+          <width>100</width>
+          <header>ipx3</header>
+          <constraintValueType>1</constraintValueType>
+          <factField>ipx3</factField>
+          <fieldType>Comparable</fieldType>
+          <operator>==</operator>
+          <parameters/>
+          <binding></binding>
+        </condition-column52>
       </conditions>
       <window>
         <parameters/>
       </window>
+      <entryPointName></entryPointName>
     </Pattern52>
   </conditionPatterns>
   <actionCols>
@@ -77,24 +81,9 @@
       <hideColumn>false</hideColumn>
       <width>100</width>
       <header>family code</header>
-      <factType>Family</factType>
+      <factType>Material</factType>
       <boundName>f2</boundName>
       <factField>familyCode</factField>
-      <type>String</type>
-      <isInsertLogical>false</isInsertLogical>
-    </insert-fact-column52>
-    <insert-fact-column52>
-      <typedDefaultValue>
-        <valueString>basic</valueString>
-        <dataType>STRING</dataType>
-        <isOtherwise>false</isOtherwise>
-      </typedDefaultValue>
-      <hideColumn>false</hideColumn>
-      <width>100</width>
-      <header>price position</header>
-      <factType>Family</factType>
-      <boundName>f2</boundName>
-      <factField>pricePosition</factField>
       <type>String</type>
       <isInsertLogical>false</isInsertLogical>
     </insert-fact-column52>
@@ -106,12 +95,11 @@
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
       <width>100</width>
-      <header>metadata</header>
-      <factType>Family</factType>
+      <header>material code</header>
+      <factType>Material</factType>
       <boundName>f2</boundName>
-      <factField>metadata</factField>
-      <type>java.util.Map</type>
-      <valueList>createIndicatorsMetadata(f1)</valueList>
+      <factField>materialCode</factField>
+      <type>String</type>
       <isInsertLogical>false</isInsertLogical>
     </insert-fact-column52>
   </actionCols>
@@ -145,11 +133,14 @@
   <imports>
     <imports>
       <org.kie.soup.project.datamodel.imports.Import>
-        <type>ch.welld.schindler.fixture.droolsknowledge.materials.Family</type>
+        <type>ch.welld.schindler.fixture.droolsknowledge.materials.Material</type>
+      </org.kie.soup.project.datamodel.imports.Import>
+      <org.kie.soup.project.datamodel.imports.Import>
+        <type>ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean</type>
       </org.kie.soup.project.datamodel.imports.Import>
     </imports>
   </imports>
-  <packageName>ch.welld.schindler.fixture.droolsknowledge.components.indicators</packageName>
+  <packageName>ch.welld.schindler.fixture.droolsknowledge.components.mounting</packageName>
   <tableFormat>EXTENDED_ENTRY</tableFormat>
   <hitPolicy>RULE_ORDER</hitPolicy>
   <data>
@@ -166,7 +157,12 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>DMI</valueString>
+        <valueString>WITHOUT</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>SURFACE</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -176,17 +172,15 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>Surface</valueString>
+        <valueString>54411307</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>57634379</valueString>
+        <valueString>54411522</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
-      <value reference="../../../actionCols/insert-fact-column52[3]/typedDefaultValue"/>
     </list>
     <list>
       <value>
@@ -200,20 +194,31 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
-      <value reference="../../list/value[4]"/>
       <value>
-        <valueString>Flush</valueString>
+        <valueString>WITHOUT</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>57634380</valueString>
+        <valueString>WALLBOX</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
-      <value reference="../../../actionCols/insert-fact-column52[3]/typedDefaultValue"/>
+      <value>
+        <valueString>NullableBoolean.YES</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411307</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411525</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -228,27 +233,30 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>TFT</valueString>
+        <valueString>WITHOUT</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
+        <valueString>WALLBOX</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
+        <valueString>NullableBoolean.NO</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>57634381</valueString>
+        <valueString>54411307</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
-      <value reference="../../../actionCols/insert-fact-column52[3]/typedDefaultValue"/>
+      <value>
+        <valueString>54414813</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
     </list>
     <list>
       <value>
@@ -263,12 +271,12 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>EDS</valueString>
+        <valueString>SINGLE</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>4.3</valueString>
+        <valueString>SURFACE</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -278,13 +286,12 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>57634382</valueString>
+        <valueString>54411305</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
       <value>
-        <valueString>createIndicatorsMetadata(f1)</valueString>
+        <valueString>54411367</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -301,25 +308,28 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[4]/value[3]"/>
       <value>
-        <valueString>7</valueString>
+        <valueString>SINGLE</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
+        <valueString>WALLBOX</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>57634383</valueString>
+        <valueString>NullableBoolean.YES</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
       <value>
-        <valueString>createIndicatorsMetadata(f1)</valueString>
+        <valueString>54411305</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411370</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -336,25 +346,28 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[4]/value[3]"/>
       <value>
-        <valueString>10</valueString>
+        <valueString>SINGLE</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString></valueString>
+        <valueString>WALLBOX</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>57634384</valueString>
+        <valueString>NullableBoolean.NO</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
       <value>
-        <valueString>createIndicatorsMetadata(f1)</valueString>
+        <valueString>54411305</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54414811</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -371,9 +384,13 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[4]/value[3]"/>
       <value>
-        <valueString>12</valueString>
+        <valueString>DOUBLE</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>SURFACE</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -383,13 +400,12 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>57634385</valueString>
+        <valueString>54411306</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
       <value>
-        <valueString>createIndicatorsMetadata(f1)</valueString>
+        <valueString>54411398</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -406,10 +422,37 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list[4]/value[3]"/>
       <value>
-        <valueString>15</valueString>
+        <valueString>DOUBLE</valueString>
         <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>WALLBOX</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>NullableBoolean.YES</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411306</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411501</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+    </list>
+    <list>
+      <value>
+        <valueNumeric class="int">9</valueNumeric>
+        <valueString></valueString>
+        <dataType>NUMERIC_INTEGER</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -418,13 +461,27 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>57634386</valueString>
+        <valueString>DOUBLE</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../../actionCols/insert-fact-column52[2]/typedDefaultValue"/>
       <value>
-        <valueString>createIndicatorsMetadata(f1)</valueString>
+        <valueString>WALLBOX</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>NullableBoolean.NO</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54411306</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>54414812</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>

@@ -53,7 +53,7 @@ public class TestFixtureConfigurationBuilder {
     @DisplayName("can convert a fixture configuration")
     public void testCanParseFixtureConfiguration() {
         Map<String, Object> configuration = new Maps.Builder<String,Object>()
-            .put("elevator", "Fixtures")
+            .put("sections", "Fixtures")
             .build();
         assertTrue(
             builder.canParseConfiguration(configuration)
@@ -64,13 +64,13 @@ public class TestFixtureConfigurationBuilder {
     @DisplayName("cannot convert a not fixture configuration")
     public void testCannotParseNonFixtureConfiguration() {
         assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Lamps"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Lamps"))
         );
     }
 
     @Test
-    @DisplayName("cannot convert a configuration with no 'elevator' field")
-    public void testCannotParseConfigurationWithNoElevatorKey() {
+    @DisplayName("cannot convert a configuration with no 'sections' field")
+    public void testCannotParseConfigurationWithNoSectionsKey() {
         assertFalse(
             builder.canParseConfiguration(Collections.emptyMap())
         );

@@ -1,6 +1,6 @@
 <rule>
-  <name>EdsIndicatorCables</name>
-  <parentName>EDS Indicator Cables</parentName>
+  <name>CopTftDmiIndicatorCables</name>
+  <parentName>COP TFT DMI Indicator Cables</parentName>
   <modelVersion>1.0</modelVersion>
   <attributes/>
   <metadataList/>
@@ -22,19 +22,6 @@
                 <parameters/>
                 <factType>IndicatorConfiguration</factType>
                 <fieldName>cableType</fieldName>
-                <fieldType>String</fieldType>
-              </fieldConstraint>
-              <fieldConstraint>
-                <value>$edsType</value>
-                <operator>==</operator>
-                <constraintValueType>7</constraintValueType>
-                <expression>
-                  <parts/>
-                  <index>2147483647</index>
-                </expression>
-                <parameters/>
-                <factType>IndicatorConfiguration</factType>
-                <fieldName>edsType</fieldName>
                 <fieldType>String</fieldType>
               </fieldConstraint>
             </constraints>
@@ -117,6 +104,12 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
       <org.kie.soup.project.datamodel.imports.Import>
         <type>ch.welld.schindler.fixture.droolsknowledge.materials.CableHelper</type>
       </org.kie.soup.project.datamodel.imports.Import>
+      <org.kie.soup.project.datamodel.imports.Import>
+        <type>ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean</type>
+      </org.kie.soup.project.datamodel.imports.Import>
+      <org.kie.soup.project.datamodel.imports.Import>
+          <type>org.drools.core.spi.Tuple</type>
+        </org.kie.soup.project.datamodel.imports.Import>
     </imports>
   </imports>
   <packageName>ch.welld.schindler.fixture.droolsknowledge.components.indicators</packageName>
@@ -126,10 +119,7 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
       <string>$cableType</string>
       <list>
         <string>PVC/CCC</string>
-        <string>PVC/CCC</string>
         <string>UL</string>
-        <string>UL</string>
-        <string>HLF</string>
         <string>HLF</string>
       </list>
     </entry>
@@ -139,50 +129,27 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <string>1</string>
         <string>2</string>
         <string>3</string>
-        <string>4</string>
-        <string>5</string>
-        <string>6</string>
       </list>
     </entry>
     <entry>
       <string>$cableOnCommissionCode</string>
       <list>
-        <string>57634310</string>
-        <string>57647933</string>
-        <string>57634312</string>
-        <string>57647934</string>
-        <string>57634311</string>
-        <string>57647935</string>
+        <string>57630728</string>
+        <string>57630729</string>
+        <string>57630730</string>
       </list>
     </entry>
     <entry>
       <string>$cableStandardCode</string>
       <list>
-        <string>57634307</string>
-        <string>57647930</string>
-        <string>57634309</string>
-        <string>57647931</string>
-        <string>57634308</string>
-        <string>57647932</string>
-      </list>
-    </entry>
-    <entry>
-      <string>$edsType</string>
-      <list>
-        <string>MASTER</string>
-        <string>SLAVE</string>
-        <string>MASTER</string>
-        <string>SLAVE</string>
-        <string>MASTER</string>
-        <string>SLAVE</string>
+        <string>57630722</string>
+        <string>57630723</string>
+        <string>57630724</string>
       </list>
     </entry>
     <entry>
       <string>$cableFamilyCode</string>
       <list>
-        <string>57634502</string>
-        <string>57634502</string>
-        <string>57634502</string>
         <string>57634502</string>
         <string>57634502</string>
         <string>57634502</string>
@@ -192,14 +159,11 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
       <string>$cableStandardLength</string>
       <list>
         <string>1200</string>
-        <string>6000</string>
-        <string>600</string>
-        <string>6000</string>
         <string>1200</string>
-        <string>6000</string>
+        <string>1200</string>
       </list>
     </entry>
   </table>
-  <idCol>6</idCol>
-  <rowsCount>6</rowsCount>
+  <idCol>3</idCol>
+  <rowsCount>3</rowsCount>
 </rule>

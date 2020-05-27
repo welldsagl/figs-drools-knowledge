@@ -1,6 +1,6 @@
 <rule>
-  <name>TftDmiIndicatorCables</name>
-  <parentName>TFT DMI Indicator Cables</parentName>
+  <name>LopPanelOnCommissionCables</name>
+  <parentName>LOP Panel On Commission Cables</parentName>
   <modelVersion>1.0</modelVersion>
   <attributes/>
   <metadataList/>
@@ -20,13 +20,13 @@
                   <index>2147483647</index>
                 </expression>
                 <parameters/>
-                <factType>IndicatorConfiguration</factType>
+                <factType>LopPanelConfiguration</factType>
                 <fieldName>cableType</fieldName>
                 <fieldType>String</fieldType>
               </fieldConstraint>
             </constraints>
           </constraintList>
-          <factType>IndicatorConfiguration</factType>
+          <factType>LopPanelConfiguration</factType>
           <isNegated>false</isNegated>
           <window>
             <parameters/>
@@ -51,19 +51,6 @@
               <compositeConstraint>
                 <compositeJunctionType>||</compositeJunctionType>
                 <constraints>
-                  <fieldConstraint>
-                    <value>$cableStandardCode</value>
-                    <operator>==</operator>
-                    <constraintValueType>7</constraintValueType>
-                    <expression>
-                      <parts/>
-                      <index>2147483647</index>
-                    </expression>
-                    <parameters/>
-                    <factType>CableRequest</factType>
-                    <fieldName>materialCode</fieldName>
-                    <fieldType>String</fieldType>
-                  </fieldConstraint>
                   <fieldConstraint>
                     <value>$cableOnCommissionCode</value>
                     <operator>==</operator>
@@ -93,7 +80,7 @@
   <rhs>
     <freeForm>
       <text>Tuple tuple = drools.getTuple();
-insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{$cableStandardCode}&quot;, @{$cableStandardLength}, &quot;@{$cableOnCommissionCode}&quot;));</text>
+insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  null, null, &quot;@{$cableOnCommissionCode}&quot;));</text>
     </freeForm>
   </rhs>
   <imports>
@@ -104,15 +91,9 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
       <org.kie.soup.project.datamodel.imports.Import>
         <type>ch.welld.schindler.fixture.droolsknowledge.materials.CableHelper</type>
       </org.kie.soup.project.datamodel.imports.Import>
-      <org.kie.soup.project.datamodel.imports.Import>
-        <type>ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean</type>
-      </org.kie.soup.project.datamodel.imports.Import>
-      <org.kie.soup.project.datamodel.imports.Import>
-          <type>org.drools.core.spi.Tuple</type>
-        </org.kie.soup.project.datamodel.imports.Import>
     </imports>
   </imports>
-  <packageName>ch.welld.schindler.fixture.droolsknowledge.components.indicators</packageName>
+  <packageName>ch.welld.schindler.fixture.droolsknowledge.components.loppanel</packageName>
   <isNegated>false</isNegated>
   <table>
     <entry>
@@ -127,43 +108,27 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
       <string>__ID_KOL_NAME__</string>
       <list>
         <string>1</string>
-        <string>2</string>
-        <string>3</string>
+        <string>5</string>
+        <string>9</string>
       </list>
     </entry>
     <entry>
       <string>$cableOnCommissionCode</string>
       <list>
-        <string>57630728</string>
-        <string>57630729</string>
-        <string>57630730</string>
-      </list>
-    </entry>
-    <entry>
-      <string>$cableStandardCode</string>
-      <list>
-        <string>57630722</string>
-        <string>57630723</string>
-        <string>57630724</string>
+        <string>54411686</string>
+        <string>54411688</string>
+        <string>54411690</string>
       </list>
     </entry>
     <entry>
       <string>$cableFamilyCode</string>
       <list>
-        <string>57634502</string>
-        <string>57634502</string>
-        <string>57634502</string>
-      </list>
-    </entry>
-    <entry>
-      <string>$cableStandardLength</string>
-      <list>
-        <string>1200</string>
-        <string>1200</string>
-        <string>1200</string>
+        <string>54411798</string>
+        <string>54411798</string>
+        <string>54411798</string>
       </list>
     </entry>
   </table>
-  <idCol>3</idCol>
+  <idCol>12</idCol>
   <rowsCount>3</rowsCount>
 </rule>

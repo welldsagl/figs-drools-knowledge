@@ -1,5 +1,7 @@
 package ch.welld.schindler.fixture.droolsknowledge.materials;
 
+import java.util.Map;
+
 /**
  * `BaseMaterial` is the abstract superclass of cables and materials, which are the two kind of entities
  * that can be returned by Drools' knowledge sessions. Here common attributes are handled, such
@@ -9,44 +11,58 @@ public abstract class BaseMaterial implements java.io.Serializable {
 
     static final long serialVersionUID = 1L;
 
-    private java.lang.String materialCode;
+    private String materialCode;
 
-    private java.lang.String familyCode;
+    private String familyCode;
 
-    private java.util.Map<java.lang.String, java.lang.Object> metadata;
+    private Map<String, Object> metadata;
+
+    private Integer quantity = 1;
 
     public BaseMaterial() {
     }
 
-    public java.lang.String getMaterialCode() {
+    public String getMaterialCode() {
         return this.materialCode;
     }
 
-    public void setMaterialCode(java.lang.String materialCode) {
+    public void setMaterialCode(String materialCode) {
         this.materialCode = materialCode;
     }
 
-    public java.lang.String getFamilyCode() {
+    public String getFamilyCode() {
         return this.familyCode;
     }
 
-    public void setFamilyCode(java.lang.String familyCode) {
+    public void setFamilyCode(String familyCode) {
         this.familyCode = familyCode;
     }
 
-    public java.util.Map<java.lang.String, java.lang.Object> getMetadata() {
+    public Map<String, Object> getMetadata() {
         return this.metadata;
     }
 
-    public void setMetadata(java.util.Map<java.lang.String, java.lang.Object> metadata) {
+    public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
     }
 
-    public BaseMaterial(java.lang.String materialCode, java.lang.String familyCode,
-                    java.util.Map<java.lang.String, java.lang.Object> metadata) {
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity == null ? 1 : quantity;
+    }
+
+    public BaseMaterial(
+        String materialCode,
+        String familyCode,
+        Integer quantity,
+        Map<String, Object> metadata
+    ) {
         this.materialCode = materialCode;
         this.familyCode = familyCode;
         this.metadata = metadata;
+        this.quantity = quantity == null ? 1 : quantity;
     }
-
 }

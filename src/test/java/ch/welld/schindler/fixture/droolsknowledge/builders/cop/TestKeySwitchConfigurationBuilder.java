@@ -22,7 +22,7 @@ public class TestKeySwitchConfigurationBuilder {
     @DisplayName("can convert a key switch configuration")
     public void testCanParseKeySwitchConfiguration() {
         assertTrue(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "key switches"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "key switches"))
         );
     }
 
@@ -30,13 +30,13 @@ public class TestKeySwitchConfigurationBuilder {
     @DisplayName("cannot convert a not key switch configuration")
     public void testCannotParseNonKeySwitchConfiguration() {
         assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "lamp"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "lamp"))
         );
     }
 
     @Test
-    @DisplayName("cannot convert a configuration with no 'elevator' field")
-    public void testCannotParseConfigurationWithNoElevatorKey() {
+    @DisplayName("cannot convert a configuration with no 'sections' field")
+    public void testCannotParseConfigurationWithNoSectionsKey() {
         assertFalse(
             builder.canParseConfiguration(Collections.emptyMap())
         );

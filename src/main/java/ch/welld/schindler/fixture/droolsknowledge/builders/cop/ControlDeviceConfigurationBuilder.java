@@ -19,7 +19,7 @@ public class ControlDeviceConfigurationBuilder extends AbstractConfigurationBuil
 
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
-        return "Control Device".equalsIgnoreCase((String) config.get("elevator"));
+        return "Control Device".equalsIgnoreCase((String) config.get("sections"));
     }
 
     @Override

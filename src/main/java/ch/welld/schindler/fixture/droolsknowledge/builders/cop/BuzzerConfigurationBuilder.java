@@ -15,7 +15,7 @@ import java.util.Optional;
 public class BuzzerConfigurationBuilder extends AbstractConfigurationBuilder implements CopConfiguration {
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
-        return "Buzzer".equalsIgnoreCase((String) config.get("elevator"));
+        return "Buzzer".equalsIgnoreCase((String) config.get("sections"));
     }
 
     @Override
