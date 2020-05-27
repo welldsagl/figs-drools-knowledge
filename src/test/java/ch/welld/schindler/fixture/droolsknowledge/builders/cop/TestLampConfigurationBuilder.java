@@ -24,7 +24,7 @@ public class TestLampConfigurationBuilder {
     @DisplayName("can convert a lamp configuration")
     public void testCanParseLampConfiguration() {
         assertTrue(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Lamps"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Lamps"))
         );
     }
 
@@ -32,13 +32,13 @@ public class TestLampConfigurationBuilder {
     @DisplayName("cannot convert a not lamp configuration")
     public void testCannotParseNonLampConfiguration() {
         assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Fixtures"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Fixtures"))
         );
     }
 
     @Test
-    @DisplayName("cannot convert a configuration with no 'elevator' field")
-    public void testCannotParseConfigurationWithNoElevatorKey() {
+    @DisplayName("cannot convert a configuration with no 'sections' field")
+    public void testCannotParseConfigurationWithNoSectionsKey() {
         assertFalse(
             builder.canParseConfiguration(Collections.emptyMap())
         );

@@ -11,7 +11,7 @@ public abstract class FixtureConfigurationBuilder extends AbstractConfigurationB
 
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
-        return "Fixtures".equalsIgnoreCase((String) config.get("elevator"));
+        return "Fixtures".equalsIgnoreCase((String) config.get("sections"));
     }
 
     protected final FixtureConfiguration createBaseConfiguration(Map<String, Object> config, String type) {

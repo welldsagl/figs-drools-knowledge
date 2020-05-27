@@ -23,7 +23,7 @@ public class TestKsIndicatorConfigurationBuilder {
     @DisplayName("can convert a ks indicator configuration")
     public void testCanParseKsIndicatorConfiguration() {
         assertTrue(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "KS Indicator"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "KS Indicator"))
         );
     }
 
@@ -31,13 +31,13 @@ public class TestKsIndicatorConfigurationBuilder {
     @DisplayName("cannot convert a not ks indicator configuration")
     public void testCannotParseNonKsIndicatorConfiguration() {
         assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Fixtures"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Fixtures"))
         );
     }
 
     @Test
-    @DisplayName("cannot convert a configuration with no 'elevator' field")
-    public void testCannotParseConfigurationWithNoElevatorKey() {
+    @DisplayName("cannot convert a configuration with no 'sections' field")
+    public void testCannotParseConfigurationWithNoSectionsKey() {
         assertFalse(
             builder.canParseConfiguration(Collections.emptyMap())
         );

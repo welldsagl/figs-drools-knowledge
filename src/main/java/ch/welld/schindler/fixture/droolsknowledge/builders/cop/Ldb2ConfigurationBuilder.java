@@ -15,7 +15,7 @@ import javax.enterprise.context.ApplicationScoped;
 public class Ldb2ConfigurationBuilder extends AbstractConfigurationBuilder implements CopConfiguration {
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
-        return "LDB2".equalsIgnoreCase((String) config.get("elevator"));
+        return "LDB2".equalsIgnoreCase((String) config.get("sections"));
     }
 
     @Override

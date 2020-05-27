@@ -41,7 +41,7 @@ public class LampConfigurationBuilder extends AbstractConfigurationBuilder imple
 
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
-        return "Lamps".equalsIgnoreCase((String) config.get("elevator"));
+        return "Lamps".equalsIgnoreCase((String) config.get("sections"));
     }
 
     private ComponentConfiguration createBaseConfiguration(Map<String, Object> config, String lamp) {

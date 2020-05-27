@@ -14,7 +14,7 @@ import java.util.Map;
 public class KeySwitchConfigurationBuilder extends AbstractConfigurationBuilder implements CopConfiguration {
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
-        return "key switches".equalsIgnoreCase((String) config.get("elevator"));
+        return "key switches".equalsIgnoreCase((String) config.get("sections"));
     }
 
     @Override

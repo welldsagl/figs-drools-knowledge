@@ -1,4 +1,4 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders.common;
+package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.builders.InvalidConfigurationFormatException;
@@ -13,25 +13,15 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("test indicator configuration builder")
-public class TestIndicatorConfigurationBuilder {
+public class TestCopIndicatorConfigurationBuilder {
 
-    private IndicatorConfigurationBuilder builder = new IndicatorConfigurationBuilder() {
-        @Override
-        public String getCableLengthKey() {
-            return null;
-        }
-
-        @Override
-        public String getComponentType() {
-            return null;
-        }
-    };
+    private CopIndicatorConfigurationBuilder builder = new CopIndicatorConfigurationBuilder();
 
     @Test
     @DisplayName("can convert an indicator configuration")
     public void testCanParseIndicatorConfiguration() {
         assertTrue(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Indicator"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Indicator"))
         );
     }
 
@@ -39,13 +29,13 @@ public class TestIndicatorConfigurationBuilder {
     @DisplayName("cannot convert a not indicator configuration")
     public void testCannotParseNonIndicatorConfiguration() {
         assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Fixtures"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Fixtures"))
         );
     }
 
     @Test
-    @DisplayName("cannot convert a configuration with no 'elevator' field")
-    public void testCannotParseConfigurationWithNoElevatorKey() {
+    @DisplayName("cannot convert a configuration with no 'sections' field")
+    public void testCannotParseConfigurationWithNoSectionsKey() {
         assertFalse(
             builder.canParseConfiguration(Collections.emptyMap())
         );

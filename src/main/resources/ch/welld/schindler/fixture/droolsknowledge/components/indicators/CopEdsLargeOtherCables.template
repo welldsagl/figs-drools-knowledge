@@ -1,6 +1,6 @@
 <rule>
-  <name>EdsLargeOtherCables</name>
-  <parentName>EDS Large Indicator Cables</parentName>
+  <name>CopEdsLargeOtherCables</name>
+  <parentName>COP EDS Large Indicator Cables</parentName>
   <modelVersion>1.0</modelVersion>
   <attributes/>
   <metadataList/>

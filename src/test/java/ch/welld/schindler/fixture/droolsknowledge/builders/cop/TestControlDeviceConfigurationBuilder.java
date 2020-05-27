@@ -25,7 +25,7 @@ public class TestControlDeviceConfigurationBuilder {
     @DisplayName("can convert a control device configuration")
     public void testCanParseControlDeviceConfiguration() {
         assertTrue(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Control Device"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Control Device"))
         );
     }
 
@@ -33,13 +33,13 @@ public class TestControlDeviceConfigurationBuilder {
     @DisplayName("cannot convert a not control device configuration")
     public void testCannotParseNonControlDeviceConfiguration() {
         assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Fixtures"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Fixtures"))
         );
     }
 
     @Test
-    @DisplayName("cannot convert a configuration with no 'elevator' field")
-    public void testCannotParseConfigurationWithNoElevatorKey() {
+    @DisplayName("cannot convert a configuration with no 'sections' field")
+    public void testCannotParseConfigurationWithNoSectionsKey() {
         assertFalse(
             builder.canParseConfiguration(Collections.emptyMap())
         );

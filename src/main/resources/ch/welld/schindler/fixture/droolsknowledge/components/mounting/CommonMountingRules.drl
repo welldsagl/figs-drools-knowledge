@@ -1,0 +1,7 @@
+package ch.welld.schindler.fixture.droolsknowledge.components.mounting;
+
+rule "LOP Mounting"
+    when
+        MountingConfiguration( componentType == "LOP" )
+    then
+end

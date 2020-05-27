@@ -15,8 +15,7 @@ import java.util.Map;
 public class ThirdPartElementConfigurationBuilder extends AbstractConfigurationBuilder implements CopConfiguration {
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
-        // TODO IS IT OK?
-        return "thirdpartelements".equalsIgnoreCase((String) config.get("elevator"));
+        return "thirdpartelements".equalsIgnoreCase((String) config.get("sections"));
     }
 
     @Override

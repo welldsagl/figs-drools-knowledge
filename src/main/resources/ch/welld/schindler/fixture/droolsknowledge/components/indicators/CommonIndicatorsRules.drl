@@ -4,19 +4,43 @@ import ch.welld.schindler.fixture.droolsknowledge.materials.CableRequest;
 import java.util.Map;
 import java.util.HashMap;
 
-rule "TFT Indicators"
+rule "COP Indicators"
+    when
+        IndicatorConfiguration( componentType == "COP" )
+    then
+end
+
+rule "COP TFT Indicators" extends "COP Indicators"
     when
         IndicatorConfiguration( indicatorType == "TFT" )
     then
 end
 
-rule "EDS Indicators"
+rule "COP EDS Indicators" extends "COP Indicators"
     when
         IndicatorConfiguration( indicatorType == "EDS" )
     then
 end
 
-rule "DMI Indicators"
+rule "COP DMI Indicators" extends "COP Indicators"
+    when
+        IndicatorConfiguration( indicatorType == "DMI" )
+    then
+end
+
+rule "LOP Indicators"
+    when
+        IndicatorConfiguration( componentType == "LOP" )
+    then
+end
+
+rule "LOP TFT Indicators" extends "LOP Indicators"
+    when
+        IndicatorConfiguration( indicatorType == "TFT" )
+    then
+end
+
+rule "LOP DMI Indicators" extends "LOP Indicators"
     when
         IndicatorConfiguration( indicatorType == "DMI" )
     then
@@ -30,20 +54,32 @@ function Map<String, Object> createIndicatorsMetadata(IndicatorConfiguration con
     return m;
 }
 
-rule "TFT DMI Indicator Cables"
+rule "COP TFT DMI Indicator Cables"
     when
-        IndicatorConfiguration( indicatorType in ( "DMI", "TFT" ) ) or CableRequest()
+        CableRequest() or IndicatorConfiguration( componentType == "COP", indicatorType in ( "DMI", "TFT" ) )
     then
 end
 
-rule "EDS Indicator Cables"
+rule "COP EDS Indicator Cables"
     when
-        CableRequest() or IndicatorConfiguration( indicatorType == "EDS" )
+        CableRequest() or IndicatorConfiguration( componentType == "COP", indicatorType == "EDS" )
     then
 end
 
-rule "EDS Large Indicator Cables"
+rule "COP EDS Large Indicator Cables"
     when
-        CableRequest() or IndicatorConfiguration( indicatorType == "EDS" && displaySize in ( "12", "15" ))
+        CableRequest() or IndicatorConfiguration( componentType == "COP", indicatorType == "EDS", displaySize in ( "12", "15" ))
+    then
+end
+
+rule "LOP Standard Indicator Cables"
+    when
+        CableRequest( length in (5000,10000,15000,20000) ) or IndicatorConfiguration( componentType == "LOP", cableLength in (5000,10000,15000,20000) )
+    then
+end
+
+rule "LOP On Commission Indicator Cables"
+    when
+        CableRequest( length not in (5000,10000,15000,20000) ) or IndicatorConfiguration( componentType == "LOP", cableLength not in (5000,10000,15000,20000) )
     then
 end

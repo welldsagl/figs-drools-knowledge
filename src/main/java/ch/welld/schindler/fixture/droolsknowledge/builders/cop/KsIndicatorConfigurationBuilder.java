@@ -15,7 +15,7 @@ import java.util.Optional;
 public class KsIndicatorConfigurationBuilder extends AbstractConfigurationBuilder implements CopConfiguration {
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
-        return "KS Indicator".equalsIgnoreCase((String) config.get("elevator"));
+        return "KS Indicator".equalsIgnoreCase((String) config.get("sections"));
     }
 
     @Override

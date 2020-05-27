@@ -1,0 +1,39 @@
+package ch.welld.schindler.fixture.droolsknowledge.components.loppanel;
+
+import ch.welld.schindler.fixture.droolsknowledge.materials.CableRequest;
+
+rule "LOP Panel"
+    when
+        LopPanelConfiguration()
+    then
+end
+
+rule "LOP Without Indicator Panel"
+    when
+        LopPanelConfiguration( lopType == "WITHOUT" )
+    then
+end
+
+rule "LOP Single Indicator Panel"
+    when
+        LopPanelConfiguration( lopType == "SINGLE" )
+    then
+end
+
+rule "LOP Double Indicator Panel"
+    when
+        LopPanelConfiguration( lopType == "DOUBLE" )
+    then
+end
+
+rule "LOP Panel Standard Cables"
+    when
+        CableRequest( length in (5000,10000,15000,20000) ) or LopPanelConfiguration( componentType == "LOP", cableLength in (5000,10000,15000,20000) )
+    then
+end
+
+rule "LOP Panel On Commission Cables"
+    when
+        CableRequest( length not in (5000,10000,15000,20000) ) or LopPanelConfiguration( componentType == "LOP", cableLength not in (5000,10000,15000,20000) )
+    then
+end

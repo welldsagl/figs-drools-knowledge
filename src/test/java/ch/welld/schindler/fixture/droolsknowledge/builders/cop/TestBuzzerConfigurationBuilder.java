@@ -22,7 +22,7 @@ public class TestBuzzerConfigurationBuilder {
     @DisplayName("can convert a buzzer configuration")
     public void testCanParseBuzzerConfiguration() {
         assertTrue(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Buzzer"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Buzzer"))
         );
     }
 
@@ -30,13 +30,13 @@ public class TestBuzzerConfigurationBuilder {
     @DisplayName("cannot convert a not buzzer configuration")
     public void testCannotParseNonBuzzerConfiguration() {
         assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("elevator", "Fixtures"))
+            builder.canParseConfiguration(Collections.singletonMap("sections", "Fixtures"))
         );
     }
 
     @Test
-    @DisplayName("cannot convert a configuration with no 'elevator' field")
-    public void testCannotParseConfigurationWithNoElevatorKey() {
+    @DisplayName("cannot convert a configuration with no 'sections' field")
+    public void testCannotParseConfigurationWithNoSectionsKey() {
         assertFalse(
             builder.canParseConfiguration(Collections.emptyMap())
         );
