@@ -13,6 +13,8 @@ public class MountingConfiguration extends BaseConfiguration {
 
     private String lopType;
 
+    private String lipType;
+
     private String fixtureFamily;
 
     private Integer buttonCount;
@@ -44,6 +46,14 @@ public class MountingConfiguration extends BaseConfiguration {
         this.lopType = lopType;
     }
 
+    public String getLipType() {
+        return this.lipType;
+    }
+
+    public void setLipType(String lipType) {
+        this.lipType = lipType;
+    }
+
     public String getFixtureFamily() {
         return this.fixtureFamily;
     }
@@ -64,12 +74,14 @@ public class MountingConfiguration extends BaseConfiguration {
         String mountingType,
         NullableBoolean ipx3,
         String lopType,
+        String lipType,
         String fixtureFamily,
         Integer buttonCount
     ) {
         this.mountingType = mountingType;
         this.ipx3 = ipx3;
         this.lopType = lopType;
+        this.lipType = lipType;
         this.fixtureFamily = fixtureFamily;
         this.buttonCount = buttonCount;
     }

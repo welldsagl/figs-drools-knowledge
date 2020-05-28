@@ -37,6 +37,11 @@ public class TestMountingConfigurationBuilder {
         protected String getLopType(Map<String, Object> config) {
             return "WITHOUT";
         }
+
+        @Override
+        protected String getLipType(Map<String, Object> config) {
+            return "HORIZONTAL";
+        }
     };
 
     @Test
