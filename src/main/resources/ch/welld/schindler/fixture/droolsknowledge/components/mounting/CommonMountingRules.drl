@@ -5,3 +5,9 @@ rule "LOP Mounting"
         MountingConfiguration( componentType == "LOP" )
     then
 end
+
+rule "LIP Mounting"
+    when
+        MountingConfiguration( componentType == "LIP" )
+    then
+end

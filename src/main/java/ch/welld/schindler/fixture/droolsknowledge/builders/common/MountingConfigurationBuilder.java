@@ -26,6 +26,7 @@ public abstract class MountingConfigurationBuilder extends AbstractConfiguration
             !mountingType.contains("without")
         ));
         mc.setLopType(getLopType(config));
+        mc.setLipType(getLipType(config));
         mc.setFixtureFamily((String) config.get("fixtureFamily"));
         mc.setButtonCount(getButtonCount(config));
         return Collections.singletonList(
@@ -39,4 +40,6 @@ public abstract class MountingConfigurationBuilder extends AbstractConfiguration
     protected abstract Integer getButtonCount(Map<String, Object> config);
 
     protected abstract String getLopType(Map<String, Object> config);
+
+    protected abstract String getLipType(Map<String, Object> config);
 }

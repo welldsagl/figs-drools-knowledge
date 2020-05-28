@@ -8,3 +8,4 @@
 'IndicatorConfiguration.cableType' : ['PVC/CCC','UL','HLF']
 'IndicatorConfiguration.edsType' : ['MASTER','SLAVE']
 'IndicatorConfiguration.lopType' : ['SINGLE','DOUBLE','WITHOUT']
+'IndicatorConfiguration.lipType' : ['HORIZONTAL','VERTICAL']

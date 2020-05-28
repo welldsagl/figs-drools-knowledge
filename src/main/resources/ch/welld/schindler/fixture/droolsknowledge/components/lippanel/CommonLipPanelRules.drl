@@ -1,0 +1,19 @@
+package ch.welld.schindler.fixture.droolsknowledge.components.lippanel;
+
+rule "LIP Panel"
+    when
+        LipPanelConfiguration()
+    then
+end
+
+rule "LIP Horizontal Panel"
+    when
+        LipPanelConfiguration( lipType == "HORIZONTAL" )
+    then
+end
+
+rule "LIP Vertical Panel"
+    when
+        LipPanelConfiguration( lipType == "VERTICAL" )
+    then
+end

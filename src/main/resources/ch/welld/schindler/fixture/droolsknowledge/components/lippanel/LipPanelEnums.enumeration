@@ -1,0 +1,4 @@
+'LipPanelConfiguration.glass' : ['BLACK','SLR']
+'LipPanelConfiguration.panelPackage' : ['MIRROR','HAIRLINE']
+'LipPanelConfiguration.lipType' : ['HORIZONTAL','VERTICAL']
+'LipPanelConfiguration.indicatorFamily' : ['DMI','TFT']
