@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.kie.soup.commons.util.Maps;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,6 +42,18 @@ public class TestLipIndicatorConfigurationBuilder {
     }
 
     @Test
+    @DisplayName("convert into an empty list if lip quantity is zero")
+    public void testEmptyConfigurationList() {
+        List<ComponentConfiguration> configuration = builder.getConfigurations(
+            new Maps.Builder<String, Object>()
+                .put("quantity", BigDecimal.ZERO)
+                .build()
+        );
+        assertNotNull(configuration);
+        assertTrue(configuration.isEmpty());
+    }
+
+    @Test
     @DisplayName("convert a correct configuration")
     public void testParseConfiguration() {
         List<ComponentConfiguration> configuration = builder.getConfigurations(
@@ -48,12 +61,13 @@ public class TestLipIndicatorConfigurationBuilder {
                 .put("color", "amber")
                 .put("indicatorFamily", "DMI")
                 .put("lipType", "Horizontal")
+                .put("quantity", new BigDecimal(3))
                 .put("gong", true)
                 .build()
         );
         assertNotNull(configuration);
         assertEquals(1, configuration.size());
-        assertEquals(1, configuration.get(0).getCount());
+        assertEquals(3, configuration.get(0).getCount());
         assertTrue(configuration.get(0).getConfiguration() instanceof IndicatorConfiguration);
         IndicatorConfiguration indicatorConfiguration =
             (IndicatorConfiguration) configuration.get(0).getConfiguration();
@@ -70,7 +84,10 @@ public class TestLipIndicatorConfigurationBuilder {
         assertThrows(
             InvalidConfigurationFormatException.class,
             () -> builder.getConfigurations(
-                Collections.singletonMap("gong", "not a boolean")
+                new Maps.Builder<String,Object>()
+                    .put("quantity", new BigDecimal(3))
+                    .put("gong", "not a boolean")
+                    .build()
             )
         );
     }

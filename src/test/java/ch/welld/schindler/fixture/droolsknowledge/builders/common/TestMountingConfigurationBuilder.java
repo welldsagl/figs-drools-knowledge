@@ -1,7 +1,6 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders.common;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
-import ch.welld.schindler.fixture.droolsknowledge.builders.InvalidConfigurationFormatException;
 import ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean;
 import ch.welld.schindler.fixture.droolsknowledge.components.mounting.MountingConfiguration;
 import org.junit.jupiter.api.DisplayName;
@@ -19,6 +18,11 @@ public class TestMountingConfigurationBuilder {
 
     private MountingConfigurationBuilder builder = new MountingConfigurationBuilder() {
         @Override
+        protected List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
+            return null;
+        }
+
+        @Override
         public String getCableLengthKey() {
             return null;
         }
@@ -26,11 +30,6 @@ public class TestMountingConfigurationBuilder {
         @Override
         public String getComponentType() {
             return null;
-        }
-
-        @Override
-        protected Integer getButtonCount(Map<String, Object> config) {
-            return 1;
         }
 
         @Override
@@ -71,61 +70,49 @@ public class TestMountingConfigurationBuilder {
     @Test
     @DisplayName("convert a surface mounting configuration")
     public void testParseSurfaceConfiguration() {
-        List<ComponentConfiguration> configuration = builder.getConfigurations(
+        MountingConfiguration mc = builder.createBaseConfiguration(
             new Maps.Builder<String,Object>()
                 .put("mounting", "surface")
                 .build()
         );
-        assertNotNull(configuration);
-        assertEquals(1, configuration.size());
-        assertEquals(1, configuration.get(0).getCount());
-        assertTrue(configuration.get(0).getConfiguration() instanceof MountingConfiguration);
-        MountingConfiguration mountingConfiguration =
-            (MountingConfiguration) configuration.get(0).getConfiguration();
+        assertNotNull(mc);
 
-        assertEquals("SURFACE", mountingConfiguration.getMountingType());
-        assertEquals(NullableBoolean.NO, mountingConfiguration.getIpx3());
+        assertEquals("SURFACE", mc.getMountingType());
+        assertEquals(NullableBoolean.NO, mc.getIpx3());
+        assertEquals("WITHOUT", mc.getLopType());
+        assertEquals("HORIZONTAL", mc.getLipType());
     }
 
     @Test
     @DisplayName("convert a wallbox with ipx3 mounting configuration")
     public void testParseWallboxWithIpx3Configuration() {
-        List<ComponentConfiguration> configuration = builder.getConfigurations(
+        MountingConfiguration mc = builder.createBaseConfiguration(
             new Maps.Builder<String,Object>()
                 .put("mounting", "wallbox with ipx3")
                 .build()
         );
-        MountingConfiguration mountingConfiguration =
-            (MountingConfiguration) configuration.get(0).getConfiguration();
+        assertNotNull(mc);
 
-        assertEquals("WALLBOX", mountingConfiguration.getMountingType());
-        assertEquals(NullableBoolean.YES, mountingConfiguration.getIpx3());
+        assertEquals("WALLBOX", mc.getMountingType());
+        assertEquals(NullableBoolean.YES, mc.getIpx3());
+        assertEquals("WITHOUT", mc.getLopType());
+        assertEquals("HORIZONTAL", mc.getLipType());
     }
 
     @Test
     @DisplayName("convert a wallbox without ipx3 mounting configuration")
     public void testParseWallboxWithoutIpx3Configuration() {
-        List<ComponentConfiguration> configuration = builder.getConfigurations(
+        MountingConfiguration mc = builder.createBaseConfiguration(
             new Maps.Builder<String,Object>()
                 .put("mounting", "wallbox without ipx3")
                 .build()
         );
-        MountingConfiguration mountingConfiguration =
-            (MountingConfiguration) configuration.get(0).getConfiguration();
+        assertNotNull(mc);
 
-        assertEquals("WALLBOX", mountingConfiguration.getMountingType());
-        assertEquals(NullableBoolean.NO, mountingConfiguration.getIpx3());
-    }
-
-    @Test
-    @DisplayName("throws the correct exception with an incorrect configuration")
-    public void testThrowsInvalidConfigurationFormatException() {
-        assertThrows(
-            InvalidConfigurationFormatException.class,
-            () -> builder.getConfigurations(
-                Collections.singletonMap("mounting", 1) // not a string
-            )
-        );
+        assertEquals("WALLBOX", mc.getMountingType());
+        assertEquals(NullableBoolean.NO, mc.getIpx3());
+        assertEquals("WITHOUT", mc.getLopType());
+        assertEquals("HORIZONTAL", mc.getLipType());
     }
 
 }

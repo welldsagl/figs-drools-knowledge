@@ -1,6 +1,6 @@
 <rule>
   <name>LopSealingFoam</name>
-  <parentName>LOP Mounting</parentName>
+  <parentName>Sealing Foam</parentName>
   <modelVersion>1.0</modelVersion>
   <attributes/>
   <metadataList/>
@@ -17,7 +17,7 @@
               <index>2147483647</index>
             </expression>
             <parameters/>
-            <factType>MountingConfiguration</factType>
+            <factType>SealingFoamConfiguration</factType>
             <fieldName>fixtureFamily</fieldName>
             <fieldType>String</fieldType>
           </fieldConstraint>
@@ -30,7 +30,7 @@
               <index>2147483647</index>
             </expression>
             <parameters/>
-            <factType>MountingConfiguration</factType>
+            <factType>SealingFoamConfiguration</factType>
             <fieldName>lopType</fieldName>
             <fieldType>String</fieldType>
           </fieldConstraint>
@@ -43,13 +43,13 @@
               <index>2147483647</index>
             </expression>
             <parameters/>
-            <factType>MountingConfiguration</factType>
+            <factType>SealingFoamConfiguration</factType>
             <fieldName>ipx3</fieldName>
             <fieldType>Comparable</fieldType>
           </fieldConstraint>
         </constraints>
       </constraintList>
-      <factType>MountingConfiguration</factType>
+      <factType>SealingFoamConfiguration</factType>
       <boundName>config</boundName>
       <isNegated>false</isNegated>
       <window>
@@ -71,12 +71,6 @@
           <value>$materialCode</value>
           <nature>7</nature>
           <type>String</type>
-        </fieldValue>
-        <fieldValue>
-          <field>quantity</field>
-          <value>config.getButtonCount()</value>
-          <nature>3</nature>
-          <type>Integer</type>
         </fieldValue>
       </fieldValues>
       <factType>Material</factType>

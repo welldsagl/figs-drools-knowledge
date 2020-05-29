@@ -3,7 +3,7 @@ package ch.welld.schindler.fixture.droolsknowledge.components.mounting;
 import ch.welld.schindler.fixture.droolsknowledge.builders.BaseConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean;
 
-public class MountingConfiguration extends BaseConfiguration {
+public class SealingFoamConfiguration extends BaseConfiguration {
 
     static final long serialVersionUID = 1L;
 
@@ -11,11 +11,11 @@ public class MountingConfiguration extends BaseConfiguration {
 
     private NullableBoolean ipx3;
 
+    private String fixtureFamily;
+
     private String lopType;
 
-    private String lipType;
-
-    public MountingConfiguration() {
+    public SealingFoamConfiguration() {
     }
 
     public String getMountingType() {
@@ -34,6 +34,14 @@ public class MountingConfiguration extends BaseConfiguration {
         this.ipx3 = ipx3;
     }
 
+    public String getFixtureFamily() {
+        return this.fixtureFamily;
+    }
+
+    public void setFixtureFamily(String fixtureFamily) {
+        this.fixtureFamily = fixtureFamily;
+    }
+
     public String getLopType() {
         return this.lopType;
     }
@@ -42,23 +50,15 @@ public class MountingConfiguration extends BaseConfiguration {
         this.lopType = lopType;
     }
 
-    public String getLipType() {
-        return this.lipType;
-    }
-
-    public void setLipType(String lipType) {
-        this.lipType = lipType;
-    }
-
-    public MountingConfiguration(
+    public SealingFoamConfiguration(
         String mountingType,
         NullableBoolean ipx3,
-        String lopType,
-        String lipType
+        String fixtureFamily,
+        String lopType
     ) {
         this.mountingType = mountingType;
         this.ipx3 = ipx3;
+        this.fixtureFamily = fixtureFamily;
         this.lopType = lopType;
-        this.lipType = lipType;
     }
 }

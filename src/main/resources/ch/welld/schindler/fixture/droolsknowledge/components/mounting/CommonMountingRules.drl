@@ -11,3 +11,9 @@ rule "LIP Mounting"
         MountingConfiguration( componentType == "LIP" )
     then
 end
+
+rule "Sealing Foam"
+    when
+        SealingFoamConfiguration ()
+    then
+end

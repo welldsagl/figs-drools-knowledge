@@ -1,3 +1,5 @@
-'MountingConfiguration.lipType' : ['HORIZONTAL','VERTICAL']
+'MountingConfiguration.mountingType' : ['SURFACE','WALLBOX']
 'MountingConfiguration.lopType' : ['SINGLE','DOUBLE','WITHOUT']
-'MountingConfiguration.fixtureFamily' : ['AT','DT','MT','GST']
+'MountingConfiguration.lipType' : ['HORIZONTAL','VERTICAL']
+'SealingFoamConfiguration.mountingType' : ['SURFACE','WALLBOX']
+'SealingFoamConfiguration.fixtureFamily' : ['AT','DT','MT','GST']

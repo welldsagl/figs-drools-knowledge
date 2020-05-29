@@ -3,6 +3,7 @@ package ch.welld.schindler.fixture.droolsknowledge.builders.lop;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,19 +49,37 @@ public class TestLopBuilderHelper {
     }
 
     @Test
-    @DisplayName("get a button count of 2")
-    public void testGetButtonCountEquals2() {
+    @DisplayName("get a total button count equals to top floors quantity if it is the only provided quantity")
+    public void testGetTopFloorsButtonCount() {
         Map<String, Object> config = new HashMap<>();
-        config.put("position", "MIDDLE");
+        config.put("topFloors", new BigDecimal(5));
+        assertEquals(5, LopBuilderHelper.getButtonCount(config));
+    }
+
+    @Test
+    @DisplayName("get a total button count equals to bottom floors quantity if it is the only provided quantity")
+    public void testGetBottomFloorsButtonCount() {
+        Map<String, Object> config = new HashMap<>();
+        config.put("bottomFloors", new BigDecimal(2));
         assertEquals(2, LopBuilderHelper.getButtonCount(config));
     }
 
     @Test
-    @DisplayName("get a button count of 1")
-    public void testGetButtonCountEquals1() {
+    @DisplayName("get a total button count equals to the double of middle floors quantity if it is the only provided quantity")
+    public void testGetMiddleFloorsButtonCount() {
         Map<String, Object> config = new HashMap<>();
-        config.put("position", "Unknown");
-        assertEquals(1, LopBuilderHelper.getButtonCount(config));
+        config.put("middleFloors", new BigDecimal(5));
+        assertEquals(10, LopBuilderHelper.getButtonCount(config));
+    }
+
+    @Test
+    @DisplayName("get a total button count equals to the sum of top, bottom and middle floors quantities")
+    public void testGetAllFloorsButtonCount() {
+        Map<String, Object> config = new HashMap<>();
+        config.put("topFloors", new BigDecimal(2));
+        config.put("middleFloors", new BigDecimal(5));
+        config.put("bottomFloors", new BigDecimal(3));
+        assertEquals(15, LopBuilderHelper.getButtonCount(config));
     }
 
     @Test
@@ -71,4 +90,45 @@ public class TestLopBuilderHelper {
         assertEquals("the indicator family", LopBuilderHelper.getIndicatorFamily(config));
     }
 
+    @Test
+    @DisplayName("get configuration's fixture family")
+    public void testGetFixtureFamily() {
+        Map<String, Object> config = new HashMap<>();
+        config.put("fixtureFamily", "the fixture family");
+        assertEquals("the fixture family", LopBuilderHelper.getFixtureFamily(config));
+    }
+
+    @Test
+    @DisplayName("get top floors count")
+    public void testGetTopFloorsCount() {
+        Map<String, Object> config = new HashMap<>();
+        config.put("topFloors", new BigDecimal(4));
+        assertEquals(4, LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.TOP));
+    }
+
+    @Test
+    @DisplayName("get middle floors count")
+    public void testGetMiddleFloorsCount() {
+        Map<String, Object> config = new HashMap<>();
+        config.put("middleFloors", new BigDecimal(4));
+        assertEquals(4, LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.MIDDLE));
+    }
+
+    @Test
+    @DisplayName("get bottom floors count")
+    public void testGetBottomFloorsCount() {
+        Map<String, Object> config = new HashMap<>();
+        config.put("bottomFloors", new BigDecimal(4));
+        assertEquals(4, LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.BOTTOM));
+    }
+
+    @Test
+    @DisplayName("get total floors count")
+    public void testGetTotalFloorsCount() {
+        Map<String, Object> config = new HashMap<>();
+        config.put("topFloors", new BigDecimal(1));
+        config.put("middleFloors", new BigDecimal(2));
+        config.put("bottomFloors", new BigDecimal(3));
+        assertEquals(6, LopBuilderHelper.getTotalFloorsCount(config));
+    }
 }
