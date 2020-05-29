@@ -21,6 +21,9 @@ public class LopIndicatorConfigurationBuilder extends AbstractConfigurationBuild
 
     @Override
     public List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
+        if (LopBuilderHelper.getTotalFloorsCount(config) == 0) {
+            return Collections.emptyList();
+        }
         IndicatorConfiguration ic = new IndicatorConfiguration();
         ic.setDisplayColor(Optional
             .ofNullable(config.get("color"))
@@ -30,10 +33,13 @@ public class LopIndicatorConfigurationBuilder extends AbstractConfigurationBuild
         String lopType = LopBuilderHelper.getLopType(config);
         ic.setLopType(lopType);
 
+        int quantity = LopBuilderHelper.getTotalFloorsCount(config)
+            * (lopType.equalsIgnoreCase("DOUBLE") ? 2 : 1);
+
         return Collections.singletonList(
             new ComponentConfiguration(
                 ic,
-                lopType != null && lopType.equalsIgnoreCase("DOUBLE") ? 2 : 1
+                quantity
             )
         );
     }

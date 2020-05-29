@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.kie.soup.commons.util.Maps;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 
@@ -42,6 +43,18 @@ public class TestLopIndicatorConfigurationBuilder {
     }
 
     @Test
+    @DisplayName("convert into an empty list if floors quantity is zero")
+    public void testEmptyConfigurationList() {
+        List<ComponentConfiguration> configuration = builder.getConfigurations(
+            new Maps.Builder<String, Object>()
+                .put("topFloors", BigDecimal.ZERO)
+                .build()
+        );
+        assertNotNull(configuration);
+        assertTrue(configuration.isEmpty());
+    }
+
+    @Test
     @DisplayName("convert a correct configuration")
     public void testParseConfiguration() {
         List<ComponentConfiguration> configuration = builder.getConfigurations(
@@ -49,11 +62,14 @@ public class TestLopIndicatorConfigurationBuilder {
                 .put("color", "amber")
                 .put("indicatorFamily", "TFT")
                 .put("lopType", "Single Indicator")
+                .put("topFloors", new BigDecimal(2))
+                .put("middleFloors", new BigDecimal(3))
+                .put("bottomFloors", new BigDecimal(4))
                 .build()
         );
         assertNotNull(configuration);
         assertEquals(1, configuration.size());
-        assertEquals(1, configuration.get(0).getCount());
+        assertEquals(9, configuration.get(0).getCount()); // 2 + 3 + 4
         assertTrue(configuration.get(0).getConfiguration() instanceof IndicatorConfiguration);
         IndicatorConfiguration indicatorConfiguration =
             (IndicatorConfiguration) configuration.get(0).getConfiguration();
@@ -64,16 +80,19 @@ public class TestLopIndicatorConfigurationBuilder {
     }
 
     @Test
-    @DisplayName("convert a correct configuration for a lop with two indicators (quantity = 2)")
+    @DisplayName("convert a correct configuration for a lop with two indicators (double quantity)")
     public void testParseConfigurationForDoubleIndicatorLop() {
         List<ComponentConfiguration> configuration = builder.getConfigurations(
             new Maps.Builder<String,Object>()
                 .put("color", "amber")
                 .put("indicatorFamily", "TFT")
                 .put("lopType", "Two Indicators")
+                .put("topFloors", new BigDecimal(2))
+                .put("middleFloors", new BigDecimal(3))
+                .put("bottomFloors", new BigDecimal(4))
                 .build()
         );
-        assertEquals(2, configuration.get(0).getCount());
+        assertEquals(18, configuration.get(0).getCount()); // 2 * (2 + 3 + 4)
     }
 
     @Test
@@ -82,7 +101,10 @@ public class TestLopIndicatorConfigurationBuilder {
         assertThrows(
             InvalidConfigurationFormatException.class,
             () -> builder.getConfigurations(
-                Collections.singletonMap("indicatorFamily", 1) // not a string
+                new Maps.Builder<String, Object>()
+                    .put("topFloors", BigDecimal.ONE)
+                    .put("indicatorFamily", 1) // not a string
+                    .build()
             )
         );
     }

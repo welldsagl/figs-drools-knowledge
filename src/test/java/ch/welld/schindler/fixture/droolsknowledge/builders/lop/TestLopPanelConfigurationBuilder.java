@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.kie.soup.commons.util.Maps;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 
@@ -42,6 +43,18 @@ public class TestLopPanelConfigurationBuilder {
     }
 
     @Test
+    @DisplayName("convert into an empty list if floors quantity is zero")
+    public void testEmptyConfigurationList() {
+        List<ComponentConfiguration> configuration = builder.getConfigurations(
+            new Maps.Builder<String, Object>()
+                .put("topFloors", BigDecimal.ZERO)
+                .build()
+        );
+        assertNotNull(configuration);
+        assertTrue(configuration.isEmpty());
+    }
+
+    @Test
     @DisplayName("convert a correct configuration")
     public void testParseConfiguration() {
         List<ComponentConfiguration> configuration = builder.getConfigurations(
@@ -52,11 +65,14 @@ public class TestLopPanelConfigurationBuilder {
                 .put("buttonPanel", "Mirror")
                 .put("lopType", "Two indicators")
                 .put("indicatorFamily", "DMI")
+                .put("topFloors", new BigDecimal(2))
+                .put("middleFloors", new BigDecimal(3))
+                .put("bottomFloors", new BigDecimal(4))
                 .build()
         );
         assertNotNull(configuration);
         assertEquals(1, configuration.size());
-        assertEquals(1, configuration.get(0).getCount());
+        assertEquals(9, configuration.get(0).getCount()); // 2 + 3 + 4
         assertTrue(configuration.get(0).getConfiguration() instanceof LopPanelConfiguration);
         LopPanelConfiguration lopPanelConfiguration =
             (LopPanelConfiguration) configuration.get(0).getConfiguration();
@@ -75,7 +91,10 @@ public class TestLopPanelConfigurationBuilder {
         assertThrows(
             InvalidConfigurationFormatException.class,
             () -> builder.getConfigurations(
-                Collections.singletonMap("indicatorFamily", 1) // not a string
+                new Maps.Builder<String, Object>()
+                    .put("topFloors", BigDecimal.ONE)
+                    .put("indicatorFamily", BigDecimal.ZERO) // not a string
+                    .build()
             )
         );
     }

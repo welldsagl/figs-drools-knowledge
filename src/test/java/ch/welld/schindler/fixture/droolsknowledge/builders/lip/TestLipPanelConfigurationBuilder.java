@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.kie.soup.commons.util.Maps;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,6 +42,18 @@ public class TestLipPanelConfigurationBuilder {
     }
 
     @Test
+    @DisplayName("convert into an empty list if lip quantity is zero")
+    public void testEmptyConfigurationList() {
+        List<ComponentConfiguration> configuration = builder.getConfigurations(
+            new Maps.Builder<String, Object>()
+                .put("quantity", BigDecimal.ZERO)
+                .build()
+        );
+        assertNotNull(configuration);
+        assertTrue(configuration.isEmpty());
+    }
+
+    @Test
     @DisplayName("convert a correct configuration")
     public void testParseConfiguration() {
         List<ComponentConfiguration> configuration = builder.getConfigurations(
@@ -50,11 +63,12 @@ public class TestLipPanelConfigurationBuilder {
                 .put("panelPackage", "Mirror")
                 .put("lipType", "vertical")
                 .put("indicatorFamily", "DMI")
+                .put("quantity", new BigDecimal(2))
                 .build()
         );
         assertNotNull(configuration);
         assertEquals(1, configuration.size());
-        assertEquals(1, configuration.get(0).getCount());
+        assertEquals(2, configuration.get(0).getCount());
         assertTrue(configuration.get(0).getConfiguration() instanceof LipPanelConfiguration);
         LipPanelConfiguration lipPanelConfiguration =
             (LipPanelConfiguration) configuration.get(0).getConfiguration();
@@ -72,7 +86,10 @@ public class TestLipPanelConfigurationBuilder {
         assertThrows(
             InvalidConfigurationFormatException.class,
             () -> builder.getConfigurations(
-                Collections.singletonMap("panel", 2) // not a string
+                new Maps.Builder<String,Object>()
+                    .put("quantity", new BigDecimal(3))
+                    .put("panel", 2) // not a string
+                    .build()
             )
         );
     }

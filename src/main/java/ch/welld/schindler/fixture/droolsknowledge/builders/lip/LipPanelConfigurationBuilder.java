@@ -20,6 +20,9 @@ public class LipPanelConfigurationBuilder extends AbstractConfigurationBuilder i
 
     @Override
     public List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
+        if (LipBuilderHelper.getLipQuantity(config) == 0) {
+            return Collections.emptyList();
+        }
         LipPanelConfiguration lpc = new LipPanelConfiguration();
         if (config.containsKey("panel")) {
             lpc.setWithGlass(((String)config.get("panel")).equalsIgnoreCase("glass"));
@@ -31,7 +34,7 @@ public class LipPanelConfigurationBuilder extends AbstractConfigurationBuilder i
         return Collections.singletonList(
             new ComponentConfiguration(
                 lpc,
-                1
+                LipBuilderHelper.getLipQuantity(config)
             )
         );
     }

@@ -43,22 +43,13 @@ public class LopFixtureConfigurationBuilder extends FixtureConfigurationBuilder 
     @Override
     public List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
         List<ComponentConfiguration> configList = new ArrayList<>();
-        int upButtons = 0;
-        int downButtons = 0;
-        switch (getUpperCaseString(config, "position")) {
-            case "TOP":
-                downButtons = 1;
-                break;
-            case "BOTTOM":
-                upButtons = 1;
-                break;
-            case "MIDDLE":
-                upButtons = 1;
-                downButtons = 1;
-                break;
-            default:
-                break;
-        }
+
+        int topFloors = LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.TOP);
+        int middleFloors = LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.MIDDLE);
+        int bottomFloors = LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.BOTTOM);
+
+        int upButtons = middleFloors + bottomFloors;
+        int downButtons = middleFloors + topFloors;
 
         if (upButtons > 0) {
             configList.add(new ComponentConfiguration(createBaseConfiguration(config, FixtureType.UP.toString()), upButtons));

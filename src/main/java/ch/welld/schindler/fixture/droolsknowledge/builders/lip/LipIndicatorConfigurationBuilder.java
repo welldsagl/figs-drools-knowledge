@@ -21,6 +21,9 @@ public class LipIndicatorConfigurationBuilder extends AbstractConfigurationBuild
 
     @Override
     public List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
+        if (LipBuilderHelper.getLipQuantity(config) == 0) {
+            return Collections.emptyList();
+        }
         IndicatorConfiguration ic = new IndicatorConfiguration();
         ic.setDisplayColor(Optional
             .ofNullable(config.get("color"))
@@ -30,7 +33,12 @@ public class LipIndicatorConfigurationBuilder extends AbstractConfigurationBuild
         ic.setLipType(LipBuilderHelper.getLipType(config));
         ic.setWithGong((Boolean) config.get("gong"));
 
-        return Collections.singletonList(new ComponentConfiguration(ic, 1));
+        return Collections.singletonList(
+            new ComponentConfiguration(
+                ic,
+                LipBuilderHelper.getLipQuantity(config)
+            )
+        );
     }
 
 }

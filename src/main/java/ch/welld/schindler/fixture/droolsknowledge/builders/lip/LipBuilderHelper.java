@@ -1,5 +1,6 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders.lip;
 
+import java.math.BigDecimal;
 import java.util.Map;
 
 public class LipBuilderHelper {
@@ -24,5 +25,7 @@ public class LipBuilderHelper {
         return (String) config.get("indicatorFamily");
     }
 
-
+    public static int getLipQuantity(Map<String, Object> config) {
+        return ((BigDecimal) config.getOrDefault("quantity", BigDecimal.ZERO)).intValue();
+    }
 }

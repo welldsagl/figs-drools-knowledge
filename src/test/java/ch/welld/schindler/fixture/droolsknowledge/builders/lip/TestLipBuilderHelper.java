@@ -3,6 +3,7 @@ package ch.welld.schindler.fixture.droolsknowledge.builders.lip;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,6 +45,14 @@ public class TestLipBuilderHelper {
         Map<String, Object> config = new HashMap<>();
         config.put("indicatorFamily", "the indicator family");
         assertEquals("the indicator family", LipBuilderHelper.getIndicatorFamily(config));
+    }
+
+    @Test
+    @DisplayName("get lip quantity")
+    public void testGetLipQuantity() {
+        Map<String, Object> config = new HashMap<>();
+        config.put("quantity", new BigDecimal(3));
+        assertEquals(3, LipBuilderHelper.getLipQuantity(config));
     }
 
 }

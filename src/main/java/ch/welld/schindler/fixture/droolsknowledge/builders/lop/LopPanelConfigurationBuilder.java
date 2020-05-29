@@ -20,6 +20,9 @@ public class LopPanelConfigurationBuilder extends AbstractConfigurationBuilder i
 
     @Override
     public List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
+        if (LopBuilderHelper.getTotalFloorsCount(config) == 0) {
+            return Collections.emptyList();
+        }
         LopPanelConfiguration lpc = new LopPanelConfiguration();
         lpc.setWithGlass(((String)config.get("panel")).equalsIgnoreCase("glass"));
         lpc.setWithLogo((Boolean) config.get("logo"));
@@ -30,7 +33,7 @@ public class LopPanelConfigurationBuilder extends AbstractConfigurationBuilder i
         return Collections.singletonList(
             new ComponentConfiguration(
                 lpc,
-                1
+                LopBuilderHelper.getTotalFloorsCount(config)
             )
         );
     }
