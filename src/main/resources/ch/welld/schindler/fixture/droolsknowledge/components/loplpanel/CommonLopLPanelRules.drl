@@ -1,0 +1,7 @@
+package ch.welld.schindler.fixture.droolsknowledge.components.loplpanel;
+
+rule "LOP-L Panel"
+    when
+        LopLPanelConfiguration()
+    then
+end
