@@ -8,7 +8,12 @@ public class LopKBuilderHelper {
         LOP_K_100x110,
         LOP_K_100x160,
         LOP_K_180x110,
-        LOP_K_180x160
+        LOP_K_180x160;
+
+        @Override
+        public String toString() {
+            return super.toString().substring(6);
+        }
     }
 
     static String getLopKType(Map<String, Object> config) {

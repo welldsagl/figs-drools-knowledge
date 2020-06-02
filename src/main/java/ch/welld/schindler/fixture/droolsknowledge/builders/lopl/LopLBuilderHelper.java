@@ -8,7 +8,12 @@ public class LopLBuilderHelper {
         LOP_L_100x110,
         LOP_L_100x160,
         LOP_L_180x110,
-        LOP_L_180x160
+        LOP_L_180x160;
+
+        @Override
+        public String toString() {
+            return super.toString().substring(6);
+        }
     }
 
     static String getLopLType(Map<String, Object> config) {

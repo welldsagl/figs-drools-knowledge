@@ -6,10 +6,12 @@ import ch.welld.schindler.fixture.droolsknowledge.builders.common.FloorsQuantity
 import ch.welld.schindler.fixture.droolsknowledge.components.loplpanel.LopLPanelConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.types.LopLConfiguration;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+@ApplicationScoped
 public class LopLPanelConfigurationBuilder extends AbstractConfigurationBuilder implements LopLConfiguration {
 
     @Override
@@ -24,7 +26,7 @@ public class LopLPanelConfigurationBuilder extends AbstractConfigurationBuilder 
         }
         LopLPanelConfiguration lpc = new LopLPanelConfiguration();
         lpc.setLopLType(LopLBuilderHelper.getLopLType(config));
-        lpc.setPanelPackage(getUpperCaseString(config, "panelPackage"));
+        lpc.setPanelPackage(getUpperCaseString(config, "panel"));
         return Collections.singletonList(
             new ComponentConfiguration(
                 lpc,

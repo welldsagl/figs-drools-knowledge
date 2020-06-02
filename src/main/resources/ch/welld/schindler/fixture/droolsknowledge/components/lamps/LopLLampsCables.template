@@ -114,7 +114,7 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
       <list>
         <string>PVC/CCC</string>
         <string>UL</string>
-        <string>PVC/CCC</string>
+        <string>HLF</string>
       </list>
     </entry>
     <entry>
