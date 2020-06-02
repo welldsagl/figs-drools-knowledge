@@ -12,6 +12,18 @@ rule "LIP Mounting"
     then
 end
 
+rule "LOP-K Mounting"
+    when
+        MountingConfiguration( componentType == "LOP-K" )
+    then
+end
+
+rule "LOP-L Mounting"
+    when
+        MountingConfiguration( componentType == "LOP-L" )
+    then
+end
+
 rule "Sealing Foam"
     when
         SealingFoamConfiguration ()
