@@ -48,9 +48,15 @@ rule "LARC LAGC Not Intercom Lamp Cables" extends "LARC LAGC Lamp Cables"
     then
 end
 
-rule "Other Lamps Cables"
+rule "Other COP Lamps Cables"
     when
-        LampConfiguration( lamp not in ( "LARC-Communication", "LARC-Phone", "LAGC" ) ) or CableRequest()
+        LampConfiguration( componentType == "COP", lamp not in ( "LARC-Communication", "LARC-Phone", "LAGC" ) ) or CableRequest()
+    then
+end
+
+rule "LOP-L Lamps Cables"
+    when
+        LampConfiguration( componentType == "LOP-L" ) or CableRequest()
     then
 end
 
