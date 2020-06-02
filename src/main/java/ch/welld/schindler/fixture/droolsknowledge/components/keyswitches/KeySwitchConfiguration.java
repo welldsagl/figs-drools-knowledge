@@ -10,63 +10,77 @@ public class KeySwitchConfiguration extends BaseConfiguration {
 
 	static final long serialVersionUID = 1L;
 
-	private java.lang.String keyType;
-	private java.lang.String keySwitch;
-	private java.lang.String keyFunction;
-	private java.lang.String engraving;
-	private java.lang.String fixtureFamily;
+	private String keyType;
+	private String keySwitch;
+	private String keyFunction;
+	private String engraving;
+	private String fixtureFamily;
+	private String position;
 
 	public KeySwitchConfiguration() {
 	}
 
-	public java.lang.String getKeyType() {
+	public String getKeyType() {
 		return this.keyType;
 	}
 
-	public void setKeyType(java.lang.String keyType) {
+	public void setKeyType(String keyType) {
 		this.keyType = keyType;
 	}
 
-	public java.lang.String getKeySwitch() {
+	public String getKeySwitch() {
 		return this.keySwitch;
 	}
 
-	public void setKeySwitch(java.lang.String keySwitch) {
+	public void setKeySwitch(String keySwitch) {
 		this.keySwitch = keySwitch;
 	}
 
-	public java.lang.String getKeyFunction() {
+	public String getKeyFunction() {
 		return this.keyFunction;
 	}
 
-	public void setKeyFunction(java.lang.String keyFunction) {
+	public void setKeyFunction(String keyFunction) {
 		this.keyFunction = keyFunction;
 	}
 
-	public java.lang.String getEngraving() {
+	public String getEngraving() {
 		return this.engraving;
 	}
 
-	public void setEngraving(java.lang.String engraving) {
+	public void setEngraving(String engraving) {
 		this.engraving = engraving;
 	}
 
-	public java.lang.String getFixtureFamily() {
+	public String getFixtureFamily() {
 		return this.fixtureFamily;
 	}
 
-	public void setFixtureFamily(java.lang.String fixtureFamily) {
+	public void setFixtureFamily(String fixtureFamily) {
 		this.fixtureFamily = fixtureFamily;
 	}
 
-	public KeySwitchConfiguration(java.lang.String keyType,
-								  java.lang.String keySwitch, java.lang.String keyFunction,
-								  java.lang.String engraving, java.lang.String fixtureFamily) {
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public KeySwitchConfiguration(
+		String keyType,
+		String keySwitch,
+		String keyFunction,
+		String engraving,
+		String fixtureFamily,
+		String position
+	) {
 		this.keyType = keyType;
 		this.keySwitch = keySwitch;
 		this.keyFunction = keyFunction;
 		this.engraving = engraving;
 		this.fixtureFamily = fixtureFamily;
+		this.position = position;
 	}
-
 }

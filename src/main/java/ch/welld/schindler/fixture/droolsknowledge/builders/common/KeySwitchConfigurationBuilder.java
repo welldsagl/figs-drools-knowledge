@@ -1,17 +1,14 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
+package ch.welld.schindler.fixture.droolsknowledge.builders.common;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.AbstractConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.components.keyswitches.KeySwitchConfiguration;
-import ch.welld.schindler.fixture.droolsknowledge.types.CopConfiguration;
 
-import javax.enterprise.context.ApplicationScoped;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-@ApplicationScoped
-public class KeySwitchConfigurationBuilder extends AbstractConfigurationBuilder implements CopConfiguration {
+public abstract class KeySwitchConfigurationBuilder extends AbstractConfigurationBuilder {
     @Override
     public boolean canParseConfiguration(Map<String, Object> config) {
         return "key switches".equalsIgnoreCase((String) config.get("sections"));
@@ -25,6 +22,7 @@ public class KeySwitchConfigurationBuilder extends AbstractConfigurationBuilder 
         ksConfiguration.setKeyFunction((String) config.get("function"));
         ksConfiguration.setEngraving((String) config.getOrDefault("engraving", ""));
         ksConfiguration.setFixtureFamily((String) config.get("fixtureFamily"));
+        ksConfiguration.setPosition((String) config.get("position"));
         return Collections.singletonList(new ComponentConfiguration(ksConfiguration, 1));
     }
 
