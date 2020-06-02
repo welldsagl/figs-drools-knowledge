@@ -7,7 +7,7 @@ public interface LopKConfiguration extends ComponentType {
     }
 
     default String getComponentType() {
-        return "LOP_K";
+        return "LOP-K";
     }
 
 }

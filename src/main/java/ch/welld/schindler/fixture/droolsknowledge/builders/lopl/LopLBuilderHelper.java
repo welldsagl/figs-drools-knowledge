@@ -1,6 +1,5 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders.lopl;
 
-import java.math.BigDecimal;
 import java.util.Map;
 
 public class LopLBuilderHelper {
@@ -27,9 +26,5 @@ public class LopLBuilderHelper {
             return LopLType.LOP_L_180x160.toString();
         }
         return null;
-    }
-
-    public static int getLopLQuantity(Map<String, Object> config) {
-        return ((BigDecimal) config.getOrDefault("quantity", BigDecimal.ZERO)).intValue();
     }
 }

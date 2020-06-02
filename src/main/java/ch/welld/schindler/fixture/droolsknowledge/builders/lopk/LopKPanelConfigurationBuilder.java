@@ -2,6 +2,7 @@ package ch.welld.schindler.fixture.droolsknowledge.builders.lopk;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.AbstractConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.builders.common.FloorsQuantityHelper;
 import ch.welld.schindler.fixture.droolsknowledge.components.lopkpanel.LopKPanelConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.types.LopKConfiguration;
 
@@ -18,7 +19,7 @@ public class LopKPanelConfigurationBuilder extends AbstractConfigurationBuilder 
 
     @Override
     protected List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
-        if (LopKBuilderHelper.getLopKQuantity(config) == 0) {
+        if (FloorsQuantityHelper.getTotalFloorsCount(config) == 0) {
             return Collections.emptyList();
         }
         LopKPanelConfiguration lpc = new LopKPanelConfiguration();
@@ -27,7 +28,7 @@ public class LopKPanelConfigurationBuilder extends AbstractConfigurationBuilder 
         return Collections.singletonList(
             new ComponentConfiguration(
                 lpc,
-                LopKBuilderHelper.getLopKQuantity(config)
+                FloorsQuantityHelper.getTotalFloorsCount(config)
             )
         );
     }

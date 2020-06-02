@@ -1,8 +1,7 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders.lop;
 
-import com.sun.istack.NotNull;
+import ch.welld.schindler.fixture.droolsknowledge.builders.common.FloorsQuantityHelper;
 
-import java.math.BigDecimal;
 import java.util.Map;
 
 public class LopBuilderHelper {
@@ -34,9 +33,9 @@ public class LopBuilderHelper {
     }
 
     static Integer getButtonCount(Map<String, Object> config) {
-        return getFloorsCount(config, FloorPosition.TOP)
-            + getFloorsCount(config, FloorPosition.BOTTOM)
-            + 2 * getFloorsCount(config, FloorPosition.MIDDLE);
+        return FloorsQuantityHelper.getFloorsCount(config, FloorsQuantityHelper.FloorPosition.TOP)
+            + FloorsQuantityHelper.getFloorsCount(config, FloorsQuantityHelper.FloorPosition.BOTTOM)
+            + 2 * FloorsQuantityHelper.getFloorsCount(config, FloorsQuantityHelper.FloorPosition.MIDDLE);
     }
 
     public static String getIndicatorFamily(Map<String, Object> config) {
@@ -45,29 +44,6 @@ public class LopBuilderHelper {
 
     public static String getFixtureFamily(Map<String, Object> config) {
         return (String) config.get("fixtureFamily");
-    }
-
-    private static int getQuantityByKey(@NotNull Map<String,Object> config, String key) {
-        return ((BigDecimal) config.getOrDefault(key, BigDecimal.ZERO)).intValue();
-    }
-
-    static Integer getFloorsCount(@NotNull Map<String,Object> config, FloorPosition floorPosition) {
-        switch (floorPosition) {
-            case TOP:
-                return getQuantityByKey(config, "topFloors");
-            case MIDDLE:
-                return getQuantityByKey(config, "middleFloors");
-            case BOTTOM:
-                return getQuantityByKey(config, "bottomFloors");
-            default:
-                return 0;
-        }
-    }
-
-    public static Integer getTotalFloorsCount(Map<String, Object> config) {
-        return getFloorsCount(config, FloorPosition.TOP)
-            + getFloorsCount(config, FloorPosition.BOTTOM)
-            + getFloorsCount(config, FloorPosition.MIDDLE);
     }
 
 }

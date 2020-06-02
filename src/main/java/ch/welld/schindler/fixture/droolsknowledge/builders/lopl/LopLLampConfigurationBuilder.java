@@ -1,6 +1,7 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders.lopl;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.builders.common.FloorsQuantityHelper;
 import ch.welld.schindler.fixture.droolsknowledge.builders.common.LampConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.components.lamps.LampConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.types.LopLConfiguration;
@@ -23,7 +24,7 @@ public class LopLLampConfigurationBuilder extends LampConfigurationBuilder imple
         return Collections.singletonList(
             new ComponentConfiguration(
                 lampConfiguration,
-                LopLBuilderHelper.getLopLQuantity(config)
+                FloorsQuantityHelper.getTotalFloorsCount(config)
             )
         );
     }

@@ -2,7 +2,6 @@ package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.builders.InvalidConfigurationFormatException;
-import ch.welld.schindler.fixture.droolsknowledge.builders.cop.KeySwitchConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.components.keyswitches.KeySwitchConfiguration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("test Key Switch configuration builder")
 public class TestKeySwitchConfigurationBuilder {
 
-    private KeySwitchConfigurationBuilder builder = new KeySwitchConfigurationBuilder();
+    private CopKeySwitchConfigurationBuilder builder = new CopKeySwitchConfigurationBuilder();
 
     @Test
     @DisplayName("can convert a key switch configuration")

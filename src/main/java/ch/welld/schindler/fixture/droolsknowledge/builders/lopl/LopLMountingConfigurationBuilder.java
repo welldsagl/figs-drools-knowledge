@@ -1,6 +1,7 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders.lopl;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.builders.common.FloorsQuantityHelper;
 import ch.welld.schindler.fixture.droolsknowledge.builders.common.MountingConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.types.LopLConfiguration;
 
@@ -34,13 +35,13 @@ public class LopLMountingConfigurationBuilder extends MountingConfigurationBuild
 
     @Override
     protected List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
-        if (LopLBuilderHelper.getLopLQuantity(config) == 0) {
+        if (FloorsQuantityHelper.getTotalFloorsCount(config) == 0) {
             return Collections.emptyList();
         }
         return Collections.singletonList(
             new ComponentConfiguration(
                 createBaseConfiguration(config),
-                LopLBuilderHelper.getLopLQuantity(config)
+                FloorsQuantityHelper.getTotalFloorsCount(config)
             )
         );
     }

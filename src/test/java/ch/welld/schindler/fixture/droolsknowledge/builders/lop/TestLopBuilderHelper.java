@@ -98,37 +98,37 @@ public class TestLopBuilderHelper {
         assertEquals("the fixture family", LopBuilderHelper.getFixtureFamily(config));
     }
 
-    @Test
-    @DisplayName("get top floors count")
-    public void testGetTopFloorsCount() {
-        Map<String, Object> config = new HashMap<>();
-        config.put("topFloors", new BigDecimal(4));
-        assertEquals(4, LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.TOP));
-    }
-
-    @Test
-    @DisplayName("get middle floors count")
-    public void testGetMiddleFloorsCount() {
-        Map<String, Object> config = new HashMap<>();
-        config.put("middleFloors", new BigDecimal(4));
-        assertEquals(4, LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.MIDDLE));
-    }
-
-    @Test
-    @DisplayName("get bottom floors count")
-    public void testGetBottomFloorsCount() {
-        Map<String, Object> config = new HashMap<>();
-        config.put("bottomFloors", new BigDecimal(4));
-        assertEquals(4, LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.BOTTOM));
-    }
-
-    @Test
-    @DisplayName("get total floors count")
-    public void testGetTotalFloorsCount() {
-        Map<String, Object> config = new HashMap<>();
-        config.put("topFloors", new BigDecimal(1));
-        config.put("middleFloors", new BigDecimal(2));
-        config.put("bottomFloors", new BigDecimal(3));
-        assertEquals(6, LopBuilderHelper.getTotalFloorsCount(config));
-    }
+//    @Test
+//    @DisplayName("get top floors count")
+//    public void testGetTopFloorsCount() {
+//        Map<String, Object> config = new HashMap<>();
+//        config.put("topFloors", new BigDecimal(4));
+//        assertEquals(4, LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.TOP));
+//    }
+//
+//    @Test
+//    @DisplayName("get middle floors count")
+//    public void testGetMiddleFloorsCount() {
+//        Map<String, Object> config = new HashMap<>();
+//        config.put("middleFloors", new BigDecimal(4));
+//        assertEquals(4, LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.MIDDLE));
+//    }
+//
+//    @Test
+//    @DisplayName("get bottom floors count")
+//    public void testGetBottomFloorsCount() {
+//        Map<String, Object> config = new HashMap<>();
+//        config.put("bottomFloors", new BigDecimal(4));
+//        assertEquals(4, LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.BOTTOM));
+//    }
+//
+//    @Test
+//    @DisplayName("get total floors count")
+//    public void testGetTotalFloorsCount() {
+//        Map<String, Object> config = new HashMap<>();
+//        config.put("topFloors", new BigDecimal(1));
+//        config.put("middleFloors", new BigDecimal(2));
+//        config.put("bottomFloors", new BigDecimal(3));
+//        assertEquals(6, LopBuilderHelper.getTotalFloorsCount(config));
+//    }
 }

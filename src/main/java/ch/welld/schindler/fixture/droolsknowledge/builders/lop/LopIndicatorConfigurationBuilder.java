@@ -2,6 +2,7 @@ package ch.welld.schindler.fixture.droolsknowledge.builders.lop;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.AbstractConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.builders.common.FloorsQuantityHelper;
 import ch.welld.schindler.fixture.droolsknowledge.components.indicators.IndicatorConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.types.LopConfiguration;
 
@@ -21,7 +22,7 @@ public class LopIndicatorConfigurationBuilder extends AbstractConfigurationBuild
 
     @Override
     public List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
-        if (LopBuilderHelper.getTotalFloorsCount(config) == 0) {
+        if (FloorsQuantityHelper.getTotalFloorsCount(config) == 0) {
             return Collections.emptyList();
         }
         IndicatorConfiguration ic = new IndicatorConfiguration();
@@ -33,7 +34,7 @@ public class LopIndicatorConfigurationBuilder extends AbstractConfigurationBuild
         String lopType = LopBuilderHelper.getLopType(config);
         ic.setLopType(lopType);
 
-        int quantity = LopBuilderHelper.getTotalFloorsCount(config)
+        int quantity = FloorsQuantityHelper.getTotalFloorsCount(config)
             * (lopType.equalsIgnoreCase("DOUBLE") ? 2 : 1);
 
         return Collections.singletonList(

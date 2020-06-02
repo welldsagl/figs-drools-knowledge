@@ -23,7 +23,9 @@ public abstract class KeySwitchConfigurationBuilder extends AbstractConfiguratio
         ksConfiguration.setEngraving((String) config.getOrDefault("engraving", ""));
         ksConfiguration.setFixtureFamily((String) config.get("fixtureFamily"));
         ksConfiguration.setPosition((String) config.get("position"));
-        return Collections.singletonList(new ComponentConfiguration(ksConfiguration, 1));
+        return Collections.singletonList(new ComponentConfiguration(ksConfiguration, getQuantity(config)));
     }
+
+    protected abstract int getQuantity(Map<String, Object> config);
 
 }
