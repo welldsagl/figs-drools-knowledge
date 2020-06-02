@@ -1,0 +1,7 @@
+package ch.welld.schindler.fixture.droolsknowledge.components.lopkpanel;
+
+rule "LOP-K Panel"
+    when
+        LopKPanelConfiguration()
+    then
+end
