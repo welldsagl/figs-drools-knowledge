@@ -26,6 +26,16 @@ public class LopMountingConfigurationBuilder extends MountingConfigurationBuilde
     }
 
     @Override
+    protected String getLopKType(Map<String, Object> config) {
+        return null;
+    }
+
+    @Override
+    protected String getLopLType(Map<String, Object> config) {
+        return null;
+    }
+
+    @Override
     protected List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
         if (LopBuilderHelper.getTotalFloorsCount(config) == 0) {
             return Collections.emptyList();

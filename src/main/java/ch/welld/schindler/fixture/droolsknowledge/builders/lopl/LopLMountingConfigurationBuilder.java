@@ -1,8 +1,8 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders.lip;
+package ch.welld.schindler.fixture.droolsknowledge.builders.lopl;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.builders.common.MountingConfigurationBuilder;
-import ch.welld.schindler.fixture.droolsknowledge.types.LipConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.types.LopLConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.Collections;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @ApplicationScoped
-public class LipMountingConfigurationBuilder extends MountingConfigurationBuilder implements LipConfiguration {
+public class LopLMountingConfigurationBuilder extends MountingConfigurationBuilder implements LopLConfiguration {
 
     @Override
     protected String getLopType(Map<String, Object> config) {
@@ -19,7 +19,7 @@ public class LipMountingConfigurationBuilder extends MountingConfigurationBuilde
 
     @Override
     protected String getLipType(Map<String, Object> config) {
-        return LipBuilderHelper.getLipType(config);
+        return null;
     }
 
     @Override
@@ -29,18 +29,18 @@ public class LipMountingConfigurationBuilder extends MountingConfigurationBuilde
 
     @Override
     protected String getLopLType(Map<String, Object> config) {
-        return null;
+        return LopLBuilderHelper.getLopLType(config);
     }
 
     @Override
     protected List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
-        if (LipBuilderHelper.getLipQuantity(config) == 0) {
+        if (LopLBuilderHelper.getLopLQuantity(config) == 0) {
             return Collections.emptyList();
         }
         return Collections.singletonList(
             new ComponentConfiguration(
                 createBaseConfiguration(config),
-                LipBuilderHelper.getLipQuantity(config)
+                LopLBuilderHelper.getLopLQuantity(config)
             )
         );
     }

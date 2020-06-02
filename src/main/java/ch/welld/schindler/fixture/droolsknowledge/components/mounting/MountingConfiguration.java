@@ -15,6 +15,10 @@ public class MountingConfiguration extends BaseConfiguration {
 
     private String lipType;
 
+    private String lopKType;
+
+    private String lopLType;
+
     public MountingConfiguration() {
     }
 
@@ -50,15 +54,35 @@ public class MountingConfiguration extends BaseConfiguration {
         this.lipType = lipType;
     }
 
+    public String getLopKType() {
+        return lopKType;
+    }
+
+    public void setLopKType(String lopKType) {
+        this.lopKType = lopKType;
+    }
+
+    public String getLopLType() {
+        return lopLType;
+    }
+
+    public void setLopLType(String lopLType) {
+        this.lopLType = lopLType;
+    }
+
     public MountingConfiguration(
         String mountingType,
         NullableBoolean ipx3,
         String lopType,
-        String lipType
+        String lipType,
+        String lopKType,
+        String lopLType
     ) {
         this.mountingType = mountingType;
         this.ipx3 = ipx3;
         this.lopType = lopType;
         this.lipType = lipType;
+        this.lopKType = lopKType;
+        this.lopLType = lopLType;
     }
 }
