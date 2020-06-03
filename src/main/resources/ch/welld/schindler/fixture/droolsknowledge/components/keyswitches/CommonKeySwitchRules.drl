@@ -32,5 +32,8 @@ function Map<String, Object> createKeySwitchMetadata(KeySwitchConfiguration conf
     Map<String, Object> m = new HashMap<String, Object>();
     m.put("engraving", config.getEngraving());
     m.put("function", config.getKeyFunction());
+    if (config.getPosition() != null) {
+        m.put("position", config.getPosition());
+    }
     return m;
 }
