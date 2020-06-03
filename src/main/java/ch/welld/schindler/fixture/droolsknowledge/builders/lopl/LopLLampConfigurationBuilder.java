@@ -17,7 +17,7 @@ public class LopLLampConfigurationBuilder extends LampConfigurationBuilder imple
 
     @Override
     public List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
-        Map<String, Map<String, String>> lopLSlots = (Map<String, Map<String, String>>) config.get("lamps");
+        Map<String, Map<String, String>> lopLSlots = (Map<String, Map<String, String>>) config.get("lamp");
         List<LampConfiguration> lampConfigurations = new ArrayList<>();
 
         lopLSlots.forEach((key, value) -> {
