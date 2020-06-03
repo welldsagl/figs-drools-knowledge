@@ -7,25 +7,35 @@ import ch.welld.schindler.fixture.droolsknowledge.components.lamps.LampConfigura
 import ch.welld.schindler.fixture.droolsknowledge.types.LopLConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class LopLLampConfigurationBuilder extends LampConfigurationBuilder implements LopLConfiguration {
 
     @Override
     public List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
-        String lamp = (String) config.get("lamp");
+        Map<String, Map<String, String>> lopLSlots = (Map<String, Map<String, String>>) config.get("lamps");
+        List<LampConfiguration> lampConfigurations = new ArrayList<>();
 
-        LampConfiguration lampConfiguration = createBaseConfiguration(config, lamp);
+        lopLSlots.forEach((key, value) -> {
+            LampConfiguration slotConfiguration = createBaseConfiguration(
+                config,
+                value.get("selection")
+            );
+            slotConfiguration.setPosition(key);
+            lampConfigurations.add(slotConfiguration);
+        });
 
 
-        return Collections.singletonList(
+        int floorsQuantity = FloorsQuantityHelper.getTotalFloorsCount(config);
+        return lampConfigurations.stream().map(lConfig ->
             new ComponentConfiguration(
-                lampConfiguration,
-                FloorsQuantityHelper.getTotalFloorsCount(config)
+                lConfig,
+                floorsQuantity
             )
-        );
+        ).collect(Collectors.toList());
     }
 }

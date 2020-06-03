@@ -43,7 +43,6 @@ public abstract class LampConfigurationBuilder extends AbstractConfigurationBuil
         lp.setEn8120(((List<String>) config.get("regulations")).contains("EN 81-20"));
         lp.setLamp(lamp.toUpperCase());
         lp.setFixtureFamily((String) config.get("fixtureFamily"));
-        lp.setPosition((String) config.get("position"));
         Boolean copIntercomStation = (Boolean) config.get("copIntercomStation");
         Boolean doppelDeckerCar = (Boolean) config.get("doppelDeckerCar");
         if(copIntercomStation != null) {
