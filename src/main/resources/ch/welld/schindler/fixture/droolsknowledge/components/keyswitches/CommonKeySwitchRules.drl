@@ -4,9 +4,15 @@ import java.util.Map;
 import java.util.HashMap;
 import ch.welld.schindler.fixture.droolsknowledge.materials.CableRequest;
 
-rule "KeySwitch Cables"
+rule "COP KeySwitch Cables"
     when
-        KeySwitchConfiguration() or CableRequest()
+        KeySwitchConfiguration( componentType == "COP" ) or CableRequest()
+    then
+end
+
+rule "LOP K KeySwitch Cables"
+    when
+        KeySwitchConfiguration( componentType == "LOP-K" ) or CableRequest()
     then
 end
 
@@ -32,8 +38,5 @@ function Map<String, Object> createKeySwitchMetadata(KeySwitchConfiguration conf
     Map<String, Object> m = new HashMap<String, Object>();
     m.put("engraving", config.getEngraving());
     m.put("function", config.getKeyFunction());
-    if (config.getPosition() != null) {
-        m.put("position", config.getPosition());
-    }
     return m;
 }
