@@ -1,8 +1,8 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders.lop;
+package ch.welld.schindler.fixture.droolsknowledge.builders.lopk;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.builders.InvalidConfigurationFormatException;
-import ch.welld.schindler.fixture.droolsknowledge.components.loppanel.LopPanelConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.components.lopkpanel.LopKPanelConfiguration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.kie.soup.commons.util.Maps;
@@ -13,22 +13,21 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("lop panel configuration builder")
-public class TestLopPanelConfigurationBuilder {
+public class TestLopKPanelConfigurationBuilder {
 
-    private final LopPanelConfigurationBuilder builder = new LopPanelConfigurationBuilder();
+    private final LopKPanelConfigurationBuilder builder = new LopKPanelConfigurationBuilder();
 
     @Test
-    @DisplayName("can convert a lop panel configuration")
-    public void testCanParseLopPanelConfiguration() {
+    @DisplayName("can convert a lop k panel configuration")
+    public void testCanParseLopKPanelConfiguration() {
         assertTrue(
             builder.canParseConfiguration(Collections.singletonMap("sections", "Panel"))
         );
     }
 
     @Test
-    @DisplayName("cannot convert a not lop panel configuration")
-    public void testCannotParseNonLopPanelConfiguration() {
+    @DisplayName("cannot convert a not lop k panel configuration")
+    public void testCannotParseNonLopKPanelConfiguration() {
         assertFalse(
             builder.canParseConfiguration(Collections.singletonMap("sections", "Fixtures"))
         );
@@ -43,7 +42,7 @@ public class TestLopPanelConfigurationBuilder {
     }
 
     @Test
-    @DisplayName("convert into an empty list if floors quantity is zero")
+    @DisplayName("convert into an empty list if lop k quantity is zero")
     public void testEmptyConfigurationList() {
         List<ComponentConfiguration> configuration = builder.getConfigurations(
             new Maps.Builder<String, Object>()
@@ -59,30 +58,20 @@ public class TestLopPanelConfigurationBuilder {
     public void testParseConfiguration() {
         List<ComponentConfiguration> configuration = builder.getConfigurations(
             new Maps.Builder<String,Object>()
-                .put("panel", "GLASS")
-                .put("logo", true)
-                .put("decoPanel", "Black")
-                .put("buttonPanel", "Mirror")
-                .put("lopType", "Two indicators")
-                .put("indicatorFamily", "DMI")
+                .put("panel", "Mirror")
+                .put("lopKType", "100x110")
                 .put("topFloors", new BigDecimal(2))
-                .put("middleFloors", new BigDecimal(3))
-                .put("bottomFloors", new BigDecimal(4))
                 .build()
         );
         assertNotNull(configuration);
         assertEquals(1, configuration.size());
-        assertEquals(9, configuration.get(0).getCount()); // 2 + 3 + 4
-        assertTrue(configuration.get(0).getConfiguration() instanceof LopPanelConfiguration);
-        LopPanelConfiguration lopPanelConfiguration =
-            (LopPanelConfiguration) configuration.get(0).getConfiguration();
+        assertEquals(2, configuration.get(0).getCount());
+        assertTrue(configuration.get(0).getConfiguration() instanceof LopKPanelConfiguration);
+        LopKPanelConfiguration lopKPanelConfiguration =
+            (LopKPanelConfiguration) configuration.get(0).getConfiguration();
 
-        assertTrue(lopPanelConfiguration.getWithGlass());
-        assertTrue(lopPanelConfiguration.getWithLogo());
-        assertEquals("BLACK", lopPanelConfiguration.getDecoPanel());
-        assertEquals("MIRROR", lopPanelConfiguration.getButtonPanel());
-        assertEquals("DOUBLE", lopPanelConfiguration.getLopType());
-        assertEquals("DMI", lopPanelConfiguration.getIndicatorFamily());
+        assertEquals("MIRROR", lopKPanelConfiguration.getPanelPackage());
+        assertEquals("100x110", lopKPanelConfiguration.getLopKType());
     }
 
     @Test
@@ -91,9 +80,8 @@ public class TestLopPanelConfigurationBuilder {
         assertThrows(
             InvalidConfigurationFormatException.class,
             () -> builder.getConfigurations(
-                new Maps.Builder<String, Object>()
-                    .put("topFloors", BigDecimal.ONE)
-                    .put("indicatorFamily", BigDecimal.ZERO) // not a string
+                new Maps.Builder<String,Object>()
+                    .put("topFloors", "not a number")
                     .build()
             )
         );

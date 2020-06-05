@@ -8,6 +8,7 @@ import ch.welld.schindler.fixture.droolsknowledge.types.LopKConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -34,6 +35,10 @@ public class LopKKeySwitchConfigurationBuilder extends KeySwitchConfigurationBui
 
     @Override
     protected List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
+        int floorsQuantity = FloorsQuantityHelper.getTotalFloorsCount(config);
+        if (floorsQuantity == 0) {
+            return Collections.emptyList();
+        }
         Map<String, Map<String, String>> lopKSlots = (Map<String, Map<String, String>>) config.get("keySwitch");
         List<KeySwitchConfiguration> keySwitchConfigurations = new ArrayList<>();
 
@@ -49,7 +54,6 @@ public class LopKKeySwitchConfigurationBuilder extends KeySwitchConfigurationBui
             )
         );
 
-        int floorsQuantity = FloorsQuantityHelper.getTotalFloorsCount(config);
         return keySwitchConfigurations.stream().map(ksConfig ->
             new ComponentConfiguration(
                 ksConfig,

@@ -1,4 +1,4 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders.lip;
+package ch.welld.schindler.fixture.droolsknowledge.builders.lopk;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.components.mounting.MountingConfiguration;
@@ -12,10 +12,10 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("lip mounting configuration builder")
-public class TestLipMountingConfigurationBuilder {
+@DisplayName("lop k mounting configuration builder")
+public class TestLopKMountingConfigurationBuilder {
 
-    private final LipMountingConfigurationBuilder builder = new LipMountingConfigurationBuilder();
+    private final LopKMountingConfigurationBuilder builder = new LopKMountingConfigurationBuilder();
 
     @Test
     @DisplayName("not get the lop type")
@@ -27,21 +27,21 @@ public class TestLipMountingConfigurationBuilder {
     }
 
     @Test
-    @DisplayName("get the lip type")
+    @DisplayName("not get the lip type")
     public void testDontGetLipType() {
         Map<String, Object> config = new Maps.Builder<String,Object>()
             .put("lipType", "Horizontal")
             .build();
-        assertEquals("HORIZONTAL", builder.getLipType(config));
+        assertNull(builder.getLipType(config));
     }
 
     @Test
-    @DisplayName("not get the lop-k type")
+    @DisplayName("get the lop-k type")
     public void testGetLopKType() {
         Map<String, Object> config = new Maps.Builder<String,Object>()
-            .put("lopKType", "anything")
+            .put("lopKType", "100x110")
             .build();
-        assertNull(builder.getLopKType(config));
+        assertEquals("100x110", builder.getLopKType(config));
     }
 
     @Test
@@ -58,7 +58,7 @@ public class TestLipMountingConfigurationBuilder {
     public void testEmptyConfigurationList() {
         List<ComponentConfiguration> configuration = builder.getConfigurations(
             new Maps.Builder<String, Object>()
-                .put("quantity", BigDecimal.ZERO)
+                .put("topFloors", BigDecimal.ZERO)
                 .build()
         );
         assertNotNull(configuration);
@@ -69,9 +69,9 @@ public class TestLipMountingConfigurationBuilder {
     @DisplayName("get a mounting configuration")
     public void testGetConfiguration() {
         Map<String, Object> config = new Maps.Builder<String,Object>()
-            .put("quantity", new BigDecimal(2))
+            .put("topFloors", new BigDecimal(2))
             .put("mounting", "SURFACE")
-            .put("lipType", "Horizontal")
+            .put("lopKType", "100x110")
             .build();
         List<ComponentConfiguration> builtConfigs = builder.getConfigurationsImpl(config);
         assertEquals(1, builtConfigs.size());

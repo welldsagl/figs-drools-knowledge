@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("lop mounting configuration builder")
 public class TestLopMountingConfigurationBuilder {
 
-    private LopMountingConfigurationBuilder builder = new LopMountingConfigurationBuilder();
+    private final LopMountingConfigurationBuilder builder = new LopMountingConfigurationBuilder();
 
     @Test
     @DisplayName("get the lop type")
@@ -35,6 +35,24 @@ public class TestLopMountingConfigurationBuilder {
             .put("lipType", "anything")
             .build();
         assertNull(builder.getLipType(config));
+    }
+
+    @Test
+    @DisplayName("not get the lop k type")
+    public void testDontGetLopKType() {
+        Map<String, Object> config = new Maps.Builder<String,Object>()
+            .put("lopKType", "anything")
+            .build();
+        assertNull(builder.getLopKType(config));
+    }
+
+    @Test
+    @DisplayName("not get the lop l type")
+    public void testDontGetLopLType() {
+        Map<String, Object> config = new Maps.Builder<String,Object>()
+            .put("lopLType", "anything")
+            .build();
+        assertNull(builder.getLopLType(config));
     }
 
     @Test

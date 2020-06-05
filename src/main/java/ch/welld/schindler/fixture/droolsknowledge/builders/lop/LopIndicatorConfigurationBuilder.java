@@ -35,7 +35,7 @@ public class LopIndicatorConfigurationBuilder extends AbstractConfigurationBuild
         ic.setLopType(lopType);
 
         int quantity = FloorsQuantityHelper.getTotalFloorsCount(config)
-            * (lopType.equalsIgnoreCase("DOUBLE") ? 2 : 1);
+            * ("DOUBLE".equalsIgnoreCase(lopType) ? 2 : 1);
 
         return Collections.singletonList(
             new ComponentConfiguration(

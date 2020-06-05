@@ -12,12 +12,6 @@ public class LopBuilderHelper {
         DOUBLE
     }
 
-    enum FloorPosition {
-        TOP,
-        MIDDLE,
-        BOTTOM
-    }
-
     static String getLopType(Map<String, Object> config) {
         String lopTypeString = ((String) config.get("lopType")).toLowerCase();
         if (lopTypeString.startsWith("without")) {

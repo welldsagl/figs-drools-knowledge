@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("mounting configuration builder")
 public class TestMountingConfigurationBuilder {
 
-    private MountingConfigurationBuilder builder = new MountingConfigurationBuilder() {
+    private final MountingConfigurationBuilder builder = new MountingConfigurationBuilder() {
         @Override
         protected List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
             return null;
@@ -123,6 +123,17 @@ public class TestMountingConfigurationBuilder {
         assertEquals(NullableBoolean.NO, mc.getIpx3());
         assertEquals("WITHOUT", mc.getLopType());
         assertEquals("HORIZONTAL", mc.getLipType());
+    }
+
+    @Test
+    @DisplayName("throws an exception with an incorrect configuration")
+    public void testThrowsInvalidConfigurationFormatException() {
+        assertThrows(
+            ClassCastException.class,
+            () -> builder.createBaseConfiguration(
+                Collections.singletonMap("mounting", true) // not a string
+            )
+        );
     }
 
 }
