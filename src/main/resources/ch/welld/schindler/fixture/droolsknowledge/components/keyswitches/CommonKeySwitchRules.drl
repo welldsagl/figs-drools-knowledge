@@ -16,6 +16,12 @@ rule "LOP K KeySwitch Cables"
     then
 end
 
+rule "LOP K KeySwitch Critical Cables"
+    when
+        KeySwitchConfiguration( componentType == "LOP-K", critical == true ) or CableRequest()
+    then
+end
+
 rule "DT AT KeySwitch"
     when
         KeySwitchConfiguration( fixtureFamily in ( "DT", "AT" ) )
