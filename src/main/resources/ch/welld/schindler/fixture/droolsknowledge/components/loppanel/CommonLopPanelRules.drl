@@ -2,7 +2,7 @@ package ch.welld.schindler.fixture.droolsknowledge.components.loppanel;
 
 import ch.welld.schindler.fixture.droolsknowledge.materials.CableRequest
 import java.util.HashMap;
-import java.util.Map
+import java.util.Map;
 
 rule "LOP Panel"
     when

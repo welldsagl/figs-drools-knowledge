@@ -110,6 +110,12 @@
           <nature>3</nature>
           <type>Integer</type>
         </fieldValue>
+        <fieldValue>
+          <field>metadata</field>
+          <value>createCriticalCableMetadata(config)</value>
+          <nature>1</nature>
+          <type>java.util.Map</type>
+        </fieldValue>
       </fieldValues>
       <factType>Cable</factType>
       <isBound>false</isBound>

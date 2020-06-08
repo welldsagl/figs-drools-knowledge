@@ -1,7 +1,16 @@
 package ch.welld.schindler.fixture.droolsknowledge.components.lopkpanel;
 
+import java.util.HashMap;
+import java.util.Map;
+
 rule "LOP-K Panel"
     when
         LopKPanelConfiguration()
     then
 end
+
+function Map<String, Object> createLopKPanelMetadata(LopKPanelConfiguration config) {
+    Map<String, Object> m = new HashMap<String, Object>();
+    m.put("Positions", config.getPositions());
+    return m;
+}

@@ -9,13 +9,21 @@ import org.kie.soup.commons.util.Maps;
 
 import java.math.BigDecimal;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestLopLPanelConfigurationBuilder {
 
     private final LopLPanelConfigurationBuilder builder = new LopLPanelConfigurationBuilder();
+
+    private Map<String, Object> createSlot(String selection) {
+        return new Maps.Builder<String,Object>()
+            .put("selection", selection)
+            .build();
+    }
 
     @Test
     @DisplayName("can convert a lop l panel configuration")
@@ -56,11 +64,15 @@ public class TestLopLPanelConfigurationBuilder {
     @Test
     @DisplayName("convert a correct configuration")
     public void testParseConfiguration() {
+        Map<String, Object> slots = new HashMap<>();
+        slots.put("a1", createSlot("lamp_a1"));
+        slots.put("b1", createSlot("lamp_b1"));
         List<ComponentConfiguration> configuration = builder.getConfigurations(
             new Maps.Builder<String,Object>()
                 .put("panel", "Mirror")
                 .put("lopLType", "100x110")
                 .put("topFloors", new BigDecimal(2))
+                .put("lamp", slots)
                 .build()
         );
         assertNotNull(configuration);
@@ -72,6 +84,7 @@ public class TestLopLPanelConfigurationBuilder {
 
         assertEquals("MIRROR", lopKPanelConfiguration.getPanelPackage());
         assertEquals("100x110", lopKPanelConfiguration.getLopLType());
+        assertEquals("a1, b1", lopKPanelConfiguration.getPositions());
     }
 
     @Test

@@ -27,6 +27,8 @@ public class LopKPanelConfigurationBuilder extends AbstractConfigurationBuilder 
         LopKPanelConfiguration lpc = new LopKPanelConfiguration();
         lpc.setLopKType(LopKBuilderHelper.getLopKType(config));
         lpc.setPanelPackage(getUpperCaseString(config, "panel"));
+        Map<String, Object> lopKSlots = (Map<String, Object>) config.get("keySwitch");
+        lpc.setPositions(String.join(", ", lopKSlots.keySet()));
         return Collections.singletonList(
             new ComponentConfiguration(
                 lpc,

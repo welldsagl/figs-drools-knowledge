@@ -44,5 +44,12 @@ function Map<String, Object> createKeySwitchMetadata(KeySwitchConfiguration conf
     Map<String, Object> m = new HashMap<String, Object>();
     m.put("engraving", config.getEngraving());
     m.put("function", config.getKeyFunction());
+    m.put("position", config.getPosition());
+    return m;
+}
+
+function Map<String, Object> createCriticalCableMetadata(KeySwitchConfiguration config) {
+    Map<String, Object> m = new HashMap<String, Object>();
+    m.put("position", config.getPosition());
     return m;
 }

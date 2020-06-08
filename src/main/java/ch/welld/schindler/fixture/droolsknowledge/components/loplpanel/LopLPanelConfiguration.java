@@ -8,16 +8,19 @@ public class LopLPanelConfiguration extends BaseConfiguration {
 
     private String lopLType;
     private String panelPackage;
+    private String positions;
 
     public LopLPanelConfiguration() {
     }
 
     public LopLPanelConfiguration(
         String lopLType,
-        String panelPackage
+        String panelPackage,
+        String positions
     ) {
         this.lopLType = lopLType;
         this.panelPackage = panelPackage;
+        this.positions = positions;
     }
 
     public String getPanelPackage() {
@@ -34,5 +37,13 @@ public class LopLPanelConfiguration extends BaseConfiguration {
 
     public void setLopLType(String lopLType) {
         this.lopLType = lopLType;
+    }
+
+    public String getPositions() {
+        return positions;
+    }
+
+    public void setPositions(String positions) {
+        this.positions = positions;
     }
 }
