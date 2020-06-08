@@ -1,7 +1,8 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders.lopk;
+package ch.welld.schindler.fixture.droolsknowledge.builders.lopl;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
-import ch.welld.schindler.fixture.droolsknowledge.components.keyswitches.KeySwitchConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.components.lamps.LampConfiguration;
+import com.google.common.collect.Lists;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.kie.soup.commons.util.Maps;
@@ -13,16 +14,14 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("lop key Switch configuration builder")
-public class TestLopKKeySwitchConfigurationBuilder {
+@DisplayName("lop-l Lamp configuration builder")
+public class TestLopLLampConfigurationBuilder {
 
-    private final LopKKeySwitchConfigurationBuilder builder = new LopKKeySwitchConfigurationBuilder();
+    private final LopLLampConfigurationBuilder builder = new LopLLampConfigurationBuilder();
 
-    private Map<String, Object> createSlot(String category, String selection, String text) {
+    private Map<String, Object> createSlot(String selection) {
         return new Maps.Builder<String,Object>()
-            .put("category", category)
             .put("selection", selection)
-            .put("text", text)
             .build();
     }
 
@@ -38,35 +37,33 @@ public class TestLopKKeySwitchConfigurationBuilder {
         if (b1 != null) slots.put("b1", b1);
         if (b2 != null) slots.put("b2", b2);
         return new Maps.Builder<String,Object>()
-            .put("keyType", "KABA")
             .put( "fixtureFamily", "DT")
-            .put( "keySwitch", slots)
+            .put( "lamp", slots)
+            .put( "lopLType", "180x160")
+            .put( "regulations", Lists.newArrayList("EN 81-20"))
             .put( "topFloors", new BigDecimal(2))
             .build();
     }
 
     @Test
-    @DisplayName("convert into a list of key switch configurations")
+    @DisplayName("convert into a list of lamp configurations")
     public void testCreateConfiguration() {
         Map<String, Object> configMap = createConfigurationRequest(
-            createSlot("cat_a1", "sel_a1", "text_a1"),
-            createSlot("cat_a2", "sel_a2", "text_a2"),
-            createSlot("cat_b1", "sel_b1", "text_b1"),
-            createSlot("cat_b2", "sel_b2", "text_b2")
+            createSlot("sel_a1"),
+            createSlot("sel_a2"),
+            createSlot("sel_b1"),
+            createSlot("sel_b2")
         );
         List<ComponentConfiguration> configurations = builder.getConfigurationsImpl(configMap);
         assertNotNull(configurations);
         assertEquals(4, configurations.size());
         configurations.forEach(componentConfiguration -> {
-            assertTrue(componentConfiguration.getConfiguration() instanceof KeySwitchConfiguration);
+            assertTrue(componentConfiguration.getConfiguration() instanceof LampConfiguration);
             assertEquals(2, componentConfiguration.getCount());
-            KeySwitchConfiguration ksC = (KeySwitchConfiguration) componentConfiguration.getConfiguration();
-            String position = ksC.getPosition();
-            assertEquals("text_" + position, ksC.getEngraving());
-            assertEquals("DT", ksC.getFixtureFamily());
-            assertEquals("sel_" + position, ksC.getKeyFunction());
-            assertEquals("CAT_" + position.toUpperCase(), ksC.getKeySwitch());
-            assertEquals("KABA", ksC.getKeyType());
+            LampConfiguration lC = (LampConfiguration) componentConfiguration.getConfiguration();
+            String position = lC.getPosition();
+            assertEquals("DT", lC.getFixtureFamily());
+            assertEquals("SEL_" + position.toUpperCase(), lC.getLamp());
         });
     }
 
@@ -74,9 +71,9 @@ public class TestLopKKeySwitchConfigurationBuilder {
     @DisplayName("create a configuration for each requested slot")
     public void testGetAConfigurationForEachSlot() {
         Map<String, Object> configMap = createConfigurationRequest(
-            createSlot("cat_a1", "sel_a1", "text_a1"),
+            createSlot("sel_a1"),
             null,
-            createSlot("cat_b1", "sel_b1", "text_b1"),
+            createSlot("sel_b1"),
             null
         );
         List<ComponentConfiguration> configurations = builder.getConfigurationsImpl(configMap);

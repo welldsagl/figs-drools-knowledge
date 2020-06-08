@@ -1,4 +1,4 @@
-package ch.welld.schindler.fixture.droolsknowledge.builders.lopk;
+package ch.welld.schindler.fixture.droolsknowledge.builders.lopl;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.components.mounting.MountingConfiguration;
@@ -13,9 +13,9 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("lop k mounting configuration builder")
-public class TestLopKMountingConfigurationBuilder {
+public class TestLopLMountingConfigurationBuilder {
 
-    private final LopKMountingConfigurationBuilder builder = new LopKMountingConfigurationBuilder();
+    private final LopLMountingConfigurationBuilder builder = new LopLMountingConfigurationBuilder();
 
     @Test
     @DisplayName("not get the lop type")
@@ -41,20 +41,20 @@ public class TestLopKMountingConfigurationBuilder {
         Map<String, Object> config = new Maps.Builder<String,Object>()
             .put("lopKType", "100x110")
             .build();
-        assertEquals("100x110", builder.getLopKType(config));
+        assertNull(builder.getLopKType(config));
     }
 
     @Test
     @DisplayName("not get the lop-l type")
     public void testGetLopLType() {
         Map<String, Object> config = new Maps.Builder<String,Object>()
-            .put("lopLType", "anything")
+            .put("lopLType", "100x110")
             .build();
-        assertNull(builder.getLopLType(config));
+        assertEquals("100x110", builder.getLopLType(config));
     }
 
     @Test
-    @DisplayName("convert into an empty list if lop-k quantity is zero")
+    @DisplayName("convert into an empty list if lop-l quantity is zero")
     public void testEmptyConfigurationList() {
         List<ComponentConfiguration> configuration = builder.getConfigurations(
             new Maps.Builder<String, Object>()
@@ -71,7 +71,7 @@ public class TestLopKMountingConfigurationBuilder {
         Map<String, Object> config = new Maps.Builder<String,Object>()
             .put("topFloors", new BigDecimal(2))
             .put("mounting", "SURFACE")
-            .put("lopKType", "100x110")
+            .put("lopLType", "100x110")
             .build();
         List<ComponentConfiguration> builtConfigs = builder.getConfigurationsImpl(config);
         assertEquals(1, builtConfigs.size());
