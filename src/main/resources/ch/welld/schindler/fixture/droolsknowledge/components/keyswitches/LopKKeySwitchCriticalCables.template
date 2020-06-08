@@ -1,6 +1,6 @@
 <rule>
   <name>LopKKeySwitchCriticalCables</name>
-  <parentName>LOP K KeySwitch Critical Cables</parentName>
+  <parentName>LOP K KeySwitch Critical</parentName>
   <modelVersion>1.0</modelVersion>
   <attributes/>
   <metadataList/>
@@ -106,7 +106,7 @@
         </fieldValue>
         <fieldValue>
           <field>quantity</field>
-          <value>config.getCablesQuantity()</value>
+          <value>config.getCriticalQuantity()</value>
           <nature>3</nature>
           <type>Integer</type>
         </fieldValue>

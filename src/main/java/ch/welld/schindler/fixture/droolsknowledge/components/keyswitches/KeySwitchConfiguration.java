@@ -13,7 +13,7 @@ public class KeySwitchConfiguration extends BaseConfiguration {
 	private String fixtureFamily;
 	private String position;
 	private Boolean critical;
-	private Integer cablesQuantity;
+	private Integer criticalQuantity;
 
 	public KeySwitchConfiguration() {
 	}
@@ -74,12 +74,12 @@ public class KeySwitchConfiguration extends BaseConfiguration {
 		this.critical = critical;
 	}
 
-	public Integer getCablesQuantity() {
-		return this.cablesQuantity;
+	public Integer getCriticalQuantity() {
+		return criticalQuantity;
 	}
 
-	public void setCablesQuantity(Integer cablesQuantity) {
-		this.cablesQuantity = cablesQuantity;
+	public void setCriticalQuantity(Integer criticalQuantity) {
+		this.criticalQuantity = criticalQuantity;
 	}
 
 	public KeySwitchConfiguration(
@@ -90,7 +90,7 @@ public class KeySwitchConfiguration extends BaseConfiguration {
 		String fixtureFamily,
 		String position,
 		Boolean critical,
-		Integer cablesQuantity
+		Integer criticalQuantity
 	) {
 		this.keyType = keyType;
 		this.keySwitch = keySwitch;
@@ -99,6 +99,8 @@ public class KeySwitchConfiguration extends BaseConfiguration {
 		this.fixtureFamily = fixtureFamily;
 		this.position = position;
 		this.critical = critical;
-		this.cablesQuantity = cablesQuantity;
+		this.criticalQuantity = criticalQuantity;
 	}
+
+
 }

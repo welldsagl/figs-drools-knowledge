@@ -18,11 +18,19 @@ public class TestLopKKeySwitchConfigurationBuilder {
 
     private final LopKKeySwitchConfigurationBuilder builder = new LopKKeySwitchConfigurationBuilder();
 
-    private Map<String, Object> createSlot(String category, String selection, String text) {
+    private Map<String, Object> createSlot(
+        String category,
+        String selection,
+        String text,
+        Boolean critical,
+        BigDecimal criticalQuantity
+    ) {
         return new Maps.Builder<String,Object>()
             .put("category", category)
             .put("selection", selection)
             .put("text", text)
+            .put("critical", critical)
+            .put("criticalQuantity", criticalQuantity)
             .build();
     }
 
@@ -49,10 +57,10 @@ public class TestLopKKeySwitchConfigurationBuilder {
     @DisplayName("convert into a list of key switch configurations")
     public void testCreateConfiguration() {
         Map<String, Object> configMap = createConfigurationRequest(
-            createSlot("cat_a1", "sel_a1", "text_a1"),
-            createSlot("cat_a2", "sel_a2", "text_a2"),
-            createSlot("cat_b1", "sel_b1", "text_b1"),
-            createSlot("cat_b2", "sel_b2", "text_b2")
+            createSlot("cat_a1", "sel_a1", "text_a1", false, null),
+            createSlot("cat_a2", "sel_a2", "text_a2", false, null),
+            createSlot("cat_b1", "sel_b1", "text_b1", false, null),
+            createSlot("cat_b2", "sel_b2", "text_b2", false, null)
         );
         List<ComponentConfiguration> configurations = builder.getConfigurationsImpl(configMap);
         assertNotNull(configurations);
@@ -67,6 +75,8 @@ public class TestLopKKeySwitchConfigurationBuilder {
             assertEquals("sel_" + position, ksC.getKeyFunction());
             assertEquals("CAT_" + position.toUpperCase(), ksC.getKeySwitch());
             assertEquals("KABA", ksC.getKeyType());
+            assertEquals(false, ksC.getCritical());
+            assertEquals(0, ksC.getCriticalQuantity());
         });
     }
 
@@ -74,13 +84,32 @@ public class TestLopKKeySwitchConfigurationBuilder {
     @DisplayName("create a configuration for each requested slot")
     public void testGetAConfigurationForEachSlot() {
         Map<String, Object> configMap = createConfigurationRequest(
-            createSlot("cat_a1", "sel_a1", "text_a1"),
+            createSlot("cat_a1", "sel_a1", "text_a1", false, null),
             null,
-            createSlot("cat_b1", "sel_b1", "text_b1"),
+            createSlot("cat_b1", "sel_b1", "text_b1", false, null),
             null
         );
         List<ComponentConfiguration> configurations = builder.getConfigurationsImpl(configMap);
         assertEquals(2, configurations.size());
+    }
+
+    @Test
+    @DisplayName("create a configuration for a critical slot")
+    public void testGetCriticalConfiguration() {
+        Map<String, Object> configMap = createConfigurationRequest(
+            null,
+            null,
+            createSlot("cat_b1", "sel_b1", "text_b1", true, new BigDecimal(4)),
+            null
+        );
+        List<ComponentConfiguration> configurations = builder.getConfigurationsImpl(configMap);
+        assertEquals(1, configurations.size());
+        KeySwitchConfiguration criticalConfig = (KeySwitchConfiguration) configurations.get(0).getConfiguration();
+        assertEquals("text_b1", criticalConfig.getEngraving());
+        assertEquals("sel_b1", criticalConfig.getKeyFunction());
+        assertEquals("CAT_B1", criticalConfig.getKeySwitch());
+        assertEquals(true, criticalConfig.getCritical());
+        assertEquals(4, criticalConfig.getCriticalQuantity());
     }
 
     @Test

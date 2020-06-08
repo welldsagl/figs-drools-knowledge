@@ -7,6 +7,7 @@ import ch.welld.schindler.fixture.droolsknowledge.components.keyswitches.KeySwit
 import ch.welld.schindler.fixture.droolsknowledge.types.LopKConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,7 +22,9 @@ public class LopKKeySwitchConfigurationBuilder extends KeySwitchConfigurationBui
         String keySwitch,
         String keyFunction,
         String engraving,
-        String position
+        String position,
+        Boolean critical,
+        BigDecimal criticalQuantity
     ) {
         KeySwitchConfiguration ksConfiguration = new KeySwitchConfiguration();
         ksConfiguration.setKeyType(getUpperCaseString(config, "keyType"));
@@ -30,6 +33,8 @@ public class LopKKeySwitchConfigurationBuilder extends KeySwitchConfigurationBui
         ksConfiguration.setKeyFunction(keyFunction);
         ksConfiguration.setEngraving(engraving);
         ksConfiguration.setPosition(position);
+        ksConfiguration.setCritical(critical);
+        ksConfiguration.setCriticalQuantity(criticalQuantity != null ? criticalQuantity.intValue() : 0);
         return ksConfiguration;
     }
 
@@ -39,17 +44,19 @@ public class LopKKeySwitchConfigurationBuilder extends KeySwitchConfigurationBui
         if (floorsQuantity == 0) {
             return Collections.emptyList();
         }
-        Map<String, Map<String, String>> lopKSlots = (Map<String, Map<String, String>>) config.get("keySwitch");
+        Map<String, Map<String, Object>> lopKSlots = (Map<String, Map<String, Object>>) config.get("keySwitch");
         List<KeySwitchConfiguration> keySwitchConfigurations = new ArrayList<>();
 
         lopKSlots.forEach((key, value) ->
             keySwitchConfigurations.add(
                 createKeySwitchConfiguration(
                     config,
-                    value.get("category"),
-                    value.get("selection"),
-                    value.get("text"),
-                    key
+                    (String) value.get("category"),
+                    (String) value.get("selection"),
+                    (String) value.get("text"),
+                    key,
+                    (Boolean) value.get("critical"),
+                    (BigDecimal) value.get("criticalQuantity")
                 )
             )
         );

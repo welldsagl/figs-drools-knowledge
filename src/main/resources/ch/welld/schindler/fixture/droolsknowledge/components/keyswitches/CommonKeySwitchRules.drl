@@ -16,9 +16,9 @@ rule "LOP K KeySwitch Cables"
     then
 end
 
-rule "LOP K KeySwitch Critical Cables"
+rule "LOP K KeySwitch Critical"
     when
-        KeySwitchConfiguration( componentType == "LOP-K", critical == true ) or CableRequest()
+        KeySwitchConfiguration( componentType == "LOP-K", critical == true )
     then
 end
 
