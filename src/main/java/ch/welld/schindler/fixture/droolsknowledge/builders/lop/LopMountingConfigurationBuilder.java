@@ -1,6 +1,7 @@
 package ch.welld.schindler.fixture.droolsknowledge.builders.lop;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
+import ch.welld.schindler.fixture.droolsknowledge.builders.common.FloorsQuantityHelper;
 import ch.welld.schindler.fixture.droolsknowledge.builders.common.MountingConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.components.mounting.MountingConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.components.mounting.SealingFoamConfiguration;
@@ -26,15 +27,25 @@ public class LopMountingConfigurationBuilder extends MountingConfigurationBuilde
     }
 
     @Override
+    protected String getLopKType(Map<String, Object> config) {
+        return null;
+    }
+
+    @Override
+    protected String getLopLType(Map<String, Object> config) {
+        return null;
+    }
+
+    @Override
     protected List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
-        if (LopBuilderHelper.getTotalFloorsCount(config) == 0) {
+        if (FloorsQuantityHelper.getTotalFloorsCount(config) == 0) {
             return Collections.emptyList();
         }
         List<ComponentConfiguration> componentConfigurations = new ArrayList<>();
         // mounting configuration
         MountingConfiguration mc = createBaseConfiguration(config);
         componentConfigurations.add(
-            new ComponentConfiguration(mc,LopBuilderHelper.getTotalFloorsCount(config))
+            new ComponentConfiguration(mc,FloorsQuantityHelper.getTotalFloorsCount(config))
         );
         //seal foam configuration
         SealingFoamConfiguration sfc = new SealingFoamConfiguration();

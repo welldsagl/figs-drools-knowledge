@@ -1,6 +1,6 @@
 <rule>
-  <name>KeySwitchCables</name>
-  <parentName>KeySwitch Cables</parentName>
+  <name>CopKeySwitchCables</name>
+  <parentName>COP KeySwitch Cables</parentName>
   <modelVersion>1.0</modelVersion>
   <attributes/>
   <metadataList/>

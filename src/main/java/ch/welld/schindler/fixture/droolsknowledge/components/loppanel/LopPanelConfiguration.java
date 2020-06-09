@@ -16,6 +16,7 @@ public class LopPanelConfiguration extends BaseConfiguration {
     private String buttonPanel;
     private String lopType;
     private String indicatorFamily;
+    private String floorPosition;
 
     public LopPanelConfiguration() {
     }
@@ -68,13 +69,22 @@ public class LopPanelConfiguration extends BaseConfiguration {
         this.indicatorFamily = indicatorFamily;
     }
 
+    public String getFloorPosition() {
+        return floorPosition;
+    }
+
+    public void setFloorPosition(String floorPosition) {
+        this.floorPosition = floorPosition;
+    }
+
     public LopPanelConfiguration(
         Boolean withGlass,
         Boolean withLogo,
         String decoPanel,
         String buttonPanel,
         String lopType,
-        String indicatorFamily
+        String indicatorFamily,
+        String floorPosition
     ) {
         this.withGlass = withGlass;
         this.withLogo = withLogo;
@@ -82,5 +92,6 @@ public class LopPanelConfiguration extends BaseConfiguration {
         this.buttonPanel = buttonPanel;
         this.lopType = lopType;
         this.indicatorFamily = indicatorFamily;
+        this.floorPosition = floorPosition;
     }
 }

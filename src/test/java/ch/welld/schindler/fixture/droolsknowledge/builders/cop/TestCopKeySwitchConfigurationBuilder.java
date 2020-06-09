@@ -2,7 +2,6 @@ package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.builders.InvalidConfigurationFormatException;
-import ch.welld.schindler.fixture.droolsknowledge.builders.cop.KeySwitchConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.components.keyswitches.KeySwitchConfiguration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,34 +12,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("test Key Switch configuration builder")
-public class TestKeySwitchConfigurationBuilder {
+@DisplayName("cop key Switch configuration builder")
+public class TestCopKeySwitchConfigurationBuilder {
 
-    private KeySwitchConfigurationBuilder builder = new KeySwitchConfigurationBuilder();
-
-    @Test
-    @DisplayName("can convert a key switch configuration")
-    public void testCanParseKeySwitchConfiguration() {
-        assertTrue(
-            builder.canParseConfiguration(Collections.singletonMap("sections", "key switches"))
-        );
-    }
-
-    @Test
-    @DisplayName("cannot convert a not key switch configuration")
-    public void testCannotParseNonKeySwitchConfiguration() {
-        assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("sections", "lamp"))
-        );
-    }
-
-    @Test
-    @DisplayName("cannot convert a configuration with no 'sections' field")
-    public void testCannotParseConfigurationWithNoSectionsKey() {
-        assertFalse(
-            builder.canParseConfiguration(Collections.emptyMap())
-        );
-    }
+    private final CopKeySwitchConfigurationBuilder builder = new CopKeySwitchConfigurationBuilder();
 
     @Test
     @DisplayName("convert a correct configuration")

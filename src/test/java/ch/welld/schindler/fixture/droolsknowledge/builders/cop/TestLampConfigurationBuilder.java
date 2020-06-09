@@ -2,7 +2,6 @@ package ch.welld.schindler.fixture.droolsknowledge.builders.cop;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.builders.InvalidConfigurationFormatException;
-import ch.welld.schindler.fixture.droolsknowledge.builders.cop.LampConfigurationBuilder;
 import ch.welld.schindler.fixture.droolsknowledge.components.lamps.LampConfiguration;
 import com.google.common.collect.Lists;
 import org.junit.jupiter.api.DisplayName;
@@ -18,31 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("test lamp configuration builder")
 public class TestLampConfigurationBuilder {
 
-    private LampConfigurationBuilder builder = new LampConfigurationBuilder();
-
-    @Test
-    @DisplayName("can convert a lamp configuration")
-    public void testCanParseLampConfiguration() {
-        assertTrue(
-            builder.canParseConfiguration(Collections.singletonMap("sections", "Lamps"))
-        );
-    }
-
-    @Test
-    @DisplayName("cannot convert a not lamp configuration")
-    public void testCannotParseNonLampConfiguration() {
-        assertFalse(
-            builder.canParseConfiguration(Collections.singletonMap("sections", "Fixtures"))
-        );
-    }
-
-    @Test
-    @DisplayName("cannot convert a configuration with no 'sections' field")
-    public void testCannotParseConfigurationWithNoSectionsKey() {
-        assertFalse(
-            builder.canParseConfiguration(Collections.emptyMap())
-        );
-    }
+    private final CopLampConfigurationBuilder builder = new CopLampConfigurationBuilder();
 
     @Test
     @DisplayName("convert a correct configuration")
@@ -60,10 +35,10 @@ public class TestLampConfigurationBuilder {
         assertEquals(2, configuration.size());
         assertEquals(1, configuration.get(0).getCount());
         assertTrue(configuration.get(0).getConfiguration() instanceof LampConfiguration);
-        LampConfiguration lampConfiguration = (LampConfiguration) configuration.get(0).getConfiguration();
-        assertEquals("LEB", lampConfiguration.getLamp());
-        assertEquals("DT", lampConfiguration.getFixtureFamily());
-        assertEquals(true, lampConfiguration.getEn8120());
+        LampConfiguration lampConfigurationLEB = (LampConfiguration) configuration.get(0).getConfiguration();
+        LampConfiguration lampConfigurationLNO = (LampConfiguration) configuration.get(1).getConfiguration();
+        assertEquals("LEB", lampConfigurationLEB.getLamp());
+        assertEquals("LNO", lampConfigurationLNO.getLamp());
     }
 
     @Test

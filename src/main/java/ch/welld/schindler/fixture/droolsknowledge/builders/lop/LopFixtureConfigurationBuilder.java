@@ -2,6 +2,7 @@ package ch.welld.schindler.fixture.droolsknowledge.builders.lop;
 
 import ch.welld.schindler.fixture.droolsknowledge.builders.ComponentConfiguration;
 import ch.welld.schindler.fixture.droolsknowledge.builders.common.FixtureConfigurationBuilder;
+import ch.welld.schindler.fixture.droolsknowledge.builders.common.FloorsQuantityHelper;
 import ch.welld.schindler.fixture.droolsknowledge.types.LopConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -44,9 +45,9 @@ public class LopFixtureConfigurationBuilder extends FixtureConfigurationBuilder 
     public List<ComponentConfiguration> getConfigurationsImpl(Map<String, Object> config) {
         List<ComponentConfiguration> configList = new ArrayList<>();
 
-        int topFloors = LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.TOP);
-        int middleFloors = LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.MIDDLE);
-        int bottomFloors = LopBuilderHelper.getFloorsCount(config, LopBuilderHelper.FloorPosition.BOTTOM);
+        int topFloors = FloorsQuantityHelper.getFloorsCount(config, FloorsQuantityHelper.FloorPosition.TOP);
+        int middleFloors = FloorsQuantityHelper.getFloorsCount(config, FloorsQuantityHelper.FloorPosition.MIDDLE);
+        int bottomFloors = FloorsQuantityHelper.getFloorsCount(config, FloorsQuantityHelper.FloorPosition.BOTTOM);
 
         int upButtons = middleFloors + bottomFloors;
         int downButtons = middleFloors + topFloors;

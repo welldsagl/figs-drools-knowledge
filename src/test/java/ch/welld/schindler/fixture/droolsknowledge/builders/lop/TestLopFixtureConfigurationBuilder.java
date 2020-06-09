@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.kie.soup.commons.util.Maps;
 
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("lop fixture configuration builder")
 public class TestLopFixtureConfigurationBuilder {
 
-    LopFixtureConfigurationBuilder builder = new LopFixtureConfigurationBuilder();
+    private final LopFixtureConfigurationBuilder builder = new LopFixtureConfigurationBuilder();
 
     private Map<String, Object> createConfigurationRequest(int topFloors, int middleFloors, int bottomFloors) {
         return new Maps.Builder<String, Object>()
@@ -40,6 +41,48 @@ public class TestLopFixtureConfigurationBuilder {
     }
 
     @Test
+    @DisplayName("get fixture type equal to FLOORS")
+    public void testGetFixtureType() {
+        assertEquals("FLOOR", builder.getFixtureType(null, null));
+    }
+
+    @Test
+    @DisplayName("get push type depending on configuration")
+    public void testGetPushType() {
+        Map<String, Object> config = new Maps.Builder<String, Object>()
+            .put("pushType", "TOUCH")
+            .build();
+        assertEquals("TOUCH", builder.getPushType(config, null));
+    }
+
+    @Test
+    @DisplayName("get default push type of PUSH")
+    public void testGetDefaultPushType() {
+        assertEquals("PUSH", builder.getPushType(Collections.emptyMap(), null));
+    }
+
+    @Test
+    @DisplayName("get up arrow label")
+    public void testGetUpArrowLabel() {
+        assertEquals("▲", builder.getLabel(Collections.emptyMap(), "UP"));
+    }
+
+    @Test
+    @DisplayName("get down arrow label")
+    public void testGetDownArrowLabel() {
+        assertEquals("▼", builder.getLabel(Collections.emptyMap(), "DOWN"));
+    }
+
+    @Test
+    @DisplayName("throw an exception if button type is not recognized null label")
+    public void testGetNullLabel() {
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> builder.getLabel(Collections.emptyMap(), "another type")
+        );
+    }
+
+    @Test
     @DisplayName("get one button configuration for down buttons if only top floors are provided")
     public void testOnlyTopFloorsConfiguration() {
         Map<String, Object> configMap = createConfigurationRequest(2,0,0);
@@ -50,8 +93,6 @@ public class TestLopFixtureConfigurationBuilder {
         assertEquals(2, config.getCount());
         assertTrue(config.getConfiguration() instanceof FixtureConfiguration);
         FixtureConfiguration c = (FixtureConfiguration) config.getConfiguration();
-        assertEquals("FLOOR", c.getFixtureType());
-        assertEquals("PUSH", c.getPushType());
         assertEquals("▼", c.getLabel());
     }
 
@@ -66,8 +107,6 @@ public class TestLopFixtureConfigurationBuilder {
         assertEquals(2, config.getCount());
         assertTrue(config.getConfiguration() instanceof FixtureConfiguration);
         FixtureConfiguration c = (FixtureConfiguration) config.getConfiguration();
-        assertEquals("FLOOR", c.getFixtureType());
-        assertEquals("PUSH", c.getPushType());
         assertEquals("▲", c.getLabel());
     }
 
@@ -86,11 +125,7 @@ public class TestLopFixtureConfigurationBuilder {
         assertTrue(downButtonsConfig.getConfiguration() instanceof FixtureConfiguration);
         FixtureConfiguration upButtonsFixtureConfig = (FixtureConfiguration) upButtonsConfig.getConfiguration();
         FixtureConfiguration downButtonsFixtureConfig = (FixtureConfiguration) downButtonsConfig.getConfiguration();
-        assertEquals("FLOOR", upButtonsFixtureConfig.getFixtureType());
-        assertEquals("PUSH", upButtonsFixtureConfig.getPushType());
         assertEquals("▲", upButtonsFixtureConfig.getLabel());
-        assertEquals("FLOOR", downButtonsFixtureConfig.getFixtureType());
-        assertEquals("PUSH", downButtonsFixtureConfig.getPushType());
         assertEquals("▼", downButtonsFixtureConfig.getLabel());
     }
 
@@ -109,11 +144,7 @@ public class TestLopFixtureConfigurationBuilder {
         assertTrue(downButtonsConfig.getConfiguration() instanceof FixtureConfiguration);
         FixtureConfiguration upButtonsFixtureConfig = (FixtureConfiguration) upButtonsConfig.getConfiguration();
         FixtureConfiguration downButtonsFixtureConfig = (FixtureConfiguration) downButtonsConfig.getConfiguration();
-        assertEquals("FLOOR", upButtonsFixtureConfig.getFixtureType());
-        assertEquals("PUSH", upButtonsFixtureConfig.getPushType());
         assertEquals("▲", upButtonsFixtureConfig.getLabel());
-        assertEquals("FLOOR", downButtonsFixtureConfig.getFixtureType());
-        assertEquals("PUSH", downButtonsFixtureConfig.getPushType());
         assertEquals("▼", downButtonsFixtureConfig.getLabel());
     }
 
