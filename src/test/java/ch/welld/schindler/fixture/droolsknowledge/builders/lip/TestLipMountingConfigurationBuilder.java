@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("lip mounting configuration builder")
 public class TestLipMountingConfigurationBuilder {
 
-    private LipMountingConfigurationBuilder builder = new LipMountingConfigurationBuilder();
+    private final LipMountingConfigurationBuilder builder = new LipMountingConfigurationBuilder();
 
     @Test
     @DisplayName("not get the lop type")
@@ -33,6 +33,24 @@ public class TestLipMountingConfigurationBuilder {
             .put("lipType", "Horizontal")
             .build();
         assertEquals("HORIZONTAL", builder.getLipType(config));
+    }
+
+    @Test
+    @DisplayName("not get the lop-k type")
+    public void testGetLopKType() {
+        Map<String, Object> config = new Maps.Builder<String,Object>()
+            .put("lopKType", "anything")
+            .build();
+        assertNull(builder.getLopKType(config));
+    }
+
+    @Test
+    @DisplayName("not get the lop-l type")
+    public void testGetLopLType() {
+        Map<String, Object> config = new Maps.Builder<String,Object>()
+            .put("lopLType", "anything")
+            .build();
+        assertNull(builder.getLopLType(config));
     }
 
     @Test

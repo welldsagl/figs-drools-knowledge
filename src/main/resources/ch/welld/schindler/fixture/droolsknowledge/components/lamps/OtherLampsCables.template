@@ -1,6 +1,6 @@
 <rule>
   <name>OtherLampsCables</name>
-  <parentName>Other Lamps Cables</parentName>
+  <parentName>Other COP Lamps Cables</parentName>
   <modelVersion>1.0</modelVersion>
   <attributes/>
   <metadataList/>

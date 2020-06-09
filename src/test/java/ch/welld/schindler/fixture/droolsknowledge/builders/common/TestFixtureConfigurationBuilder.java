@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("test fixture configuration builder")
 public class TestFixtureConfigurationBuilder {
 
-    private FixtureConfigurationBuilder builder = new FixtureConfigurationBuilder() {
+    private final FixtureConfigurationBuilder builder = new FixtureConfigurationBuilder() {
         @Override
         public String getCableLengthKey() {
             return null;
@@ -95,8 +95,8 @@ public class TestFixtureConfigurationBuilder {
     }
 
     @Test
-    @DisplayName("convert a main button configuration")
-    public void testParseMainConfiguration() {
+    @DisplayName("create a fixture configuration")
+    public void testParseFixtureConfiguration() {
         Map<String, Object> configurationRequest = createConfigurationRequest();
 
         FixtureConfiguration c = builder.createBaseConfiguration(configurationRequest, "a type");
@@ -118,15 +118,16 @@ public class TestFixtureConfigurationBuilder {
     }
 
     @Test
-    @DisplayName("throws the correct exception with an incorrect configuration")
+    @DisplayName("throws an exception if the configuration is not correct")
     public void testThrowsInvalidConfigurationFormatException() {
         assertThrows(
-            InvalidConfigurationFormatException.class,
-            () -> builder.getConfigurations(
+            ClassCastException.class,
+            () -> builder.createBaseConfiguration(
                 new Maps.Builder<String,Object>()
                     .put("mainFloorButton", true)
                     .put("backlight", "not a boolean")
-                    .build()
+                    .build(),
+                "a type"
             )
         );
     }

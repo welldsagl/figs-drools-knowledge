@@ -1,6 +1,8 @@
 package ch.welld.schindler.fixture.droolsknowledge.components.loppanel;
 
-import ch.welld.schindler.fixture.droolsknowledge.materials.CableRequest;
+import ch.welld.schindler.fixture.droolsknowledge.materials.CableRequest
+import java.util.HashMap;
+import java.util.Map;
 
 rule "LOP Panel"
     when
@@ -37,3 +39,9 @@ rule "LOP Panel On Commission Cables"
         CableRequest( length not in (5000,10000,15000,20000) ) or LopPanelConfiguration( componentType == "LOP", cableLength not in (5000,10000,15000,20000) )
     then
 end
+
+function Map<String, Object> createLopPanelMetadata(LopPanelConfiguration config) {
+    Map<String, Object> m = new HashMap<String, Object>();
+    m.put("Floor", config.getFloorPosition());
+    return m;
+}

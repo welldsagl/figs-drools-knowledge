@@ -24,6 +24,22 @@
             <isOtherwise>false</isOtherwise>
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
+          <width>122</width>
+          <header>component type</header>
+          <constraintValueType>1</constraintValueType>
+          <factField>componentType</factField>
+          <fieldType>String</fieldType>
+          <operator>==</operator>
+          <parameters/>
+          <binding></binding>
+        </condition-column52>
+        <condition-column52>
+          <typedDefaultValue>
+            <valueString></valueString>
+            <dataType>STRING</dataType>
+            <isOtherwise>false</isOtherwise>
+          </typedDefaultValue>
+          <hideColumn>false</hideColumn>
           <width>100</width>
           <header>key type</header>
           <constraintValueType>1</constraintValueType>
@@ -66,6 +82,7 @@
       <window>
         <parameters/>
       </window>
+      <entryPointName></entryPointName>
     </Pattern52>
   </conditionPatterns>
   <actionCols>
@@ -151,6 +168,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString>KCA31</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -188,7 +210,12 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>KEY CONTACT</valueString>
         <dataType>STRING</dataType>
@@ -222,7 +249,12 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>KEY CONTACT</valueString>
         <dataType>STRING</dataType>
@@ -256,7 +288,12 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>KEY CONTACT</valueString>
         <dataType>STRING</dataType>
@@ -290,7 +327,12 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>KEY CONTACT</valueString>
         <dataType>STRING</dataType>
@@ -324,7 +366,12 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
       <value>
         <valueString>2 POSITION</valueString>
         <dataType>STRING</dataType>
@@ -358,8 +405,13 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
-      <value reference="../../list[6]/value[4]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
+      <value reference="../../list[6]/value[5]"/>
       <value>
         <valueString>JNO</valueString>
         <dataType>STRING</dataType>
@@ -388,8 +440,13 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
-      <value reference="../../list[6]/value[4]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
+      <value reference="../../list[6]/value[5]"/>
       <value>
         <valueString>JSPE</valueString>
         <dataType>STRING</dataType>
@@ -418,8 +475,13 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
-      <value reference="../../list[6]/value[4]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
+      <value reference="../../list[6]/value[5]"/>
       <value>
         <valueString>JVEC</valueString>
         <dataType>STRING</dataType>
@@ -448,8 +510,13 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
-      <value reference="../../list[6]/value[4]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
+      <value reference="../../list[6]/value[5]"/>
       <value>
         <valueString>JLC</valueString>
         <dataType>STRING</dataType>
@@ -478,8 +545,13 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
-      <value reference="../../list[6]/value[4]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
+      <value reference="../../list[6]/value[5]"/>
       <value>
         <valueString>JKLBL</valueString>
         <dataType>STRING</dataType>
@@ -505,6 +577,11 @@
       </value>
       <value>
         <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>COP</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -546,8 +623,13 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
-      <value reference="../../list[6]/value[4]"/>
+      <value>
+        <valueString>COP</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
+      <value reference="../../list[6]/value[5]"/>
       <value>
         <valueString>JLI</valueString>
         <dataType>STRING</dataType>
@@ -576,8 +658,13 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
-      <value reference="../../list[6]/value[4]"/>
+      <value>
+        <valueString>COP</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
+      <value reference="../../list[6]/value[5]"/>
       <value>
         <valueString>JRVC</valueString>
         <dataType>STRING</dataType>
@@ -606,8 +693,13 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
-      <value reference="../../list[6]/value[4]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
+      <value reference="../../list[6]/value[5]"/>
       <value>
         <valueString>JNFFP</valueString>
         <dataType>STRING</dataType>
@@ -636,8 +728,13 @@
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
-      <value reference="../../list/value[3]"/>
-      <value reference="../../list[6]/value[4]"/>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value reference="../../list/value[4]"/>
+      <value reference="../../list[6]/value[5]"/>
       <value>
         <valueString>JBF</valueString>
         <dataType>STRING</dataType>
@@ -659,6 +756,11 @@
         <valueNumeric class="int">17</valueNumeric>
         <valueString></valueString>
         <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -705,6 +807,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString>KABA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -735,6 +842,11 @@
         <valueNumeric class="int">19</valueNumeric>
         <valueString></valueString>
         <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -781,6 +893,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString>KABA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -811,6 +928,11 @@
         <valueNumeric class="int">21</valueNumeric>
         <valueString></valueString>
         <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -857,6 +979,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString>KABA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -887,6 +1014,11 @@
         <valueNumeric class="int">23</valueNumeric>
         <valueString></valueString>
         <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -933,6 +1065,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString>KABA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -963,6 +1100,11 @@
         <valueNumeric class="int">25</valueNumeric>
         <valueString></valueString>
         <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -1009,6 +1151,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString>KABA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -1039,6 +1186,11 @@
         <valueNumeric class="int">27</valueNumeric>
         <valueString></valueString>
         <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -1085,6 +1237,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString>KABA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -1115,6 +1272,11 @@
         <valueNumeric class="int">29</valueNumeric>
         <valueString></valueString>
         <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
@@ -1161,6 +1323,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString>COP</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString>KABA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -1195,6 +1362,11 @@
       </value>
       <value>
         <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>COP</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
@@ -1237,6 +1409,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString>COP</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString>KABA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -1275,6 +1452,11 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
+        <valueString>LOP-K</valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
         <valueString>KABA</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
@@ -1309,6 +1491,11 @@
       </value>
       <value>
         <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString>LOP-K</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>

@@ -4,9 +4,21 @@ import java.util.Map;
 import java.util.HashMap;
 import ch.welld.schindler.fixture.droolsknowledge.materials.CableRequest;
 
-rule "KeySwitch Cables"
+rule "COP KeySwitch Cables"
     when
-        KeySwitchConfiguration() or CableRequest()
+        KeySwitchConfiguration( componentType == "COP" ) or CableRequest()
+    then
+end
+
+rule "LOP K KeySwitch Cables"
+    when
+        KeySwitchConfiguration( componentType == "LOP-K" ) or CableRequest()
+    then
+end
+
+rule "LOP K KeySwitch Critical"
+    when
+        KeySwitchConfiguration( componentType == "LOP-K", critical == true )
     then
 end
 
@@ -32,5 +44,12 @@ function Map<String, Object> createKeySwitchMetadata(KeySwitchConfiguration conf
     Map<String, Object> m = new HashMap<String, Object>();
     m.put("engraving", config.getEngraving());
     m.put("function", config.getKeyFunction());
+    m.put("position", config.getPosition());
+    return m;
+}
+
+function Map<String, Object> createCriticalCableMetadata(KeySwitchConfiguration config) {
+    Map<String, Object> m = new HashMap<String, Object>();
+    m.put("position", config.getPosition());
     return m;
 }

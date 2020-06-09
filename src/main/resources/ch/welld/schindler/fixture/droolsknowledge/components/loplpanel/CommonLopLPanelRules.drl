@@ -1,0 +1,16 @@
+package ch.welld.schindler.fixture.droolsknowledge.components.loplpanel;
+
+import java.util.HashMap;
+import java.util.Map;
+
+rule "LOP-L Panel"
+    when
+        LopLPanelConfiguration()
+    then
+end
+
+function Map<String, Object> createLopLPanelMetadata(LopLPanelConfiguration config) {
+    Map<String, Object> m = new HashMap<String, Object>();
+    m.put("Positions", config.getPositions());
+    return m;
+}

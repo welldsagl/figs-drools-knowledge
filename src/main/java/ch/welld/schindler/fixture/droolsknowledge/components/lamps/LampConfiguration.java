@@ -11,40 +11,42 @@ public class LampConfiguration extends BaseConfiguration {
 
 	static final long serialVersionUID = 1L;
 
-	private java.lang.Boolean en8120;
+	private Boolean en8120;
 
-	private java.lang.String lamp;
+	private String lamp;
 
-	private java.lang.String fixtureFamily;
+	private String fixtureFamily;
 
 	private NullableBoolean copIntercomStation;
 
 	private NullableBoolean doppelDeckerCar;
 
+	private String position;
+
 	public LampConfiguration() {
 	}
 
-	public java.lang.Boolean getEn8120() {
+	public Boolean getEn8120() {
 		return this.en8120;
 	}
 
-	public void setEn8120(java.lang.Boolean en8120) {
+	public void setEn8120(Boolean en8120) {
 		this.en8120 = en8120;
 	}
 
-	public java.lang.String getLamp() {
+	public String getLamp() {
 		return this.lamp;
 	}
 
-	public void setLamp(java.lang.String lamp) {
+	public void setLamp(String lamp) {
 		this.lamp = lamp;
 	}
 
-	public java.lang.String getFixtureFamily() {
+	public String getFixtureFamily() {
 		return this.fixtureFamily;
 	}
 
-	public void setFixtureFamily(java.lang.String fixtureFamily) {
+	public void setFixtureFamily(String fixtureFamily) {
 		this.fixtureFamily = fixtureFamily;
 	}
 
@@ -64,10 +66,23 @@ public class LampConfiguration extends BaseConfiguration {
 		this.doppelDeckerCar = doppelDeckerCar;
 	}
 
-	public LampConfiguration(java.lang.Boolean en8120, java.lang.String lamp,
-							 java.lang.String fixtureFamily) {
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public LampConfiguration(
+		Boolean en8120,
+		String lamp,
+	 	String fixtureFamily,
+		String position
+	) {
 		this.en8120 = en8120;
 		this.lamp = lamp;
 		this.fixtureFamily = fixtureFamily;
+		this.position = position;
 	}
 }

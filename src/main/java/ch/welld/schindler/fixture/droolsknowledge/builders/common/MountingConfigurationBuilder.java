@@ -20,15 +20,21 @@ public abstract class MountingConfigurationBuilder extends AbstractConfiguration
         String mountingType = (String) config.get("mounting");
         mc.setMountingType(mountingType.equalsIgnoreCase("SURFACE") ? "SURFACE" : "WALLBOX");
         mc.setIpx3(NullableBoolean.from(
-            !mountingType.equalsIgnoreCase("SURFACE") &&
-                !mountingType.contains("without")
+            !mountingType.equalsIgnoreCase("SURFACE")
+            && !mountingType.contains("without")
         ));
         mc.setLopType(getLopType(config));
         mc.setLipType(getLipType(config));
+        mc.setLopKType(getLopKType(config));
+        mc.setLopLType(getLopLType(config));
         return mc;
     }
 
     protected abstract String getLopType(Map<String, Object> config);
 
     protected abstract String getLipType(Map<String, Object> config);
+
+    protected abstract String getLopKType(Map<String, Object> config);
+
+    protected abstract String getLopLType(Map<String, Object> config);
 }

@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestLipPanelConfigurationBuilder {
 
-    private LipPanelConfigurationBuilder builder = new LipPanelConfigurationBuilder();
+    private final LipPanelConfigurationBuilder builder = new LipPanelConfigurationBuilder();
 
     @Test
     @DisplayName("can convert a lip panel configuration")

@@ -1,5 +1,7 @@
 'MountingConfiguration.mountingType' : ['SURFACE','WALLBOX']
 'MountingConfiguration.lopType' : ['SINGLE','DOUBLE','WITHOUT']
 'MountingConfiguration.lipType' : ['HORIZONTAL','VERTICAL']
+'MountingConfiguration.lopKType' : ['100x110','100x160','180x110','180x160']
+'MountingConfiguration.lopLType' : ['100x110','100x160','180x110','180x160']
 'SealingFoamConfiguration.mountingType' : ['SURFACE','WALLBOX']
 'SealingFoamConfiguration.fixtureFamily' : ['AT','DT','MT','GST']

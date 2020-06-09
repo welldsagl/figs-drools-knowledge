@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("lop panel configuration builder")
 public class TestLopPanelConfigurationBuilder {
 
-    private LopPanelConfigurationBuilder builder = new LopPanelConfigurationBuilder();
+    private final LopPanelConfigurationBuilder builder = new LopPanelConfigurationBuilder();
 
     @Test
     @DisplayName("can convert a lop panel configuration")
@@ -66,13 +66,11 @@ public class TestLopPanelConfigurationBuilder {
                 .put("lopType", "Two indicators")
                 .put("indicatorFamily", "DMI")
                 .put("topFloors", new BigDecimal(2))
-                .put("middleFloors", new BigDecimal(3))
-                .put("bottomFloors", new BigDecimal(4))
                 .build()
         );
         assertNotNull(configuration);
         assertEquals(1, configuration.size());
-        assertEquals(9, configuration.get(0).getCount()); // 2 + 3 + 4
+        assertEquals(2, configuration.get(0).getCount());
         assertTrue(configuration.get(0).getConfiguration() instanceof LopPanelConfiguration);
         LopPanelConfiguration lopPanelConfiguration =
             (LopPanelConfiguration) configuration.get(0).getConfiguration();
@@ -83,6 +81,42 @@ public class TestLopPanelConfigurationBuilder {
         assertEquals("MIRROR", lopPanelConfiguration.getButtonPanel());
         assertEquals("DOUBLE", lopPanelConfiguration.getLopType());
         assertEquals("DMI", lopPanelConfiguration.getIndicatorFamily());
+    }
+
+    @Test
+    @DisplayName("create a configuration for each floor type")
+    public void testParseConfigurationForEachFloorType() {
+        List<ComponentConfiguration> configurations = builder.getConfigurations(
+            new Maps.Builder<String,Object>()
+                .put("panel", "GLASS")
+                .put("logo", true)
+                .put("decoPanel", "Black")
+                .put("buttonPanel", "Mirror")
+                .put("lopType", "Two indicators")
+                .put("indicatorFamily", "DMI")
+                .put("topFloors", new BigDecimal(2))
+                .put("middleFloors", new BigDecimal(3))
+                .put("bottomFloors", new BigDecimal(4))
+                .build()
+        );
+        assertEquals(3, configurations.size());
+        configurations.forEach(configuration -> {
+            LopPanelConfiguration lpc = (LopPanelConfiguration) configuration.getConfiguration();
+            String floorPosition = lpc.getFloorPosition();
+            switch (floorPosition) {
+                case "Top":
+                    assertEquals(2, configuration.getCount());
+                    break;
+                case "Bottom":
+                    assertEquals(4, configuration.getCount());
+                    break;
+                case "Intermediate":
+                    assertEquals(3, configuration.getCount());
+                    break;
+                default:
+                    fail();
+            }
+        });
     }
 
     @Test
