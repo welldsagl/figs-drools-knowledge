@@ -16,10 +16,8 @@ A component configuration represents a set of features of a chosen component, fo
 This configuration yields a list of materials codes that will be used later by the `Material rules engine` service
 to retrieve the corresponding materials from the `Catalog` service.
 
-## Prerequisites
-
--  Java 8
--  Maven
+In this guide, we will explain how we used Drools. For a more detailed explanation on the Business
+Central, check the [Business Central guide](./docs/BUSINESS_CENTRAL.md).
 
 ## Drools
 
@@ -67,6 +65,46 @@ rule "inheriting rule" extends "super rule"
         ...
 end
 ```
+
+## Rules
+
+The Drool Knowledge service can be queried in two ways:
+-  Providing a configuration map
+-  Providing a cable request
+
+![Drools diagram](./docs/images/drools-diagram.png)
+
+Component Configurations contain all the features of the component requested by the user. Rules matching those
+objects can return three kinds of materials:
+
+-  `Material` objects, that represent a unique pair of `family code` and `material code`. Inserting a Material
+into the knowledge means `Get the material identified by those two codes`. In general,
+`additional` materials are added this way.
+
+-  `Family` objects, that represent a `family code` and a `price position` type (which is always set to
+`basic` because additional materials are always added as Materials and not as Families). Inserting a 
+family into the knowledge means `Get all the material of that family with that price position`.
+In general, `basic` materials are added this way.
+
+ -  `Cable` objects, similar to Materials, with a `family code` and a `material code`, with an additional `length`
+ field.
+
+The configuration builders will convert the generic component configuration to a specific one,
+depending on the content of the configuration map. The specific component configuration will then be
+forwarded to the Drools environment. For more about configuration builders, see the
+[Java code](#java-code) section.
+
+On the other hand, a Cable Request is sent when we want to get the "sibling version" of a given cable. 
+Two sibling cables are two cables that match the same component configuration but differ for being 
+the `standard` and `on commission` versions. So, a Cable request is sent when you have a standard 
+version of a cable and you want to get the on commission one, or vice-versa. In this case, the cable
+request is directly dispatched to the Drools environment.
+
+
+## Prerequisites
+
+-  Java 8
+-  Maven
 
 ## Build
 
@@ -120,30 +158,3 @@ that must be opened with an external tool. That tool is called [Business Central
 
 Please note that `.template` and `.gdst` files will be compiled to `.drl` files, they are just a different way
 to define rules. `.enumeration` files are utility files for simplifying the usage of the Business Central.
-
-## Rules
-
-Rules can be triggered by two kinds of objects:
-
--  (as told before) Component Configurations
--  Cable Requests.
-
-Component Configurations contain all the features of the component requested by the user. Rules matching those
-objects can return three kinds of materials:
-
--  `Material` objects, that represent a unique pair of `family code` and `material code`. Inserting a Material
-into the knowledge means `Get the material identified by those two codes`. In general,
-`additional` materials are added this way.
-
--  `Family` objects, that represent a `family code` and a `price position` type (which is always set to
-`basic` because additional materials are always added as Materials and not as Families). Inserting a 
-family into the knowledge means `Get all the material of that family with that price position`.
-In general, `basic` materials are added this way.
- 
- -  `Cable` objects, similar to Materials, with a `family code` and a `material code`, with an additional `length`
- field.  
-
-A CableRequest is sent when we want to get the "sibling version" of a given cable. Two sibling cables are
-two cables that match the same component configuration but differ for being the `standard` and `on commission`
-versions. So, a Cable request is sent when you have a standard version of a cable and you want to get
-the on commission one, or vice-versa.
