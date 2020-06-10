@@ -116,6 +116,10 @@ A `kjar` is a common `jar` with a `kmodule.xml` file and a set of knowledge file
 The result of the build can be set as a dependency in any Kogito Maven project (in our case the
 `Material rules engine`) by using the [Kogito Kjar Maven Plugin](https://github.com/welldsagl/kogito-kjar-maven-plugin). 
 
+## Test
+
+To execute unit tests: `mvn test`.
+
 ## Code organization
 
 Project contains both java and drl code. 
@@ -158,3 +162,19 @@ that must be opened with an external tool. That tool is called [Business Central
 
 Please note that `.template` and `.gdst` files will be compiled to `.drl` files, they are just a different way
 to define rules. `.enumeration` files are utility files for simplifying the usage of the Business Central.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of
+conduct, and the process for submitting pull requests to us.
+
+## Authors
+
+* **Ignazio Secci** - *Developer* - [isecci](https://gitlab.welld.io/isecci)
+* **Amedeo Zucchetti** - *Developer* - [azucchetti](https://gitlab.welld.io/azucchetti)
+* **Matteo Codogno** - *Configuration* - [mcodogno](https://gitlab.welld.io/mcodogno)
+* **Simone D'Avico** - *Configuration* - [sdavico](https://gitlab.welld.io/sdavico)
+
+## License
+
+The license for this project is private.
