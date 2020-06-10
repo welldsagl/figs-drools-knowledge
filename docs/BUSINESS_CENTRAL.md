@@ -41,10 +41,10 @@ select the `Drools Knowledge` project and click on `OK` in the upper-right corne
 
 We use a mirrored GitHub repository instead of the GitLab one, because, at the moment, the Business Central does not support
 importing projects from GitLab. The two repositories are automatically synchronized; take note that
-sometimes the synchronization is not immediate, so you might have to wait awhile.
+sometimes the synchronization is not immediate, so you might have to wait for a while.
 
 At the end of the operation, a success message will be prompted, but you will still have to wait some 
-minutes for file indexing to complete (maybe take a look at the logs for keeping track of the progress).
+minutes for file indexing to complete (take a look at the logs for keeping track of the progress).
 
 By default, you will be placed on the `master` branch, by clicking on the breadcrumb on the top of the view you can 
 switch to another branch.
@@ -66,7 +66,7 @@ You can also import an asset, or create a new one. We use five kinds of assets:
 ## Data objects
 
 Data objects are the Java POJOs placed in the `component` package. The Business Central allows you to manage
-their properties, but it is much easier to handle that kind of files on your IDE. 
+their properties, but it is much easier to handle that kind of files through your IDE. 
 
 If you decide to handle POJOs manually (via IDE), remember that for each property you have to:
 
@@ -108,7 +108,7 @@ you with auto-imports and autocomplete of Java code.
 ## Enumeration files
 
 Enumeration files are utility files where we can save all possible values of POJOs properties. This is very useful
-because they will allow us to select property values on decision tables and guided rule templates, instead of typing
+because it allows us to select property values on decision tables and guided rule templates, instead of typing
 free text. This prevents us from typing invalid property values.
 
 Both the Business Central and the IDE can be used to edit these files.
@@ -132,14 +132,14 @@ We use guided decision tables to define:
 
 -  `Basic` family rules.
 -  `Additional` material rules.
--  `Cable` rules (very rarely).
+-  `Cable` rules, for those cables that have only one version (either standard or on commission).
 
 In order to create a guided decision table you have to select the `Add asset` option on the project page of the Business Central
-and then (obviously) `Guided Decision Table`. Give a name to your asset, choose the package where you want to save it
-(_e.g._, if you want to create a decision table for `buzzer` component, select `ch.welld...components.buzzer`), check
+and then `Guided Decision Table`. Give a name to your asset, choose the package where you want to save it
+(_e.g._, if you want to create a decision table for `buzzer` component, select `ch.welld...components.buzzer`), check the
 `Use Wizard` checkbox and select a `Rule order` hit policy (it means that all the matching rules will be triggered).
 
-Then, you will have to fill a wizard, as describe in the following sections.
+At this point you will have to fill a wizard, as described in the following sections.
 
 ### Creation wizard
 
@@ -156,13 +156,13 @@ into the knowledge, in order to create the right part of the rules.
 
 #### Step 3 - Add Fact Patterns
 
-Here is where we select the objects we will consider for pattern matching. Rules will check properties of the
+In this section we select the objects we will consider for pattern matching. Rules will check properties of the
 ComponentConfiguration, so we move that to the list of chosen patterns. Optionally we can give a name to the
 object (`f1` by default).
 
-#### Step 3 - Add Constraints
+#### Step 4 - Add Constraints
 
-Here is were we define the constraint that will be present in the left part of the rule. To do so, we have
+Here we define the constraint that will be present in the left part of the rule. To do so, we have
 to select the previously added ComponentConfiguration, select the field we want to set a constraint on and define
 the specific condition.
 
@@ -171,17 +171,17 @@ We also have to define a mandatory column header and operator (`equal to`, `cont
 Note that if you have already defined that property in an enumeration file, the list of possible values is already
 defined (see `default value` select).
 
-#### Step 4 - Add actions to update Facts
+#### Step 5 - Add actions to update Facts
 
-We do not need this step. You can directly jump to step 5.
+We usually do not need this step and jump to step 6.
 
-#### Step 5 - Add actions to insert Facts
+#### Step 6 - Add actions to insert Facts
 
 Here we can define the right part of the rule. Move `Material` (or the class you want to insert into the knowledge) 
-to the list of chosen patterns and move to the list of chosen fields those properties you want to set.
+to the list of chosen patterns and move to the list of chosen fields the properties you want to set.
 
 As an example, if you want to insert a Material, select at least `familyCode` and `materialCode`. You only have to
-set the column header of each column and then click on Finish button (you can skip step 6).
+set the column header of each column and then click on Finish button (you can skip step 7).
 
 ### Guided decision table environment
 
@@ -192,7 +192,7 @@ In every moment you can also see the DRL resulting from the compilation of the d
 opening the source tab. Click on save and then download to get the `.gdst` file to paste into the
 project folder.
  
-Empty cells will be skipped in rules creation, that means that rules will not consider that constraint during pattern 
+Empty cells will be ignored in rules creation, that means that rules will not consider that constraint during pattern 
 matching.
  
 ![indicators](./images/indicators.png)
@@ -201,7 +201,7 @@ As an example in the previous image we have two rules where
 
 -  indicator type needs to be matched in both rules
 -  display size is considered only in the second rule
--  mounting type is skipped in both rules.
+-  mounting type is ignored in both rules.
 
 Those two rules compile as:
 
@@ -245,10 +245,10 @@ function Map<String, Object> createLabelMetadata(FixtureConfiguration config) {
 
 -  `Boolean empty values`: The Business Central does not allow to leave boolean cells empty. Boolean cells are
 displayed as checked or unchecked checkboxes, meaning that the property has to be true or false, but you cannot
-skip its evaluation. You have two ways to resolve this problem: the first way is to define a custom
+skip its evaluation. You have two ways to work around this limitation: the first way is to define a custom
 `true,false` value list in the value option property of the column configuration: instead of seeing the checkbox you
 will see a select with those two values, and you will also be able to delete the value in the cell, leaving it empty.
-Otherwise, you can use the self-made `NullableBoolean` enum (this is useful in guided rule templates, where you
+Otherwise, you can use the `NullableBoolean` enum we defined (this is useful in guided rule templates, where you
 cannot use the default values trick).
 
 -  In general, guided decision tables are not the right tool to handle logical disjunctions (`or`). We need
@@ -260,10 +260,10 @@ matching the CableRequest. We decided to avoid this redundancy.
 
 ## Guided rule templates
 
-As told before, guided decision tables do not allow to define logical disjunctions. Instead guided rule templates
+As already mentioned in the previous section, guided decision tables do not allow to define logical disjunctions. On the other hand, guided rule templates
 give us a suitable tool for doing so.
 
-Almost all cable rules have been defined by this tool. 
+Almost all cable rules have been defined with this format. 
 
 In order to create a new guided rule template you have to select `Add asset` option on the project page of the 
 Business Central and then `Guided rule template`. Give a name to your asset, choose the package where you want to save 
@@ -282,13 +282,11 @@ cable rules template).
 
 By clicking on the added object you can add a restriction on a specific field or a multiple field constraint, choose
 the constraint type and decide to evaluate the constraint against a constant literal value or a template value. If you 
-choose the template key option (choose an adequate name, maybe starting with `$`) you will see a new column in the data 
+choose the template key option (choose an adequate name, by convention we give names starting with `$`) you will see a new column in the data 
 tab. In every cell of the column you can set the value to evaluate the constraint against.
 
-You can use the same pattern to create the right part of the rule. We often use the free DRL option because we wanted
-to use a helper method we defined previously, in order to create the new cable object to be returned after matching both 
-ComponentConfiguration or CableRequest. Take a look at any cable rules file and at `CableHelper` Java class in order 
-to better understand this process.
+You can use the same pattern to create the right part of the rule. We often use the free DRL option because it allows us to use helper methods.
+Take a look at any cable rules file and at `CableHelper` Java class in order  to better understand this process.
 
 ![cables](./images/cables.png)
 

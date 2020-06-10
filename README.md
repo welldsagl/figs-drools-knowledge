@@ -1,7 +1,6 @@
 # Schindler Fixture - Drools Knowledge
 
-`Drools Knowledge` is the service that allows us to match a given component configuration to a
-list of different types of material codes.
+`Drools Knowledge` allows us to match a component configuration to a list of material codes.
 
 A component configuration represents a set of features of a chosen component, for example:
 
@@ -68,7 +67,7 @@ end
 
 ## Rules
 
-The Drool Knowledge service can be queried in two ways:
+The Drools Knowledge can be queried in two ways:
 -  Providing a configuration map
 -  Providing a cable request
 
@@ -80,13 +79,11 @@ objects can return three kinds of materials:
 -  `Material` objects, that represent a unique pair of `family code` and `material code`. Inserting a Material
 into the knowledge means `Get the material identified by those two codes`. In general,
 `additional` materials are added this way.
-
 -  `Family` objects, that represent a `family code` and a `price position` type (which is always set to
 `basic` because additional materials are always added as Materials and not as Families). Inserting a 
 family into the knowledge means `Get all the material of that family with that price position`.
 In general, `basic` materials are added this way.
-
- -  `Cable` objects, similar to Materials, with a `family code` and a `material code`, with an additional `length`
+-  `Cable` objects, similar to Materials, with a `family code` and a `material code`, with an additional `length`
  field.
 
 The configuration builders will convert the generic component configuration to a specific one,
@@ -108,7 +105,7 @@ request is directly dispatched to the Drools environment.
 
 ## Build
 
-By running `mvn install` we compile through the `kie-maven-plugin` which produces a `kjar` package.
+By running `mvn package` we compile through the `kie-maven-plugin` which produces a `kjar` package.
 
 A `kjar` is a common `jar` with a `kmodule.xml` file and a set of knowledge files in its
 `resources` directory.
@@ -122,11 +119,10 @@ To execute unit tests: `mvn test`.
 
 ## Code organization
 
-Project contains both java and drl code. 
+The project contains both Java and Drools specific (DRL and GDST) code. 
 
-Java code contains the definition of data types and the business logic
-that converts the incoming key-value generic configuration map into these known data types. It also contains some 
-utility methods used by drools code.
+The Java code contains beans representing the inputs and outputs to the knowledge. More specifically, it includes `Configuration` 
+beans that map the input component configuration and several beans for the materials and cables output from running the rules.
 
 Drools code contains the definition of all the rules that match the incoming configuration to a list of materials
 and cables. 
@@ -138,10 +134,9 @@ Java code is split into 4 main packages:
 -  `components` contains all DTOs for Drools-known component configurations, such as 'IndicatorConfiguration'.
 -  `materials` contains all parts of the materials hierarchy that we can create in the right part of the rules: we can 
 create materials, cables or families. A family is a group of materials identified by a common code.
--  `builders` contains all the business logic to convert a generic key-value `Map` into a Drools-known component 
+-  `builders` contains all the business logic to convert a generic key-value `Map` into a typed component 
 configuration. Builders are divided by common builders, builders for COP components, for LOP components, etc.
-Builders are annotated with `@ApplicationScoped` in order to register them as potential configuration builders
-onto the `Material rules engine` service. This annotation is mandatory.
+Builders must be discoverable from a `CDI` application, so we usually annotate them with `@ApplicationScoped`.
 -  `types` contains a set of utility interfaces (with some default method implementations) that are implemented by the 
 builders. We have an interface for LOP builders, one for COP ones, etc.
 
@@ -150,15 +145,15 @@ builders. We have an interface for LOP builders, one for COP ones, etc.
 Drools code is placed in the `resources` directory and it contains a directory for each component: we have a directory 
 for indicators, one for fixtures, etc.
 
-You can find four kinds of knowledge files in our code:
+There are four kinds of knowledge files:
 
--  plain `DRL` files
--  `.gdst` guided decision table files
--  `.template` guided rules template files
--  `.enumeration` files.
+1. `DRL` files;
+2. `.gdst` guided decision table files;
+3. `.template` guided rules template files;
+4. `.enumeration` files.
 
 While DRL and enumeration files are easily readable, `.template` and `.gdst` files are customized `xml` files
-that must be opened with an external tool. That tool is called [Business Central](./docs/BUSINESS_CENTRAL.md).
+that must be opened with the [Business Central](./docs/BUSINESS_CENTRAL.md).
 
 Please note that `.template` and `.gdst` files will be compiled to `.drl` files, they are just a different way
 to define rules. `.enumeration` files are utility files for simplifying the usage of the Business Central.
