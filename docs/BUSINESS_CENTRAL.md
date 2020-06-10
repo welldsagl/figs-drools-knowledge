@@ -154,11 +154,15 @@ a Material`. We do not need to import the specific `ComponentConfiguration` clas
 package of the guided decision table, but we need to import the `Material`, `Cable` or `Family` class that we want to insert 
 into the knowledge, in order to create the right part of the rules.
 
+![step 2](./images/step2.png)
+
 #### Step 3 - Add Fact Patterns
 
 In this section we select the objects we will consider for pattern matching. Rules will check properties of the
 ComponentConfiguration, so we move that to the list of chosen patterns. Optionally we can give a name to the
 object (`f1` by default).
+
+![step 3](./images/step3.png)
 
 #### Step 4 - Add Constraints
 
@@ -171,6 +175,8 @@ We also have to define a mandatory column header and operator (`equal to`, `cont
 Note that if you have already defined that property in an enumeration file, the list of possible values is already
 defined (see `default value` select).
 
+![step 4](./images/step4.png)
+
 #### Step 5 - Add actions to update Facts
 
 We usually do not need this step and jump to step 6.
@@ -182,6 +188,8 @@ to the list of chosen patterns and move to the list of chosen fields the propert
 
 As an example, if you want to insert a Material, select at least `familyCode` and `materialCode`. You only have to
 set the column header of each column and then click on Finish button (you can skip step 7).
+
+![step 6](./images/step6.png)
 
 ### Guided decision table environment
 
