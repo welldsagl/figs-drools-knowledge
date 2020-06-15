@@ -113,6 +113,21 @@ public class TestLopKKeySwitchConfigurationBuilder {
     }
 
     @Test
+    @DisplayName("create a non-critical configuration if critical quantity is zero")
+    public void testGetNonCriticalWithZeroQuantityConfiguration() {
+        Map<String, Object> configMap = createConfigurationRequest(
+            null,
+            null,
+            createSlot("cat_b1", "sel_b1", "text_b1", true, new BigDecimal(0)),
+            null
+        );
+        List<ComponentConfiguration> configurations = builder.getConfigurationsImpl(configMap);
+        KeySwitchConfiguration criticalConfig = (KeySwitchConfiguration) configurations.get(0).getConfiguration();
+        assertEquals(false, criticalConfig.getCritical());
+        assertEquals(0, criticalConfig.getCriticalQuantity());
+    }
+
+    @Test
     @DisplayName("convert into an empty list if no slots are provided")
     public void testEmptyConfigurationListForNoSlots() {
         Map<String, Object> configMap = createConfigurationRequest(
