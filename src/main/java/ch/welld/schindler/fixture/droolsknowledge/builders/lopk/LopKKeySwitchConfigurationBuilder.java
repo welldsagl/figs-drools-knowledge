@@ -33,8 +33,9 @@ public class LopKKeySwitchConfigurationBuilder extends KeySwitchConfigurationBui
         ksConfiguration.setKeyFunction(keyFunction);
         ksConfiguration.setEngraving(engraving);
         ksConfiguration.setPosition(position);
-        ksConfiguration.setCritical(critical);
-        ksConfiguration.setCriticalQuantity(criticalQuantity != null ? criticalQuantity.intValue() : 0);
+        int criticalQuantityValue = critical && criticalQuantity != null ? criticalQuantity.intValue() : 0;
+        ksConfiguration.setCriticalQuantity(criticalQuantityValue);
+        ksConfiguration.setCritical(criticalQuantityValue > 0);
         return ksConfiguration;
     }
 
