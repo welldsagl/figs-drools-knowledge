@@ -153,4 +153,19 @@ public class TestLopKKeySwitchConfigurationBuilder {
         assertTrue(configuration.isEmpty());
     }
 
+    @Test
+    @DisplayName("create non-critical configuration if critical flag is not provided")
+    public void testGetCriticalConfigurationError() {
+        Map<String, Object> configMap = createConfigurationRequest(
+                null,
+                null,
+                createSlot("cat_b1", "sel_b1", "text_b1", null, new BigDecimal(4)),
+                null
+        );
+        List<ComponentConfiguration> configurations = builder.getConfigurationsImpl(configMap);
+        assertEquals(1, configurations.size());
+        KeySwitchConfiguration criticalConfig = (KeySwitchConfiguration) configurations.get(0).getConfiguration();
+        assertEquals(false, criticalConfig.getCritical());
+    }
+
 }

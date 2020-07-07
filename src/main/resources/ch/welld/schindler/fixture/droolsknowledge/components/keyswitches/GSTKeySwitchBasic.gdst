@@ -921,7 +921,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>JBF R01 OOCCD</valueString>
+        <valueString>JBF JSR01 OOCCD</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>

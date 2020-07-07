@@ -1,6 +1,6 @@
 'KeySwitchConfiguration.fixtureFamily' : ['AT','DT','GST','MT']
 'KeySwitchConfiguration.keyType' : ['KCA31','KABA']
 'KeySwitchConfiguration.keySwitch' : ['2 POSITION','3 POSITION','KEY CONTACT']
-'KeySwitchConfiguration.keyFunction' : ['JAB','JBF','JBF (AUS)','JBF (AUS) GROUP','JBF JS01O','JBF JS01 OOOC','JBF JS01 C (AUS)','JBF JS01 CCD (AUS)','JBF R01 OOCCD','JBF-A','JBF-H1','JBF-H2','JDC','JDCW','JDEV','JDNF','JDNFG','JKLBL','JLC','JLI','JNFF','JNFF (AUS)','JNFF (AUS) GROUP','JNFF JS01 C (AUS)','JNFF JS01 CCD (AUS)','JNFFP','JNO','JPF','JRVC','JRVPC','JSPE','JVEC']
+'KeySwitchConfiguration.keyFunction' : ['JAB','JBF','JBF (AUS)','JBF (AUS) GROUP','JBF JS01O','JBF JS01 OOOC','JBF JS01 C (AUS)','JBF JS01 CCD (AUS)','JBF JSR01 OOCCD','JBF-A','JBF-H1','JBF-H2','JDC','JDCW','JDEV','JDNF','JDNFG','JKLBL','JLC','JLI','JNFF','JNFF (AUS)','JNFF (AUS) GROUP','JNFF JS01 C (AUS)','JNFF JS01 CCD (AUS)','JNFFP','JNO','JPF','JRVC','JRVPC','JSPE','JVEC']
 'KeySwitchConfiguration.cableType' : ['PVC/CCC','UL','HLF']
 'KeySwitchConfiguration.componentType' : ['COP','LOP-K']

@@ -117,9 +117,9 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <type>ch.welld.schindler.fixture.droolsknowledge.materials.CableHelper</type>
       </org.kie.soup.project.datamodel.imports.Import>
       <org.kie.soup.project.datamodel.imports.Import>
-      <type>ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean</type>
-    </org.kie.soup.project.datamodel.imports.Import>
-    <org.kie.soup.project.datamodel.imports.Import>
+        <type>ch.welld.schindler.fixture.droolsknowledge.components.NullableBoolean</type>
+      </org.kie.soup.project.datamodel.imports.Import>
+      <org.kie.soup.project.datamodel.imports.Import>
         <type>org.drools.core.spi.Tuple</type>
       </org.kie.soup.project.datamodel.imports.Import>
     </imports>
@@ -185,15 +185,15 @@ insert(CableHelper.createCable(tuple, &quot;@{$cableFamilyCode}&quot;,  &quot;@{
         <string>57643422</string>
         <string>57640433</string>
         <string>150918</string>
-        <string></string>
+        <string>150013</string>
         <string>57643437</string>
         <string>57640434</string>
         <string>150918</string>
-        <string></string>
+        <string>59327009</string>
         <string>57643423</string>
         <string>57640434</string>
         <string>150918</string>
-        <string></string>
+        <string>59327009</string>
       </list>
     </entry>
     <entry>
