@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>ch.welld.schindler.fixture</groupId>
   <artifactId>droolsknowledge</artifactId>
-  <version>1.1.0</version>
+  <version>1.0.1</version>
   <packaging>kjar</packaging>
   <name>Drools Knowledge</name>
   

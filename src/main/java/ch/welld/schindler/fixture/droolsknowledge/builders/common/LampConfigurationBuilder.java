@@ -19,7 +19,7 @@ public abstract class LampConfigurationBuilder extends AbstractConfigurationBuil
             "LL-X-NA",
             "LL-V",
             "LBFC",
-            "LBFC-Fire",
+            "LBFC/EN81-72",
             "LBFC-Full",
             "LRVC",
             "LREC",

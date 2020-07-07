@@ -26,6 +26,7 @@ public class LopKKeySwitchConfigurationBuilder extends KeySwitchConfigurationBui
         Boolean critical,
         BigDecimal criticalQuantity
     ) {
+        boolean isCritical = critical != null ? critical : false;
         KeySwitchConfiguration ksConfiguration = new KeySwitchConfiguration();
         ksConfiguration.setKeyType(getUpperCaseString(config, "keyType"));
         ksConfiguration.setFixtureFamily((String) config.get("fixtureFamily"));
@@ -33,7 +34,7 @@ public class LopKKeySwitchConfigurationBuilder extends KeySwitchConfigurationBui
         ksConfiguration.setKeyFunction(keyFunction);
         ksConfiguration.setEngraving(engraving);
         ksConfiguration.setPosition(position);
-        int criticalQuantityValue = critical && criticalQuantity != null ? criticalQuantity.intValue() : 0;
+        int criticalQuantityValue = isCritical && criticalQuantity != null ? criticalQuantity.intValue() : 0;
         ksConfiguration.setCriticalQuantity(criticalQuantityValue);
         ksConfiguration.setCritical(criticalQuantityValue > 0);
         return ksConfiguration;
@@ -48,6 +49,7 @@ public class LopKKeySwitchConfigurationBuilder extends KeySwitchConfigurationBui
         Map<String, Map<String, Object>> lopKSlots = (Map<String, Map<String, Object>>) config.get("keySwitch");
         List<KeySwitchConfiguration> keySwitchConfigurations = new ArrayList<>();
 
+
         lopKSlots.forEach((key, value) ->
             keySwitchConfigurations.add(
                 createKeySwitchConfiguration(
@@ -56,7 +58,7 @@ public class LopKKeySwitchConfigurationBuilder extends KeySwitchConfigurationBui
                     (String) value.get("selection"),
                     (String) value.get("text"),
                     key,
-                    (Boolean) value.get("critical"),
+                    (Boolean) value.getOrDefault("critical", false),
                     (BigDecimal) value.get("criticalQuantity")
                 )
             )
